@@ -54,12 +54,19 @@ void initPhysics(bool interactive)
 	sceneDesc.filterShader = contactReportFilterShader;
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
+
+	//Pintando objetos
+	RenderItem* _sphere = new RenderItem(CreateShape(PxSphereGeometry(10)), new PxTransform (0, 0, 0), Vector4(1, 0.7, 0.8, 1));
+
+	RegisterRenderItem(_sphere);
+
 	}
 
 
 // Function to configure what happens in each step of physics
 // interactive: true if the game is rendering, false if it offline
 // t: time passed since last call in milliseconds
+// Update
 void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);

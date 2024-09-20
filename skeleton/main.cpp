@@ -56,8 +56,16 @@ void initPhysics(bool interactive)
 	gScene = gPhysics->createScene(sceneDesc);
 
 	//Pintando objetos
-	RenderItem* _sphere = new RenderItem(CreateShape(PxSphereGeometry(10)), new PxTransform (0, 0, 0), Vector4(1, 0.7, 0.8, 1));
+	RenderItem* _sphereR = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform (20.0, 0.0, 0.0), Vector4(1, 0.7, 0.8, 1));
+	RegisterRenderItem(_sphereR);
 
+	RenderItem* _sphereB = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform(0.0, 20.0, 0.0), Vector4(0.7, 1, 0.7, 1));
+	RegisterRenderItem(_sphereB);
+
+	RenderItem* _sphereG = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform(0.0, 0.0, 20.0), Vector4(0.7, 0.7, 1, 1));
+	RegisterRenderItem(_sphereG);
+
+	RenderItem* _sphere = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform(0.0, 0.0, 0.0), Vector4(1, 1, 1, 1));
 	RegisterRenderItem(_sphere);
 
 	}

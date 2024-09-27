@@ -73,7 +73,7 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 10, 0), 0.5);
+	p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector4(1, 0.7, 0.8, 1), Vector3(0, 10, 0), 0.5);
 
 	}
 

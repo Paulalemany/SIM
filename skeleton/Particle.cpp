@@ -1,6 +1,6 @@
 #include "Particle.h"
 
-Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel)
+Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color)
 {
 	pose = physx::PxTransform(Pos);
 	vel = Vel;
@@ -8,10 +8,10 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel)
 
 	renderItem = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
-		&pose, Vector4(1, 0.7, 0.8, 1));
+		&pose, color);
 }
 
-Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D)
+Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color, physx::PxVec3 a, double D)
 {
 	pose = physx::PxTransform(Pos);
 	vel = Vel;
@@ -20,7 +20,7 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double
 
 	renderItem = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)), 
-		&pose, Vector4(1, 0.7, 0.8, 1));
+		&pose, color);
 }
 
 Particle::~Particle()

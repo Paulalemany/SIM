@@ -7,6 +7,7 @@
 #include "core.hpp"
 #include "RenderUtils.hpp"
 #include "callbacks.hpp"
+#include "Particle.h"
 
 #include <iostream>
 
@@ -29,6 +30,8 @@ PxPvd*                  gPvd        = NULL;
 PxDefaultCpuDispatcher*	gDispatcher = NULL;
 PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
+Particle* p;
+
 
 
 // Initialize physics engine
@@ -56,7 +59,8 @@ void initPhysics(bool interactive)
 	gScene = gPhysics->createScene(sceneDesc);
 
 	//Pintando objetos
-	RenderItem* _sphereR = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform (20.0, 0.0, 0.0), Vector4(1, 0.7, 0.8, 1));
+#pragma region Practica 0
+	/*RenderItem* _sphereR = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform(20.0, 0.0, 0.0), Vector4(1, 0.7, 0.8, 1));
 	RegisterRenderItem(_sphereR);
 
 	RenderItem* _sphereB = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform(0.0, 20.0, 0.0), Vector4(0.7, 1, 0.7, 1));
@@ -66,7 +70,10 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphereG);
 
 	RenderItem* _sphere = new RenderItem(CreateShape(PxSphereGeometry(5)), new PxTransform(0.0, 0.0, 0.0), Vector4(1, 1, 1, 1));
-	RegisterRenderItem(_sphere);
+	RegisterRenderItem(_sphere);*/
+#pragma endregion
+
+	p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0));
 
 	}
 
@@ -81,6 +88,7 @@ void stepPhysics(bool interactive, double t)
 
 	gScene->simulate(t);
 	gScene->fetchResults(true);
+	p->integrate(t);
 }
 
 // Function to clean data

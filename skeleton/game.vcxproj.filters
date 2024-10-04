@@ -7,28 +7,54 @@
     <ClCompile Include="Render\Render.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="RenderUtils.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="callbacks.cpp" />
-    <ClCompile Include="Vector3D.cpp" />
-    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="callbacks.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderUtils.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3D.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="core.hpp" />
     <ClInclude Include="Render\Camera.h">
       <Filter>Render</Filter>
     </ClInclude>
     <ClInclude Include="Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="RenderUtils.hpp" />
-    <ClInclude Include="callbacks.hpp" />
-    <ClInclude Include="Vector3D.h" />
-    <ClInclude Include="Particle.h" />
+    <ClInclude Include="callbacks.hpp">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="core.hpp">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderUtils.hpp">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>h</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
       <UniqueIdentifier>{d04b4f9f-5a69-465e-8070-25c6d0bcd3c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{fa10e8b0-f29d-4de5-bbd0-0a03c1e70d5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h">
+      <UniqueIdentifier>{ba19da9b-3524-422a-9092-acdb06216c55}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

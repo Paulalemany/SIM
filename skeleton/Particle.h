@@ -11,16 +11,20 @@ public:
 
 	void integrate(double t);
 
-private:
+protected:
+	//Parametros de la particula
 	physx::PxVec3 vel;
 	physx::PxVec3 ace;
 
 	//0 < d < 1
+	//Dumpling
 	double d = 0.98;
 
 	//Al RenderItem le pasamos pose para que se actualice automaticamente
 	physx::PxTransform pose;
 	RenderItem* renderItem;
+
+
 
 };
 

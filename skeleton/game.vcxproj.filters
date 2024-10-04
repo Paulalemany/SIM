@@ -22,6 +22,9 @@
     <ClCompile Include="Vector3D.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Proyectil.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -43,6 +46,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Vector3D.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Proyectil.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>

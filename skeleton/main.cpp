@@ -7,7 +7,8 @@
 #include "core.hpp"
 #include "RenderUtils.hpp"
 #include "callbacks.hpp"
-#include "Particle.h"
+
+#include "Proyectil.h"
 
 #include <iostream>
 
@@ -31,6 +32,8 @@ PxDefaultCpuDispatcher*	gDispatcher = NULL;
 PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
 Particle* p;
+std::vector<Proyectil*> proyectiles;
+
 
 
 
@@ -73,7 +76,7 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector4(1, 0.7, 0.8, 1), Vector3(0, 10, 0), 0.5);
+	//p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector4(1, 0.7, 0.8, 1), Vector3(0, 10, 0), 0.5);
 
 	}
 
@@ -88,7 +91,13 @@ void stepPhysics(bool interactive, double t)
 
 	gScene->simulate(t);
 	gScene->fetchResults(true);
-	p->integrate(t);
+	
+	//Movimiento de los proyectiles
+	if (proyectiles.size() > 0) {
+		for (auto e : proyectiles) {
+			e -> update(t);
+		}
+	}
 }
 
 // Function to clean data
@@ -121,6 +130,15 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	case ' ':
 	{
 		break;
+	}
+	case 'K':
+	{
+		//La dirección habría que cambiarla según donde mire la cámara
+		//La posición inicial es la misma en todas
+		Vector3 vel = Vector3(camera.q.getBasisVector2()) * 25;
+		std::cout << vel.x << "," << vel.y << "," << vel.z << std::endl;
+		proyectiles.push_back(
+			new Proyectil(camera.p, vel * 5, Vector4(1, 0.7, 0.8, 1), vel * 2, 0.5, 5));
 	}
 	default:
 		break;

@@ -6,6 +6,7 @@ class Particle
 {
 public:
 	Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col);
+	Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D);
 	Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxVec3 a, double D);
 	~Particle();
 

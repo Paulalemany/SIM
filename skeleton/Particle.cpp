@@ -11,6 +11,17 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color)
 		&pose, color);
 }
 
+Particle::Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D)
+{
+	pose = physx::PxTransform(Pos);
+	ace = a;
+	d = D;
+
+	renderItem = new RenderItem
+	(CreateShape(physx::PxSphereGeometry(5)),
+		&pose, col);
+}
+
 Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color, physx::PxVec3 a, double D)
 {
 	pose = physx::PxTransform(Pos);

@@ -3,38 +3,41 @@
 #include <PxPhysicsAPI.h>
 
 #include <vector>
+#include <iostream>
 
 #include "core.hpp"
 #include "RenderUtils.hpp"
 #include "callbacks.hpp"
 
+#include "Scene.h"
 #include "Proyectil.h"
 
-#include <iostream>
+
 
 std::string display_text = "This is a test";
 
 
 using namespace physx;
 
+#pragma region Inicializacion
+
 PxDefaultAllocator		gAllocator;
 PxDefaultErrorCallback	gErrorCallback;
 
-PxFoundation*			gFoundation = NULL;
-PxPhysics*				gPhysics	= NULL;
+PxFoundation* gFoundation = NULL;
+PxPhysics* gPhysics = NULL;
 
 
-PxMaterial*				gMaterial	= NULL;
+PxMaterial* gMaterial = NULL;
 
-PxPvd*                  gPvd        = NULL;
+PxPvd* gPvd = NULL;
 
-PxDefaultCpuDispatcher*	gDispatcher = NULL;
-PxScene*				gScene      = NULL;
+PxDefaultCpuDispatcher* gDispatcher = NULL;
+PxScene* gScene = NULL;
 ContactReportCallback gContactReportCallback;
-Particle* p;
-std::vector<Proyectil*> proyectiles;
+#pragma endregion
 
-
+Scene* scene = nullptr;
 
 
 // Initialize physics engine
@@ -76,9 +79,10 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	//p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector4(1, 0.7, 0.8, 1), Vector3(0, 10, 0), 0.5);
+	//p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 10, 0), 0.5);
 
-	}
+	scene = new Scene();
+}
 
 
 // Function to configure what happens in each step of physics
@@ -93,11 +97,9 @@ void stepPhysics(bool interactive, double t)
 	gScene->fetchResults(true);
 	
 	//Movimiento de los proyectiles
-	if (proyectiles.size() > 0) {
-		for (auto e : proyectiles) {
-			e -> update(t);
-		}
-	}
+	//llamamos al update de la escena y esta se encarga del resto
+	if (scene != nullptr) scene->update(t);
+	
 }
 
 // Function to clean data
@@ -135,10 +137,9 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	{
 		//La dirección habría que cambiarla según donde mire la cámara
 		//La posición inicial es la misma en todas
-		Vector3 vel = Vector3(camera.q.getBasisVector2()) * 25;
-		std::cout << vel.x << "," << vel.y << "," << vel.z << std::endl;
-		proyectiles.push_back(
-			new Proyectil(camera.p, vel * 5, Vector4(1, 0.7, 0.8, 1), vel * 2, 0.5, 5));
+		scene->addParticle(new Proyectil(camera.p, camera.q.getBasisVector2() * -25,
+			Vector3(0, 0, 0), 1));
+		
 	}
 	default:
 		break;

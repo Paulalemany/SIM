@@ -45,3 +45,12 @@ void Particle::integrate(double t)
 	vel = vel + t * ace;
 	vel = vel * pow(d, t);
 }
+
+bool Particle::update(double t)
+{
+	if (!alive) return false;
+
+	//Actualizamos la posición si está viva
+	integrate(t);
+	return true;
+}

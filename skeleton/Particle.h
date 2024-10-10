@@ -11,6 +11,7 @@ public:
 	~Particle();
 
 	void integrate(double t);
+	virtual bool update(double t);
 
 protected:
 	//Parametros de la particula
@@ -20,12 +21,10 @@ protected:
 	//0 < d < 1
 	//Dumpling
 	double d = 0.98;
+	bool alive;
 
 	//Al RenderItem le pasamos pose para que se actualice automaticamente
 	physx::PxTransform pose;
 	RenderItem* renderItem;
-
-
-
 };
 

@@ -2,24 +2,24 @@
 #include "Particle.h"
 #include <PxPhysicsAPI.h>
 
-class Proyectil : protected Particle
+class Proyectil : public Particle
 {
 public:
 	//Constructora
-	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxVec3 a, double D, double m);
+	//Añadir un vector de gravedad
+	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel,
+		physx::PxVec3 a, double D);
+	~Proyectil() {};
 
-	bool update(double t);
+	bool update(double t) override;
 
 private:
 
 	//Masa en gramos
-	double masa = 0;
+	double masa = 1;
 
 	//Gravedad en m/s
-	double gr = 0;	
-	double gs = 0;
-
-	//Velocidad en m/s
+	Vector3 grav = Vector3 (0, -9.8, 0);
 	
 };
 

@@ -25,6 +25,9 @@
     <ClCompile Include="Proyectil.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -49,6 +52,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Proyectil.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>

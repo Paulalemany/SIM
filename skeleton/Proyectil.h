@@ -7,8 +7,7 @@ class Proyectil : public Particle
 public:
 	//Constructora
 	//Añadir un vector de gravedad
-	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel,
-		physx::PxVec3 a, double D);
+	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D);
 	~Proyectil() {};
 
 	bool update(double t) override;

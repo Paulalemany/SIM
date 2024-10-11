@@ -4,7 +4,7 @@
 //La aceleración es a + gravedad
 //El color de estos va a ser morado
 Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D)
-	: Particle(Pos, Vel, Vector4 (0.34, 0.13, 0.39, 1), a + grav, D)
+	: Particle(Pos, Vel, Vector4 (0.34, 0.13, 0.39, 1), a + Vector3(0, -9.8, 0), D)
 {
 	//Escalamos las medidas
 	//masa = m * 0.4;
@@ -16,7 +16,7 @@ Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, doub
 bool Proyectil::update(double t)
 {
 	// si esta por debajo de una posicion, marca la particula para eliminar
-	if (pose.p.y <= 10) alive = false;
+	//if (pose.p.y <= 10) alive = false;
 
-	return update(t);
+	return Particle::update(t);
 }

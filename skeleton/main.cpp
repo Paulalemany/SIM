@@ -79,9 +79,9 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	//p = new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 10, 0), 0.5);
-
 	scene = new Scene();
+	//Proyectil* pr = new Proyectil(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), 1);
+	//scene->addParticle(new Proyectil(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 0, 0), 1));
 }
 
 
@@ -139,6 +139,8 @@ void keyPress(unsigned char key, const PxTransform& camera)
 		//La posición inicial es la misma en todas
 		scene->addParticle(new Proyectil(camera.p, camera.q.getBasisVector2() * -25,
 			Vector3(0, 0, 0), 1));
+
+		std::cout << "pium";
 		
 	}
 	default:

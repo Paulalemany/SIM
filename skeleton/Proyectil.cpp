@@ -16,7 +16,7 @@ Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, doub
 bool Proyectil::update(double t)
 {
 	// si esta por debajo de una posicion, marca la particula para eliminar
-	//if (pose.p.y <= 10) alive = false;
+	if (pose.p.y <= -10) alive = false;
 
 	return Particle::update(t);
 }

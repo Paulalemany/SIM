@@ -28,6 +28,12 @@
     <ClCompile Include="Scene.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleGenerator.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -55,6 +61,12 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGenerator.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>

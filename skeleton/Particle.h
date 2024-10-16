@@ -5,6 +5,7 @@
 class Particle
 {
 public:
+
 	Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col);
 	Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D);
 	Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxVec3 a, double D);
@@ -12,6 +13,8 @@ public:
 
 	void integrate(double t);
 	virtual bool update(double t);
+
+	void restLiveTime();
 
 protected:
 	//Parametros de la particula
@@ -25,7 +28,9 @@ protected:
 	//0 < d < 1
 	//Dumpling
 	double d = 0.98;
+
 	bool alive;
+	int liveTime;
 
 	//Al RenderItem le pasamos pose para que se actualice automaticamente
 	physx::PxTransform pose;	//Posicion inicial

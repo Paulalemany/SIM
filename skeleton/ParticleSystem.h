@@ -5,9 +5,9 @@ class ParticleSystem
 {
 public:
 
-	ParticleSystem(Vector3 ori, Vector3 vel, int n);
+	ParticleSystem(Vector3 ori, Vector3 vel, int n, int l);
 
-	void update(double t);
+	bool update(double t);
 
 private:
 
@@ -16,6 +16,8 @@ private:
 	Vector3 origen;
 	Vector3 velMed;
 	int numParticles;
+
+	int liveTime;
 
 	//Forma de dispersion
 	//Circular...

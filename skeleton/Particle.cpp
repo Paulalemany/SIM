@@ -54,3 +54,10 @@ bool Particle::update(double t)
 	integrate(t);
 	return true;
 }
+
+void Particle::restLiveTime()
+{
+	liveTime--;
+
+	if (liveTime == 0) alive = false;
+}

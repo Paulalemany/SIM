@@ -6,11 +6,15 @@
 class ParticleGenerator
 {
 public:
+	ParticleGenerator(Vector3 o, Vector3 vel, int np);
+	
 
 protected:
+	Vector3 origen;	//Punto de origen
+	Vector3 velMed;	//Velocidad media
 
-	//Punto de origen
-	std::vector<Proyectil*> particulas;
-	int numParticles;
+	std::vector<Proyectil*> particulas;	//Coleccion de particulas
+
+	int numParticles;	//Numero de particulas
 };
 

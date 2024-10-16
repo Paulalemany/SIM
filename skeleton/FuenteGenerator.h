@@ -1,5 +1,6 @@
 #pragma once
 #include "ParticleGenerator.h"
+#include <random>
 
 class FuenteGenerator : public ParticleGenerator
 {

@@ -34,6 +34,9 @@
     <ClCompile Include="ParticleGenerator.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="FuenteGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -69,6 +72,9 @@
     <ClInclude Include="ParticleGenerator.h">
       <Filter>h</Filter>
     </ClInclude>
+    <ClInclude Include="FuenteGenerator.h">
+      <Filter>h\Generadores</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -79,6 +85,12 @@
     </Filter>
     <Filter Include="h">
       <UniqueIdentifier>{ba19da9b-3524-422a-9092-acdb06216c55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\Generadores">
+      <UniqueIdentifier>{8c8730b2-0fba-4f9f-a866-c9e8071d62be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\Generadores">
+      <UniqueIdentifier>{6218cf6d-aafa-4de2-ae45-12cdd5685953}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

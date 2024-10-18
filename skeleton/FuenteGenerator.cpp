@@ -19,16 +19,27 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 
 
 	//Para cambiar la velocidad (Solo quiero cambiar la x y la z
-	std::normal_distribution<double> Ndistribution(5.0, 2.0);
+	//La primera variable es la media, indica como de lejos van
+	//La segunda en la desviacion tipica, indica la dispersion
+	std::normal_distribution<double> Ndistribution(5.0, 10.0);
+
+
+	std::binomial_distribution<int> Bdistribution(9, 0.5);
+
 	Vector3 newVel;
 
 	for (int i = 0; i < numPar; i++) {
 
 		double x = Ndistribution(generator);
+		double y = Ndistribution(generator);
 		double z = Ndistribution(generator);
 
+		/*int x = Bdistribution(generator);
+		int y = Bdistribution(generator);
+		int z = Bdistribution(generator);*/
+
 		newVel.x = x;
-		newVel.y = velMed.y;
+		newVel.y = y;
 		newVel.z = z;
 
 		aux.push_back(new Proyectil(origen, newVel, Vector3(0, -10, 0), 1));

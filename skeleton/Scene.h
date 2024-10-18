@@ -1,10 +1,7 @@
-
 #pragma once
-
 #include <vector>
-
-//Las escenas por ahora solo tienen particulas
 #include "Particle.h"
+#include "ParticleSystem.h"
 
 using namespace std;
 class Scene
@@ -23,5 +20,6 @@ private:
 
 	//Vector que gestiona las particulas de la escena
 	vector<Particle*> particulas;
+	ParticleSystem* sistema;
 };
 

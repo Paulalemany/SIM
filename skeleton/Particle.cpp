@@ -55,9 +55,9 @@ bool Particle::update(double t)
 	return true;
 }
 
-void Particle::restLiveTime()
+void Particle::restLiveTime(double t)
 {
-	liveTime--;
+	liveTime -= t;
 
 	if (liveTime == 0) alive = false;
 }

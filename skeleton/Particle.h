@@ -14,7 +14,7 @@ public:
 	void integrate(double t);
 	virtual bool update(double t);
 
-	void restLiveTime();
+	void restLiveTime(double t);
 
 protected:
 	//Parametros de la particula

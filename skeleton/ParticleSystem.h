@@ -1,5 +1,6 @@
 #pragma once
 #include "Proyectil.h"
+#include "FuenteGenerator.h"
 
 class ParticleSystem
 {
@@ -13,9 +14,13 @@ private:
 
 	//Generador de particulas
 	std::vector<Proyectil*> particulas;
+	std::vector<Proyectil*> aux;
 	Vector3 origen;
 	Vector3 velMed;
 	int numParticles;
+
+	//Generador asociado
+	FuenteGenerator* generator;
 
 	int liveTime;
 

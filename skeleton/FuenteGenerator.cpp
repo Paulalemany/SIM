@@ -1,5 +1,4 @@
 #include "FuenteGenerator.h"
-#include <iostream>
 
 FuenteGenerator::FuenteGenerator(Vector3 o, Vector3 vel, int np)
 	:ParticleGenerator(o, vel, np)
@@ -22,7 +21,6 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 	//La primera variable es la media, indica como de lejos van
 	//La segunda en la desviacion tipica, indica la dispersion
 	std::normal_distribution<double> Ndistribution(5.0, 10.0);
-
 
 	std::binomial_distribution<int> Bdistribution(9, 0.5);
 

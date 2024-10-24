@@ -38,9 +38,9 @@ std::vector<Proyectil*> FuegosArtificialesGenerator::CreateParticles(int actPart
 
 	
 	Vector3 newVel;
-	float x;
-	float y;
-	float z;
+	double x;
+	int y;
+	double z;
 
 	//Hacemos los colores aqui para que todo el pack sea del mismo color
 	if (actParticles <= 1) {

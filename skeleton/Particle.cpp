@@ -1,4 +1,5 @@
 #include "Particle.h"
+#include <iostream>
 
 Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color)
 {
@@ -59,5 +60,9 @@ void Particle::restLiveTime(double t)
 {
 	liveTime -= t;
 
-	if (liveTime == 0) alive = false;
+	if (liveTime == 0) 
+	{ 
+		alive = false; 
+		std::cout << "Por tiempo";
+	}
 }

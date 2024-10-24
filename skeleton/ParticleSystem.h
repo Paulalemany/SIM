@@ -6,7 +6,7 @@ class ParticleSystem
 {
 public:
 
-	ParticleSystem(Vector3 ori, Vector3 vel, int n, int l);
+	ParticleSystem(Vector3 ori, Vector3 vel, int n, int l, int ge);
 
 	bool update(double t);
 

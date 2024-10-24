@@ -1,13 +1,21 @@
 #include "ParticleSystem.h"
 
-ParticleSystem::ParticleSystem(Vector3 ori, Vector3 vel, int n, int l)
+ParticleSystem::ParticleSystem(Vector3 ori, Vector3 vel, int n, int l, int ge)
 {
 	origen = ori;
 	velMed = vel;
 	numParticles = n;
 	liveTime = l;
 
-	generator = new FuenteGenerator(origen, velMed, numParticles);
+	switch (ge)
+	{
+	case 0:
+		generator = new FuenteGenerator(origen, velMed, numParticles);
+		break;
+	default:
+		break;
+	}
+	
 }
 
 bool ParticleSystem::update(double t)

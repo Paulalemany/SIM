@@ -16,10 +16,15 @@ public:
 
 	void addParticle(Particle* particula);
 
+	enum Generadores
+	{
+		Fuente = 0
+	};
+
 private:
 
 	//Vector que gestiona las particulas de la escena
 	vector<Particle*> particulas;
-	ParticleSystem* sistema;
+	ParticleSystem* fuente;
 };
 

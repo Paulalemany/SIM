@@ -6,11 +6,13 @@
 Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D)
 	: Particle(Pos, Vel, Vector4 (0.34, 0.13, 0.39, 1), a + Vector3(0, -9.8, 0), D)
 {
-	//Escalamos las medidas
-	//masa = m * 0.4;
-	//gr = masa * -9.8;	//Esta sería la componente y ya que la gravedad solo afecta hacia abajo
+	
+}
 
-	//vel = Vel * 0.05;
+Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D, Vector4 color)
+	: Particle(Pos, Vel, color, a + Vector3(0, -9.8, 0), D)
+{
+
 }
 
 bool Proyectil::update(double t)

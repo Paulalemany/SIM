@@ -3,7 +3,7 @@
 
 Scene::Scene()
 {
-	sistema = new ParticleSystem(Vector3(0, 0, 0), Vector3(25, 25, -25), 10, 50000);
+	fuente = new ParticleSystem(Vector3(0, 0, 0), Vector3(0, 25, -25), 500, 50000, Fuente);
 }
 
 Scene::~Scene()
@@ -28,7 +28,7 @@ void Scene::update(double t)
 	//	}
 	//}
 
-	sistema->update(t);
+	fuente->update(t);
 }
 
 void Scene::addParticle(Particle* particula)

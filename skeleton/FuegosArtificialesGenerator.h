@@ -1,11 +1,10 @@
 #pragma once
 #include "ParticleGenerator.h"
 
-
-class FuenteGenerator : public ParticleGenerator
+class FuegosArtificialesGenerator : public ParticleGenerator
 {
 public:
-	FuenteGenerator(Vector3 o, Vector3 vel, int np);
+	FuegosArtificialesGenerator(Vector3 o, Vector3 vel, int np);
 
 	//Habrá que pasarle el numero de particulas que hay 
 	// y el numero maximo de particulas que puede haber

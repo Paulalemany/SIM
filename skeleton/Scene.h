@@ -18,7 +18,8 @@ public:
 
 	enum Generadores
 	{
-		Fuente = 0
+		Fuente = 0,
+		FuegosArtificiales = 1
 	};
 
 private:
@@ -26,5 +27,6 @@ private:
 	//Vector que gestiona las particulas de la escena
 	vector<Particle*> particulas;
 	ParticleSystem* fuente;
+	ParticleSystem* fuegos;
 };
 

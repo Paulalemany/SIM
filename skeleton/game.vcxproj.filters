@@ -37,6 +37,9 @@
     <ClCompile Include="FuenteGenerator.cpp">
       <Filter>cpp\Generadores</Filter>
     </ClCompile>
+    <ClCompile Include="FuegosArtificialesGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -73,6 +76,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="FuenteGenerator.h">
+      <Filter>h\Generadores</Filter>
+    </ClInclude>
+    <ClInclude Include="FuegosArtificialesGenerator.h">
       <Filter>h\Generadores</Filter>
     </ClInclude>
   </ItemGroup>

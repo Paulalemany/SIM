@@ -1,6 +1,7 @@
 #pragma once
 #include "Proyectil.h"
 #include "FuenteGenerator.h"
+#include "FuegosArtificialesGenerator.h"
 
 class ParticleSystem
 {
@@ -20,7 +21,7 @@ private:
 	int numParticles;
 
 	//Generador asociado
-	FuenteGenerator* generator;
+	ParticleGenerator* generator;
 
 	int liveTime;
 

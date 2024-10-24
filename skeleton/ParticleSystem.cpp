@@ -12,6 +12,9 @@ ParticleSystem::ParticleSystem(Vector3 ori, Vector3 vel, int n, int l, int ge)
 	case 0:
 		generator = new FuenteGenerator(origen, velMed, numParticles);
 		break;
+	case 1:
+		generator = new FuegosArtificialesGenerator(origen, velMed, numParticles);
+		break;
 	default:
 		break;
 	}

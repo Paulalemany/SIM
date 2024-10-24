@@ -2,6 +2,7 @@
 #include "Proyectil.h"
 #include "FuenteGenerator.h"
 #include "FuegosArtificialesGenerator.h"
+#include "HumoGenerator.h"
 
 class ParticleSystem
 {

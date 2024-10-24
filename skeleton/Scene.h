@@ -19,7 +19,8 @@ public:
 	enum Generadores
 	{
 		Fuente = 0,
-		FuegosArtificiales = 1
+		FuegosArtificiales = 1,
+		Humo = 2
 	};
 
 private:
@@ -28,5 +29,6 @@ private:
 	vector<Particle*> particulas;
 	ParticleSystem* fuente;
 	ParticleSystem* fuegos;
+	ParticleSystem* humo;
 };
 

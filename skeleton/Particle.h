@@ -23,9 +23,10 @@ public:
 
 protected:
 	//Parametros de la particula
-	physx::PxVec3 ace;
+	physx::PxVec3 ace;	//Aceleracion inicial
 	physx::PxVec3 vel;	//Velocidad inicial
 	Vector4 color;		//Color inicial 
+
 	float tam;			//Tamaño inicial
 	float trans;		//Transparencia inicial
 	float timeLive;		//Tiempo de vida
@@ -41,6 +42,5 @@ protected:
 	physx::PxTransform pose;	//Posicion inicial
 	RenderItem* renderItem;
 
-	//Habría que poner la forma
 };
 

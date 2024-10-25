@@ -42,9 +42,12 @@ Particle::~Particle()
 
 void Particle::integrate(double t)
 {
-	pose.p = pose.p + t * vel;
+	//euler semi-implicito
 	vel = vel + t * ace;
+	pose.p = pose.p + t * vel;
 	vel = vel * pow(d, t);
+
+	//Hay que borrar las fuerzas
 }
 
 bool Particle::update(double t)
@@ -59,10 +62,4 @@ bool Particle::update(double t)
 void Particle::restLiveTime(double t)
 {
 	liveTime -= t;
-
-	if (liveTime == 0) 
-	{ 
-		alive = false; 
-		std::cout << "Por tiempo";
-	}
 }

@@ -47,6 +47,7 @@ std::vector<Proyectil*> HumoGenerator::CreateParticles(int actParticles, int max
 		newVel.z = z;
 
 		aux.push_back(new Proyectil(origen, newVel + velMed, Vector3(0, 10, 0), 1, color));
+		aux[i]->setLiveTime(100);
 
 	}
 

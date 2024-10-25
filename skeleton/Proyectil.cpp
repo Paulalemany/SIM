@@ -22,5 +22,11 @@ bool Proyectil::update(double t)
 		alive = false; 
 	}
 
+	else if (liveTime == 0)
+	{
+		alive = false;
+		std::cout << "Por tiempo";
+	}
+
 	return Particle::update(t);
 }

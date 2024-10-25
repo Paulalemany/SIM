@@ -12,9 +12,14 @@ public:
 	~Particle();
 
 	void integrate(double t);
+
 	virtual bool update(double t);
 
+	bool getAlive() { return alive; }
+
 	void restLiveTime(double t);
+
+	void setLiveTime(double t) { liveTime = t; }
 
 protected:
 	//Parametros de la particula
@@ -30,7 +35,7 @@ protected:
 	double d = 0.98;
 
 	bool alive;
-	int liveTime;
+	double liveTime;
 
 	//Al RenderItem le pasamos pose para que se actualice automaticamente
 	physx::PxTransform pose;	//Posicion inicial

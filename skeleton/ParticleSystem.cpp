@@ -47,18 +47,22 @@ bool ParticleSystem::update(double t)
 	//Eliminar particulas que mueren
 	//Actualiza las particulas de la escena
 	for (auto p : particulas) {
-
-		if (!p->update(t)) {
-
-			//Si esta muerta la eliminamos del vector
-			delete p;
-
-			//Eliminamos tambien el puntero del vector
-			auto ref = find(particulas.begin(), particulas.end(), p);
-			particulas.erase(ref);
-		}
+		p->update(t);
 	}
 
+	for (int i = 0; i < particulas.size(); i++) {
+
+		if (!particulas[i]->getAlive()) {
+
+			//Si esta muerta la eliminamos del vector
+			delete particulas[i];
+
+			//Eliminamos tambien el puntero del vector
+			auto ref = find(particulas.begin(), particulas.end(), particulas[i]);
+			particulas.erase(ref);
+			i--;
+		}
+	}
 	
 
 	return true;

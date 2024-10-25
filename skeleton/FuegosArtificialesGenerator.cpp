@@ -53,6 +53,7 @@ std::vector<Proyectil*> FuegosArtificialesGenerator::CreateParticles(int actPart
 			Vector3 newVel(x, y, z);
 
 			aux.push_back(new Proyectil(origen, newVel + velMed, Vector3(0, -10, 0), 1, color));
+			aux[i]->setLiveTime(10);
 		}
 	}
 	

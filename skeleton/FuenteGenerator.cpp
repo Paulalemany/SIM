@@ -43,7 +43,7 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 		newVel.z = z;
 
 		aux.push_back(new Proyectil(origen, newVel + velMed, Vector3(0, -10, 0), 1, color));
-		aux[i]->setLiveTime(100);
+		aux[i]->setLiveTime(5);
 		
 	}
 

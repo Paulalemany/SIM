@@ -21,11 +21,9 @@ bool Proyectil::update(double t)
 	if (pose.p.y <= -10 || pose.p.y >= 70) {
 		alive = false; 
 	}
-
-	else if (liveTime == 0)
+	else if (liveTime <= 0)
 	{
 		alive = false;
-		std::cout << "Por tiempo";
 	}
 
 	return Particle::update(t);

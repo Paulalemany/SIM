@@ -10,9 +10,9 @@ public:
 
 	ParticleSystem(Vector3 ori, Vector3 vel, int n, int l, int ge);
 
-	bool update(double t);
+	virtual bool update(double t) = 0;
 
-private:
+protected:
 
 	//Generador de particulas
 	std::vector<Proyectil*> particulas;

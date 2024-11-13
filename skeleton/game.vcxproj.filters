@@ -43,6 +43,9 @@
     <ClCompile Include="HumoGenerator.cpp">
       <Filter>cpp\Generadores</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleSystemFuente.cpp">
+      <Filter>cpp\Sistemas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -87,6 +90,9 @@
     <ClInclude Include="HumoGenerator.h">
       <Filter>h\Generadores</Filter>
     </ClInclude>
+    <ClInclude Include="ParticleSystemFuente.h">
+      <Filter>h\Sistemas</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -103,6 +109,12 @@
     </Filter>
     <Filter Include="cpp\Generadores">
       <UniqueIdentifier>{6218cf6d-aafa-4de2-ae45-12cdd5685953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\Sistemas">
+      <UniqueIdentifier>{a9cde469-89af-436a-86b5-9237382c5f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\Sistemas">
+      <UniqueIdentifier>{85731f64-0527-41bd-b4c9-4017dd461a52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

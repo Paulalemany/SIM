@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "Particle.h"
-#include "ParticleSystem.h"
+#include "ParticleSystemFuente.h"
 
 using namespace std;
 class Scene

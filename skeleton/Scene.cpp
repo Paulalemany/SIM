@@ -53,11 +53,11 @@ void Scene::update(double t)
 //}
 #pragma endregion
 
-	fuente->update(t);
+	//fuente->update(t);
 
 	fuegos->update(t);
 
-	humo->update(t);
+	//humo->update(t);
 }
 
 void Scene::addParticle(Particle* particula)

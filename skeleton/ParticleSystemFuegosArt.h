@@ -1,5 +1,6 @@
 #pragma once
 #include "ParticleSystem.h"
+#include "FuegosArtificialesGenerator.h"
 
 class ParticleSystemFuegosArt : public ParticleSystem
 {
@@ -9,6 +10,8 @@ public:
 	bool update(double t) override;
 
 private:
+
+	std::vector<Proyectil*> ini;	//Particula que inicia el fuego
 
 };
 

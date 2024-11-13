@@ -8,5 +8,8 @@ ParticleSystemFuegosArt::ParticleSystemFuegosArt(Vector3 ori, Vector3 vel, int n
 
 bool ParticleSystemFuegosArt::update(double t)
 {
+	//actualiza el tiempo que lleva vivo el sistema
+
 	return ParticleSystem::update(t);
+	//return true;
 }

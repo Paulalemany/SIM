@@ -1,5 +1,6 @@
 #pragma once
 #include "ParticleSystem.h"
+#include "FuenteGenerator.h"
 
 class ParticleSystemFuente : public ParticleSystem
 {

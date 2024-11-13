@@ -1,8 +1,6 @@
 #pragma once
 #include "Proyectil.h"
-#include "FuenteGenerator.h"
-#include "FuegosArtificialesGenerator.h"
-#include "HumoGenerator.h"
+#include "ParticleGenerator.h"
 
 class ParticleSystem
 {

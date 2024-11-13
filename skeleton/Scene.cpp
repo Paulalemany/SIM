@@ -7,7 +7,7 @@ Scene::Scene()
 
 	//fuegos = new ParticleSystem(Vector3(0, 0, 0), Vector3(0, 40, 0), 10, 50000, FuegosArtificiales);
 
-	//humo = new ParticleSystem(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000, Humo);
+	humo = new ParticleSystemHumo(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000);
 
 	//particulas.push_back(new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector4(0, 1, 0, 1)));
 }
@@ -55,7 +55,7 @@ void Scene::update(double t)
 
 	//fuegos->update(t);
 
-	//humo->update(t);
+	humo->update(t);
 }
 
 void Scene::addParticle(Particle* particula)

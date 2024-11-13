@@ -2,6 +2,7 @@
 #include <vector>
 #include "Particle.h"
 #include "ParticleSystemFuente.h"
+#include "ParticleSystemHumo.h"
 
 using namespace std;
 class Scene

@@ -12,11 +12,13 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 	std::vector <Proyectil*> aux;
 
 	//Para numero de particulas
-	int par = maxParticles - actParticles;
+	//int par = 5 - actParticles;
 
-	//Cuantas mas particulas se generen mas continuo ira
-	std::uniform_int_distribution<int> distribution(0, par);
-	int numPar = distribution(generator);  // generates number in the range 1..par
+	////if (actParticles >= maxParticles) par -= actParticles;
+
+	////Cuantas mas particulas se generen mas continuo ira
+	//std::uniform_int_distribution<int> distribution(0, par);
+	//int numPar = distribution(generator);  // generates number in the range 1..par
 
 
 	//Para cambiar la velocidad (Solo quiero cambiar la x y la z
@@ -31,7 +33,7 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 
 	Vector4 color(0.33, 0.39, 0.92, 1);
 
-	for (int i = 0; i < numPar; i++) {
+	for (int i = 0; i < 10; i++) {
 
 		x = Ndistribution(generator);
 		y = Ndistribution(generator);

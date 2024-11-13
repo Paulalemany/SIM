@@ -49,6 +49,9 @@
     <ClCompile Include="ParticleSystemHumo.cpp">
       <Filter>cpp\Sistemas</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleSystemFuegosArt.cpp">
+      <Filter>cpp\Sistemas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -97,6 +100,9 @@
       <Filter>h\Sistemas</Filter>
     </ClInclude>
     <ClInclude Include="ParticleSystemHumo.h">
+      <Filter>h\Sistemas</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemFuegosArt.h">
       <Filter>h\Sistemas</Filter>
     </ClInclude>
   </ItemGroup>

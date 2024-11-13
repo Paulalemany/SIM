@@ -3,6 +3,7 @@
 #include "Particle.h"
 #include "ParticleSystemFuente.h"
 #include "ParticleSystemHumo.h"
+#include "ParticleSystemFuegosArt.h"
 
 using namespace std;
 class Scene
@@ -16,13 +17,6 @@ public:
 	void update(double t);
 
 	void addParticle(Particle* particula);
-
-	enum Generadores
-	{
-		Fuente = 0,
-		FuegosArtificiales = 1,
-		Humo = 2
-	};
 
 private:
 

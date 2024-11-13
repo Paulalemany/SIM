@@ -5,7 +5,7 @@ Scene::Scene()
 {
 	fuente = new ParticleSystemFuente(Vector3(0, 0, 0), Vector3(0, 25, -25), 500, 50000);
 
-	//fuegos = new ParticleSystem(Vector3(0, 0, 0), Vector3(0, 40, 0), 10, 50000, FuegosArtificiales);
+	fuegos = new ParticleSystemFuegosArt(Vector3(0, 0, 0), Vector3(0, 40, 0), 10, 50000);
 
 	humo = new ParticleSystemHumo(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000);
 
@@ -36,24 +36,26 @@ Scene::~Scene()
 
 void Scene::update(double t)
 {
+#pragma region Eliminacion particulas
 	//Actualiza las particulas de la escena
-	//for (Particle* p : particulas) {
+//for (Particle* p : particulas) {
 
-	//	//Solo queremos que actualice a las que estan vivas
-	//	if (!p->update(t)) {
+//	//Solo queremos que actualice a las que estan vivas
+//	if (!p->update(t)) {
 
-	//		//Si esta muerta la eliminamos del vector
-	//		delete p;
+//		//Si esta muerta la eliminamos del vector
+//		delete p;
 
-	//		//Eliminamos tambien el puntero del vector
-	//		auto ref = find(particulas.begin(), particulas.end(), p);
-	//		particulas.erase(ref);
-	//	}
-	//}
+//		//Eliminamos tambien el puntero del vector
+//		auto ref = find(particulas.begin(), particulas.end(), p);
+//		particulas.erase(ref);
+//	}
+//}
+#pragma endregion
 
 	fuente->update(t);
 
-	//fuegos->update(t);
+	fuegos->update(t);
 
 	humo->update(t);
 }

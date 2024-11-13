@@ -1,7 +1,7 @@
 #include "ParticleSystemHumo.h"
 
 ParticleSystemHumo::ParticleSystemHumo(Vector3 ori, Vector3 vel, int n, int l)
-	: ParticleSystem(ori, vel, n, l, 1)
+	: ParticleSystem(ori, vel, n, l)
 {
 	generator = new HumoGenerator(origen, velMed, numParticles);
 }

@@ -261,6 +261,7 @@
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleGenerator.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="ParticleSystemFuegosArt.cpp" />
     <ClCompile Include="ParticleSystemFuente.cpp" />
     <ClCompile Include="ParticleSystemHumo.cpp" />
     <ClCompile Include="Proyectil.cpp" />
@@ -279,6 +280,7 @@
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleGenerator.h" />
     <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="ParticleSystemFuegosArt.h" />
     <ClInclude Include="ParticleSystemFuente.h" />
     <ClInclude Include="ParticleSystemHumo.h" />
     <ClInclude Include="Proyectil.h" />

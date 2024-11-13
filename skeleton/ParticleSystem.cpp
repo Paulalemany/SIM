@@ -1,27 +1,11 @@
 #include "ParticleSystem.h"
 
-ParticleSystem::ParticleSystem(Vector3 ori, Vector3 vel, int n, int l, int ge)
+ParticleSystem::ParticleSystem(Vector3 ori, Vector3 vel, int n, int l)
 {
 	origen = ori;
 	velMed = vel;
 	numParticles = n;
 	liveTime = l;
-
-	switch (ge)
-	{
-	case 0:
-		generator = new FuenteGenerator(origen, velMed, numParticles);
-		break;
-	case 1:
-		generator = new FuegosArtificialesGenerator(origen, velMed, numParticles);
-		break;
-	case 2:
-		generator = new HumoGenerator(origen, velMed, numParticles);
-		break;
-	default:
-		break;
-	}
-	
 }
 
 bool ParticleSystem::update(double t)

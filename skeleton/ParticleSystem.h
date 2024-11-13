@@ -8,7 +8,7 @@ class ParticleSystem
 {
 public:
 
-	ParticleSystem(Vector3 ori, Vector3 vel, int n, int l, int ge);
+	ParticleSystem(Vector3 ori, Vector3 vel, int n, int l);
 
 	virtual bool update(double t) = 0;
 

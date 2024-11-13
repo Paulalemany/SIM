@@ -11,6 +11,7 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 {
 	std::vector <Proyectil*> aux;
 
+#pragma region random numParticles
 	//Para numero de particulas
 	//int par = 5 - actParticles;
 
@@ -19,7 +20,7 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 	////Cuantas mas particulas se generen mas continuo ira
 	//std::uniform_int_distribution<int> distribution(0, par);
 	//int numPar = distribution(generator);  // generates number in the range 1..par
-
+#pragma endregion
 
 	//Para cambiar la velocidad (Solo quiero cambiar la x y la z
 	//La primera variable es la media, indica como de lejos van
@@ -33,7 +34,7 @@ std::vector<Proyectil*> FuenteGenerator::CreateParticles(int actParticles, int m
 
 	Vector4 color(0.33, 0.39, 0.92, 1);
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 1; i++) {
 
 		x = Ndistribution(generator);
 		y = Ndistribution(generator);

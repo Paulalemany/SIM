@@ -52,6 +52,9 @@
     <ClCompile Include="ParticleSystemFuegosArt.cpp">
       <Filter>cpp\Sistemas</Filter>
     </ClCompile>
+    <ClCompile Include="OriginFuegoGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="ParticleSystemFuegosArt.h">
       <Filter>h\Sistemas</Filter>
+    </ClInclude>
+    <ClInclude Include="OriginFuegoGenerator.h">
+      <Filter>h\Generadores</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

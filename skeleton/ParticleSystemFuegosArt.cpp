@@ -5,6 +5,7 @@ ParticleSystemFuegosArt::ParticleSystemFuegosArt(Vector3 ori, Vector3 vel, int n
 	: ParticleSystem(ori, vel, n, l)
 {
 	generator = new FuegosArtificialesGenerator(origen, velMed, numParticles);
+	origenGenerator = new OriginFuegoGenerator(origen, velMed, numParticles);
 }
 
 bool ParticleSystemFuegosArt::update(double t)
@@ -15,9 +16,22 @@ bool ParticleSystemFuegosArt::update(double t)
 
 	//Primero generamos la particula de origen
 	if (ini.size() == 0) {
-		ini.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, 50, 0), Vector3(0.5, 2, 0), 0.5));
-		ini[0]->setLiveTime(1);
+
+		aux = origenGenerator->CreateParticles(ini.size(), 1);
+		/*ini.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, 50, 0), Vector3(0.5, 2, 0), 0.5));
+		ini[0]->setLiveTime(1);*/
 	}
+
+	//Anadimos las particulas de la explosion al vector
+	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
+
+		Proyectil* p = new Proyectil(aux[i]);
+		p->setLiveTime(1);
+		ini.push_back(p);
+	}
+
+	///Eliminamos aux
+	aux.clear();
 
 	//Actualizamos el tiempo de las particulas (Ambos)
 	for (auto e : ini) e->restLiveTime(t);
@@ -48,6 +62,8 @@ bool ParticleSystemFuegosArt::update(double t)
 	}
 	
 	
+#pragma region Explosion
+
 	//Anadimos las particulas de la explosion al vector
 	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
@@ -58,7 +74,7 @@ bool ParticleSystemFuegosArt::update(double t)
 
 	///Eliminamos aux
 	aux.clear();
-	
+
 	///Restamos tiempo de vida
 	//Actualizar su vector de particulas
 	for (auto e : particulas) e->restLiveTime(t);
@@ -69,6 +85,7 @@ bool ParticleSystemFuegosArt::update(double t)
 	}
 
 	eliminaPart(particulas);
+#pragma endregion
 
 	return true;
 }

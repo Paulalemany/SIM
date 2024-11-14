@@ -1,6 +1,7 @@
 #pragma once
 #include "ParticleSystem.h"
 #include "FuegosArtificialesGenerator.h"
+#include "OriginFuegoGenerator.h"
 
 class ParticleSystemFuegosArt : public ParticleSystem
 {
@@ -13,6 +14,6 @@ private:
 
 	std::vector<Proyectil*> ini;	//Particula que inicia el fuego
 	Vector4 color;
-
+	OriginFuegoGenerator* origenGenerator;	//Generador para el origen del fuego
 };
 

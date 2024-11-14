@@ -4,8 +4,8 @@
 ParticleSystemFuegosArt::ParticleSystemFuegosArt(Vector3 ori, Vector3 vel, int n, int l)
 	: ParticleSystem(ori, vel, n, l)
 {
-	generator = new FuegosArtificialesGenerator(origen, velMed, numParticles);
-	origenGenerator = new OriginFuegoGenerator(origen, velMed, numParticles);
+	fuegosGenerator = new FuegosArtificialesGenerator(origen, velMed, numParticles);
+	generator = new OriginFuegoGenerator(origen, velMed, numParticles);
 }
 
 bool ParticleSystemFuegosArt::update(double t)
@@ -16,16 +16,14 @@ bool ParticleSystemFuegosArt::update(double t)
 
 	//Primero generamos la particula de origen
 	if (ini.size() == 0) {
-
-		aux = origenGenerator->CreateParticles(ini.size(), 1);
-		/*ini.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, 50, 0), Vector3(0.5, 2, 0), 0.5));
-		ini[0]->setLiveTime(1);*/
+		aux = generator->CreateParticles(ini.size(), 1);
 	}
 
 	//Anadimos las particulas de la explosion al vector
 	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
 		Proyectil* p = new Proyectil(aux[i]);
+		delete aux[i];
 		p->setLiveTime(1);
 		ini.push_back(p);
 	}
@@ -48,8 +46,8 @@ bool ParticleSystemFuegosArt::update(double t)
 		if (!ini[i]->getAlive()) {
 
 			//Creamos aqui la explosion del fuego
-			generator->setOrigin(ini[i]->getPosition());
-			aux = generator->CreateParticles(particulas.size(), numParticles);
+			fuegosGenerator->setOrigin(ini[i]->getPosition());
+			aux = fuegosGenerator->CreateParticles(generator->getColor());
 
 			//Si esta muerta la eliminamos del vector
 			delete ini[i];
@@ -68,6 +66,7 @@ bool ParticleSystemFuegosArt::update(double t)
 	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
 		Proyectil* p = new Proyectil(aux[i]);
+		delete aux[i];
 		p->setLiveTime(8);
 		particulas.push_back(p);
 	}

@@ -14,6 +14,6 @@ private:
 
 	std::vector<Proyectil*> ini;	//Particula que inicia el fuego
 	Vector4 color;
-	OriginFuegoGenerator* origenGenerator;	//Generador para el origen del fuego
+	FuegosArtificialesGenerator* fuegosGenerator;	//Generador para el origen del fuego
 };
 

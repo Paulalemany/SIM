@@ -4,6 +4,7 @@
 Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color)
 {
 	pose = physx::PxTransform(Pos);
+	pos = Pos;
 	vel = Vel;
 	ace = Vector3(0, 0, 0);
 
@@ -23,16 +24,18 @@ Particle::Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D)
 		&pose, col);
 }
 
-Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color, physx::PxVec3 a, double D)
+Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxVec3 a, double D)
 {
 	pose = physx::PxTransform(Pos);
+	pos = Pos;
 	vel = Vel;
 	ace = a;
 	d = D;
+	color = col;
 
 	renderItem = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)), 
-		&pose, color);
+		&pose, col);
 }
 
 Particle::~Particle()

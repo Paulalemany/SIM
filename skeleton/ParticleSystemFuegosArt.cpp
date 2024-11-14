@@ -19,24 +19,24 @@ bool ParticleSystemFuegosArt::update(double t)
 		ini[0]->setLiveTime(2);
 	}
 
-	//Actualizamos el vector de particulas (Ambos)
+	//Actualizamos el tiempo de las particulas (Ambos)
 	for (auto e : ini) e->restLiveTime(t);
 
 
-	//Eliminar particulas que mueren
 	//Actualiza las particulas de la escena
 	for (auto p : ini) {
 		p->update(t);
 	}
 	
-
+	//eliminacion de ini
 	for (int i = 0; i < ini.size(); i++) {
 
 		if (!ini[i]->getAlive()) {
 
 			//Creamos aqui la explosion del fuego
 			//aux = generator->CreateParticles(particulas.size(), numParticles);
-			aux.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, -1, 0), Vector3(0, 0, 0), 0, Vector4(1, 1, 1, 1)));
+			
+			aux.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, -10, 0), Vector3(0, 0, 0), 0.5, Vector4(0, 0, 0, 1)));
 
 			//Si esta muerta la eliminamos del vector
 			delete ini[i];
@@ -49,22 +49,27 @@ bool ParticleSystemFuegosArt::update(double t)
 	}
 	
 	
-
+	////Anadimos las particulas de la explosion al vector
 	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
-		aux[i]->setLiveTime(2);
-		particulas.push_back(aux[i]);
-		
+		Proyectil* p = new Proyectil(aux[i]);
+		p->setLiveTime(2);
+		particulas.push_back(p);
 	}
 
+	///Eliminamos aux
+	aux.clear();
+	
+	///Restamos tiempo de vida
 	//Actualizar su vector de particulas
-	//for (auto e : particulas) e->restLiveTime(t);
+	for (auto e : particulas) e->restLiveTime(t);
 
-	//Eliminar particulas que mueren
 	//Actualiza las particulas de la escena
 	for (auto p : particulas) {
 		p->update(t);
 	}
+
+	
 
 	for (int i = 0; i < particulas.size(); i++) {
 

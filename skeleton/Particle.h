@@ -23,6 +23,7 @@ public:
 
 protected:
 	//Parametros de la particula
+	Vector3 pos;
 	physx::PxVec3 ace;	//Aceleracion inicial
 	physx::PxVec3 vel;	//Velocidad inicial
 	Vector4 color;		//Color inicial 

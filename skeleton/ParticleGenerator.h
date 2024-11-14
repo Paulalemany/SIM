@@ -11,6 +11,8 @@ public:
 	
 	virtual std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) = 0;
 
+	void setOrigin(Vector3 o) { origen = o; }
+
 protected:
 	Vector3 origen;	//Punto de origen
 	Vector3 velMed;	//Velocidad media

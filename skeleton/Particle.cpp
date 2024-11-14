@@ -1,12 +1,13 @@
 #include "Particle.h"
 #include <iostream>
 
-Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color)
+Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col)
 {
 	pose = physx::PxTransform(Pos);
 	pos = Pos;
 	vel = Vel;
 	ace = Vector3(0, 0, 0);
+	color = col;
 
 	renderItem = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
@@ -16,8 +17,10 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 color)
 Particle::Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D)
 {
 	pose = physx::PxTransform(Pos);
+	pos = Pos;
 	ace = a;
 	d = D;
+	color = col;
 
 	renderItem = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
@@ -49,6 +52,8 @@ void Particle::integrate(double t)
 	vel = vel + t * ace;
 	pose.p = pose.p + t * vel;
 	vel = vel * pow(d, t);
+
+	pos = pose.p;
 
 	//Hay que borrar las fuerzas
 }

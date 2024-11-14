@@ -10,6 +10,8 @@ public:
 
 	virtual bool update(double t) = 0;
 
+	void eliminaPart(std::vector<Proyectil*> par);
+
 protected:
 
 	//Generador de particulas

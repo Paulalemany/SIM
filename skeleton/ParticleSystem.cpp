@@ -34,6 +34,14 @@ bool ParticleSystem::update(double t)
 		p->update(t);
 	}
 
+	eliminaPart(particulas);
+	
+
+	return true;
+}
+
+void ParticleSystem::eliminaPart(std::vector<Proyectil*> par)
+{
 	for (int i = 0; i < particulas.size(); i++) {
 
 		if (!particulas[i]->getAlive()) {
@@ -47,7 +55,4 @@ bool ParticleSystem::update(double t)
 			i--;
 		}
 	}
-	
-
-	return true;
 }

@@ -4,6 +4,7 @@
 class FuegosArtificialesGenerator : public ParticleGenerator
 {
 public:
+
 	FuegosArtificialesGenerator(Vector3 o, Vector3 vel, int np);
 
 	//Habrá que pasarle el numero de particulas que hay 

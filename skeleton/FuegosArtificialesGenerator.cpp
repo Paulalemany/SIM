@@ -10,10 +10,10 @@ std::vector<Proyectil*> FuegosArtificialesGenerator::CreateParticles(int actPart
 	std::vector <Proyectil*> aux;
 
 	//Para numero de particulas
-	int par = maxParticles - actParticles;
+	//int par = maxParticles - actParticles;
 
 	//Cuantas mas particulas se generen mas continuo ira
-	std::uniform_int_distribution<int> distribution(0, par);
+	std::uniform_int_distribution<int> distribution(5, 15);
 	int numPar = distribution(generator);  // generates number in the range 1..par
 
 	//No se puede poner a 0 

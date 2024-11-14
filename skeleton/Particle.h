@@ -15,11 +15,14 @@ public:
 
 	virtual bool update(double t);
 
-	bool getAlive() { return alive; }
-
 	void restLiveTime(double t);
 
 	void setLiveTime(double t) { liveTime = t; }
+
+	///Getters
+	bool getAlive() { return alive; }
+
+	Vector3 getPosition() { return pos; }
 
 protected:
 	//Parametros de la particula

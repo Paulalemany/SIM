@@ -15,8 +15,8 @@ bool ParticleSystemFuegosArt::update(double t)
 
 	//Primero generamos la particula de origen
 	if (ini.size() == 0) {
-		ini.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, 100, 0), Vector3(0.5, 2, 0), 0.5));
-		ini[0]->setLiveTime(2);
+		ini.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, 50, 0), Vector3(0.5, 2, 0), 0.5));
+		ini[0]->setLiveTime(1);
 	}
 
 	//Actualizamos el tiempo de las particulas (Ambos)
@@ -34,9 +34,8 @@ bool ParticleSystemFuegosArt::update(double t)
 		if (!ini[i]->getAlive()) {
 
 			//Creamos aqui la explosion del fuego
-			//aux = generator->CreateParticles(particulas.size(), numParticles);
-			
-			aux.push_back(new Proyectil(Vector3(0, 0, 0), Vector3(0, -10, 0), Vector3(0, 0, 0), 0.5, Vector4(0, 0, 0, 1)));
+			generator->setOrigin(ini[i]->getPosition());
+			aux = generator->CreateParticles(particulas.size(), numParticles);
 
 			//Si esta muerta la eliminamos del vector
 			delete ini[i];
@@ -49,11 +48,11 @@ bool ParticleSystemFuegosArt::update(double t)
 	}
 	
 	
-	////Anadimos las particulas de la explosion al vector
+	//Anadimos las particulas de la explosion al vector
 	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
 		Proyectil* p = new Proyectil(aux[i]);
-		p->setLiveTime(2);
+		p->setLiveTime(10);
 		particulas.push_back(p);
 	}
 
@@ -69,23 +68,7 @@ bool ParticleSystemFuegosArt::update(double t)
 		p->update(t);
 	}
 
-	
-
-	for (int i = 0; i < particulas.size(); i++) {
-
-		if (!particulas[i]->getAlive()) {
-
-			//Si esta muerta la eliminamos del vector
-			delete particulas[i];
-
-			//Eliminamos tambien el puntero del vector
-			auto ref = find(particulas.begin(), particulas.end(), particulas[i]);
-			particulas.erase(ref);
-			i--;
-
-			std::cout << "eliminamos";
-		}
-	}
+	eliminaPart(particulas);
 
 	return true;
 }

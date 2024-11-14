@@ -11,5 +11,7 @@ public:
 	// y el numero maximo de particulas que puede haber
 	std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) override;
 
+	std::vector<Proyectil*> CreateParticles(Vector4 color);
+
 };
 

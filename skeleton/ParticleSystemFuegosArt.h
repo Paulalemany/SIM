@@ -12,6 +12,7 @@ public:
 private:
 
 	std::vector<Proyectil*> ini;	//Particula que inicia el fuego
+	Vector4 color;
 
 };
 

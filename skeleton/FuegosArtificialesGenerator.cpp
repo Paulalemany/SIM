@@ -9,9 +9,6 @@ std::vector<Proyectil*> FuegosArtificialesGenerator::CreateParticles(int actPart
 {
 	std::vector <Proyectil*> aux;
 
-	//Para numero de particulas
-	//int par = maxParticles - actParticles;
-
 	//Cuantas mas particulas se generen mas continuo ira
 	std::uniform_int_distribution<int> distribution(5, 15);
 	int numPar = distribution(generator);  // generates number in the range 1..par
@@ -42,20 +39,21 @@ std::vector<Proyectil*> FuegosArtificialesGenerator::CreateParticles(int actPart
 	int y;
 	double z;
 
-	//Hacemos los colores aqui para que todo el pack sea del mismo color
-	if (actParticles <= 1) {
-		for (int i = 0; i < numPar; i++) {
+	for (int i = 0; i < numPar; i++) {
 
-			x = Fdistribution(generator);
-			y = Bdistribution(generator);
-			z = Fdistribution(generator);
+		x = Fdistribution(generator);
+		y = Bdistribution(generator);
+		z = Fdistribution(generator);
 
-			Vector3 newVel(x, y, z);
+		Vector3 newVel(x, y, z);
 
-			aux.push_back(new Proyectil(origen, newVel + velMed, Vector3(0, -10, 0), 1, color));
-			aux[i]->setLiveTime(10);
-		}
+		aux.push_back(new Proyectil(origen, newVel + velMed, Vector3(0, -10, 0), 1, color));
 	}
-	
 	return aux;
+}
+
+std::vector<Proyectil*> FuegosArtificialesGenerator::CreateParticles(Vector4 color)
+{
+
+	return std::vector<Proyectil*>();
 }

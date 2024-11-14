@@ -52,7 +52,7 @@ bool ParticleSystemFuegosArt::update(double t)
 	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
 		Proyectil* p = new Proyectil(aux[i]);
-		p->setLiveTime(10);
+		p->setLiveTime(8);
 		particulas.push_back(p);
 	}
 

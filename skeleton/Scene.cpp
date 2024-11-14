@@ -5,7 +5,7 @@ Scene::Scene()
 {
 	fuente = new ParticleSystemFuente(Vector3(0, 0, 0), Vector3(0, 25, -25), 500, 50000);
 
-	fuegos = new ParticleSystemFuegosArt(Vector3(0, 0, 0), Vector3(0, 40, 0), 10, 50000);
+	fuegos = new ParticleSystemFuegosArt(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000);
 
 	humo = new ParticleSystemHumo(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000);
 

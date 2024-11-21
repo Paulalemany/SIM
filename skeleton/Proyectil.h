@@ -6,6 +6,7 @@ class Proyectil : public Particle
 {
 public:
 	//Constructora
+	Proyectil();
 	Proyectil(Proyectil* p);	//Constructor por copia
 	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D);
 	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D, Vector4 color);

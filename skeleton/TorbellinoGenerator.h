@@ -12,6 +12,6 @@ public:
 private:
 
 	//Rozamiento
-	float k = 2;
+	float k = 1;
 };
 

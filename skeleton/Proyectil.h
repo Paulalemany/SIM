@@ -17,6 +17,9 @@ public:
 	void addForce(Vector3 F) override { fuerzas.push_back(F); }
 	void applyForces() override;
 
+	///Setters
+	void setMasa(float m) override { masa = m; }
+
 private:
 
 	//Fuerzas

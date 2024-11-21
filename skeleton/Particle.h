@@ -31,6 +31,7 @@ public:
 	///Fuerzas
 	virtual void addForce(Vector3 F) {};
 	virtual void applyForces() {};
+	virtual void setMasa(float m) {};
 
 protected:
 	//Parametros de la particula

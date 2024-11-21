@@ -6,7 +6,10 @@ ForcesScene::ForcesScene()
 
 	particulas.push_back(new Proyectil({ -150, 0, -50 }, { 60, 0, -10 }, { 2,0,2 }, 0.5));
 
-	for (auto p : particulas) p->setLiveTime(500);
+	for (auto p : particulas) {
+		p->setLiveTime(500);
+		p->setMasa(1);
+	}
 }
 
 ForcesScene::~ForcesScene()
@@ -24,6 +27,4 @@ void ForcesScene::update(double t)
 		p->update(t);
 		
 	}
-
-	//fuerzas->update(t);
 }

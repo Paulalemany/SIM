@@ -30,6 +30,16 @@ Vector3 ForceGenerator::generateForce(Particle& p)
 	return F;
 }
 
+void ForceGenerator::show()
+{
+	zona->setVisibility(true);
+}
+
+void ForceGenerator::hide()
+{
+	zona->setVisibility(false);
+}
+
 void ForceGenerator::generateZone()
 {
 	//Creamos el renderItem

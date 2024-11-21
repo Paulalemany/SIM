@@ -8,7 +8,7 @@ ForcesScene::ForcesScene()
 
 	for (auto p : particulas) {
 		p->setLiveTime(500);
-		p->setMasa(1);
+		p->setMasa(0.1);
 	}
 }
 
@@ -26,4 +26,16 @@ void ForcesScene::update(double t)
 	}
 
 	Scene::update(t);
+}
+
+void ForcesScene::init()
+{
+	fuerzas->show();
+	Scene::init();
+}
+
+void ForcesScene::quit()
+{
+	fuerzas->hide();
+	Scene::quit();
 }

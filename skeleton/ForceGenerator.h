@@ -16,6 +16,9 @@ public:
 
 	Vector3 generateForce(Particle& p);
 
+	void show();
+	void hide();
+
 private:
 
 	//Propiedades de generadores de fuerzas

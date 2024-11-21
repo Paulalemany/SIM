@@ -20,8 +20,8 @@ public:
 	void eliminaPart();
 
 		/// Para la gestion de escenas
-	void init();	//Pone la escena
-	void quit();	//Quita la escena
+	virtual void init();	//Pone la escena
+	virtual void quit();	//Quita la escena
 
 protected:
 

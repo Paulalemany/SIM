@@ -13,6 +13,7 @@ ForceGenerator::~ForceGenerator()
 
 bool ForceGenerator::onZone(Vector3 pos)
 {
+	std::cout << ((pos - origen).magnitude() <= radio) << "\n";
 	//Comprueba si la posicion esta dentro del radio
 	return (pos - origen).magnitude() <= radio;
 }
@@ -26,7 +27,7 @@ Vector3 ForceGenerator::generateForce(Particle& p)
 {
 	//Vamos a tomar esto como si fuese inverso a la gravedad
 	Vector3 F = { 0,0,0 };
-	F = { 0, 9.8, 0 };	//Es la inversa de la gravedad simplemente
+	F = { 0, 2 * 9.8, 0 };	//Es la inversa de la gravedad simplemente
 	return F;
 }
 

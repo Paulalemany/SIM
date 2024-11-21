@@ -72,6 +72,8 @@ void Particle::integrate(double t)
 
 bool Particle::update(double t)
 {
+	restLiveTime(t);
+
 	if (!alive) return false;
 
 	//Actualizamos la posición si está viva

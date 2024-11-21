@@ -17,6 +17,8 @@ public:
 
 	void addParticle(Particle* particula);
 
+	void eliminaPart();
+
 		/// Para la gestion de escenas
 	void init();	//Pone la escena
 	void quit();	//Quita la escena

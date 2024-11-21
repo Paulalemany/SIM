@@ -31,10 +31,6 @@ bool ParticleSystemFuegosArt::update(double t)
 	///Eliminamos aux
 	aux.clear();
 
-	//Actualizamos el tiempo de las particulas (Ambos)
-	for (auto e : ini) e->restLiveTime(t);
-
-
 	//Actualiza las particulas de la escena
 	for (auto p : ini) {
 		p->update(t);
@@ -73,10 +69,6 @@ bool ParticleSystemFuegosArt::update(double t)
 
 	///Eliminamos aux
 	aux.clear();
-
-	///Restamos tiempo de vida
-	//Actualizar su vector de particulas
-	for (auto e : particulas) e->restLiveTime(t);
 
 	//Actualiza las particulas de la escena
 	for (auto p : particulas) {

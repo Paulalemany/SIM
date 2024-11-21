@@ -25,9 +25,6 @@ bool ParticleSystem::update(double t)
 		particulas.push_back(aux[i]);
 	}
 
-	//Actualizar su vector de particulas
-	for (auto e : particulas) e->restLiveTime(t);
-
 	//Eliminar particulas que mueren
 	//Actualiza las particulas de la escena
 	for (auto p : particulas) {

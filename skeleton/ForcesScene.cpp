@@ -23,8 +23,7 @@ void ForcesScene::update(double t)
 
 		//Si las particulas estan dentro del radio de accion
 		if (fuerzas->onZone(p->getPosition())) p->addForce(fuerzas->generateForce(*p));
-		p->restLiveTime(t);
-		p->update(t);
-		
 	}
+
+	Scene::update(t);
 }

@@ -1,11 +1,11 @@
 #pragma once
 #include "Particle.h"
+#include <vector>
 
 class Proyectil : public Particle
 {
 public:
 	//Constructora
-	//Añadir un vector de gravedad
 	Proyectil(Proyectil* p);	//Constructor por copia
 	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D);
 	Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D, Vector4 color);
@@ -13,10 +13,15 @@ public:
 
 	bool update(double t) override;
 
+	///Fuerzas
+	void addForce(Vector3 F) { fuerzas.push_back(F); }
+	void applyForces();
+
 private:
 
-	//Masa en gramos
-	double masa = 1;
+	//Fuerzas
+	std::vector<Vector3> fuerzas;	//Fuerzas que actuan sobre la particula
+	float masa = 0;
 
 	//Gravedad en m/s
 	Vector3 grav = Vector3 (0, -9.8, 0);

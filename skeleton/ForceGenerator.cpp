@@ -4,11 +4,7 @@
 ForceGenerator::ForceGenerator(Vector3 ori)
 {
 	origen = ori;
-	// si ya existe un render item, elimina el que esta y crea uno nuevo con el nuevo radio
-	if (!zona)
-	{
-		generateZone();
-	}
+	generateZone();
 }
 
 ForceGenerator::~ForceGenerator()
@@ -26,10 +22,8 @@ void ForceGenerator::update(double t)
 	
 }
 
-void ForceGenerator::setZone(float r)
+void ForceGenerator::generateForce(Particle& p)
 {
-	radio = r;
-	generateZone();
 }
 
 void ForceGenerator::generateZone()

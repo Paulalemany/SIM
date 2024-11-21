@@ -2,7 +2,7 @@
 
 ForcesScene::ForcesScene()
 {
-	fuerzas = new ForceGenerator(Vector3(0,0,0));
+	fuerzas = new ForceGenerator(Vector3(-150,0,-100));
 }
 
 ForcesScene::~ForcesScene()

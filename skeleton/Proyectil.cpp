@@ -24,14 +24,34 @@ Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, doub
 bool Proyectil::update(double t)
 {
 	// si esta por debajo de una posicion, marca la particula para eliminar
-	/*if (pose.p.y <= -10 || pose.p.y >= 70) {
+	if (pose.p.y <= -50 || pose.p.y >= 70) {
 		alive = false; 
-	}*/
-	//else 
-		if (liveTime <= 0)
+	}
+	else if (liveTime <= 0)
 	{
 		alive = false;
 	}
 
+	applyForces();
+
 	return Particle::update(t);
+}
+
+void Proyectil::applyForces()
+{
+	//Calculamos la fuerza total que hay sobre la particula
+	//Lo hacemos con un sumatorio
+
+	Vector3 FuerzaTot = { 0,0,0 };
+	for (auto f : fuerzas) FuerzaTot += f;
+
+	//hay que limpiar el vector de fuerzas???
+	//fuerzas.clear();
+
+	//La fuerza resultante sigue la formula F = m * a
+
+	ace = FuerzaTot / masa;
+
+	//Le sumamos la gravedad
+	ace += grav;
 }

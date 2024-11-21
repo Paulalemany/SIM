@@ -67,9 +67,6 @@
     <ClCompile Include="ForceGenerator.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Zone.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -136,9 +133,6 @@
       <Filter>h\Escenas</Filter>
     </ClInclude>
     <ClInclude Include="ForceGenerator.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="Zone.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>

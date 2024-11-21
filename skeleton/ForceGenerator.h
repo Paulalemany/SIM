@@ -1,7 +1,6 @@
 #pragma once
 #include "RenderUtils.hpp"
 #include "Particle.h"
-#include "Zone.h"
 
 class ForceGenerator
 {
@@ -15,12 +14,12 @@ public:
 
 	void update(double t);
 
-	void setZone(float r);
+	void generateForce(Particle& p);
 
 private:
 
 	//Propiedades de generadores de fuerzas
-	float radio = 10; //Radio de la zona afectada
+	float radio = 30; //Radio de la zona afectada
 	Vector3 origen = { 0,0,0 };
 
 	Particle* zona = nullptr;

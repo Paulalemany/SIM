@@ -9,7 +9,7 @@ OriginFuegoGenerator::OriginFuegoGenerator(Vector3 o, Vector3 vel, int np)
 std::vector<Proyectil*> OriginFuegoGenerator::CreateParticles(int actParticles, int maxParticles)
 {
 	std::vector<Proyectil*> aux;
-	int r = rand() % 1000;
+	int r = rand() % 1000;	//Da un numero de 0 a 999
 
 	if (actParticles == 0 && r == 0) {	//Solo queremos generar particulas de 1 en 1
 

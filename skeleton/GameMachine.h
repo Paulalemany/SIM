@@ -24,8 +24,8 @@ private:
 	//Escenas
 	//IMPORTANTE: el orden en el que metemos las escenas en el vector debe ser igual al valor del enum
 	const enum Scenes {
-		Particulas = 0,
-		Fuerzas = 1
+		PARTICULAS = 0,
+		FUERZAS = 1
 	};
 
 	//Escenas

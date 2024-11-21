@@ -5,7 +5,7 @@ GameMachine::GameMachine()
 	//Por ahora solo tenemos una escena estandar
 	escenas.push_back(new ParticleScene());
 	escenas.push_back(new ForcesScene());
-	actual = 0;	//Iniciamos automaticamente con la escena 0
+	actual = Fuerzas;	//Iniciamos automaticamente con la escena 0
 }
 
 GameMachine::~GameMachine()

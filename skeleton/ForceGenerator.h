@@ -20,12 +20,10 @@ public:
 private:
 
 	//Propiedades de generadores de fuerzas
-	float radio = 5; //Radio de la zona afectada
+	float radio = 10; //Radio de la zona afectada
 	Vector3 origen = { 0,0,0 };
 
-
-	RenderItem* renderItem = nullptr;
-	Zone* zona = nullptr;
+	Particle* zona = nullptr;
 
 	void generateZone();
 };

@@ -7,19 +7,7 @@
     <ClCompile Include="Render\Render.cpp">
       <Filter>Render</Filter>
     </ClCompile>
-    <ClCompile Include="callbacks.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Particle.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderUtils.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector3D.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
     <ClCompile Include="Proyectil.cpp">
@@ -67,6 +55,36 @@
     <ClCompile Include="ForceGenerator.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="VientoGenerator.cpp">
+      <Filter>cpp\Fuerzas</Filter>
+    </ClCompile>
+    <ClCompile Include="callbacks.cpp">
+      <Filter>cpp\basics</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>cpp\basics</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderUtils.cpp">
+      <Filter>cpp\basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3D.cpp">
+      <Filter>cpp\basics</Filter>
+    </ClCompile>
+    <ClCompile Include="TorbellinoGenerator.cpp">
+      <Filter>cpp\Fuerzas</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionGenerator.cpp">
+      <Filter>cpp\Fuerzas</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="TorbellinoScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="VientoScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -75,19 +93,7 @@
     <ClInclude Include="Render\Render.h">
       <Filter>Render</Filter>
     </ClInclude>
-    <ClInclude Include="callbacks.hpp">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="core.hpp">
-      <Filter>h</Filter>
-    </ClInclude>
     <ClInclude Include="Particle.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderUtils.hpp">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3D.h">
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Proyectil.h">
@@ -135,6 +141,36 @@
     <ClInclude Include="ForceGenerator.h">
       <Filter>h</Filter>
     </ClInclude>
+    <ClInclude Include="VientoGenerator.h">
+      <Filter>h\Fuerzas</Filter>
+    </ClInclude>
+    <ClInclude Include="callbacks.hpp">
+      <Filter>h\basics</Filter>
+    </ClInclude>
+    <ClInclude Include="core.hpp">
+      <Filter>h\basics</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderUtils.hpp">
+      <Filter>h\basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>h\basics</Filter>
+    </ClInclude>
+    <ClInclude Include="TorbellinoGenerator.h">
+      <Filter>h\Fuerzas</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionGenerator.h">
+      <Filter>h\Fuerzas</Filter>
+    </ClInclude>
+    <ClInclude Include="VientoScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="TorbellinoScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -163,6 +199,18 @@
     </Filter>
     <Filter Include="cpp\Escenas">
       <UniqueIdentifier>{8b9ea9b0-8d3f-4313-b008-bbafa4ee270a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\Fuerzas">
+      <UniqueIdentifier>{964a3a06-6991-48a3-9a42-1cf249cda8fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\Fuerzas">
+      <UniqueIdentifier>{de34cdef-8c2f-4bd9-b471-a5f573776e6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\basics">
+      <UniqueIdentifier>{381ea4a2-d0d1-4e8f-a96d-526f91e59bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\basics">
+      <UniqueIdentifier>{e9defb86-1b85-4401-8939-cd383f4bf34a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

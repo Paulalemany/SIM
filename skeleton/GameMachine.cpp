@@ -5,7 +5,10 @@ GameMachine::GameMachine()
 	//Por ahora solo tenemos una escena estandar
 	escenas.push_back(new ParticleScene());
 	escenas.push_back(new ForcesScene());
-	actual = FUERZAS;	//Iniciamos automaticamente con la escena 0
+	escenas.push_back(new VientoScene());
+	escenas.push_back(new TorbellinoScene());
+	escenas.push_back(new ExplosionScene());
+	actual = VIENTO;	//Iniciamos automaticamente con la escena 0
 }
 
 GameMachine::~GameMachine()
@@ -38,12 +41,22 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '0':
 		std::cout << "---ESCENA PARTICULAS---\n";
 		changeScene(PARTICULAS);
-		
 		break;
-
 	case '1':
 		std::cout << "---ESCENA FUERZAS---\n";
 		changeScene(FUERZAS);
+		break;
+	case '2':
+		std::cout << "---ESCENA VIENTO---\n";
+		changeScene(VIENTO);
+		break;
+	case '3':
+		std::cout << "---ESCENA TORBELLINO---\n";
+		changeScene(TORBELLINO);
+		break;
+	case '4':
+		std::cout << "---ESCENA EXPLOSION---\n";
+		changeScene(EXPLOSION);
 		break;
 
 	default:

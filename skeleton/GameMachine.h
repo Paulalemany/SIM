@@ -1,9 +1,11 @@
 #pragma once
 #include <iostream>
 
-#include "Scene.h"
 #include "ParticleScene.h"
 #include "ForcesScene.h"
+#include "ExplosionScene.h"
+#include "TorbellinoScene.h"
+#include "VientoScene.h"
 
 
 class GameMachine
@@ -25,7 +27,10 @@ private:
 	//IMPORTANTE: el orden en el que metemos las escenas en el vector debe ser igual al valor del enum
 	const enum Scenes {
 		PARTICULAS = 0,
-		FUERZAS = 1
+		FUERZAS,
+		VIENTO,
+		TORBELLINO,
+		EXPLOSION
 	};
 
 	//Escenas

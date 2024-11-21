@@ -66,8 +66,6 @@ void Particle::integrate(double t)
 	vel = vel * pow(d, t);
 
 	pos = pose.p;
-
-	//Hay que borrar las fuerzas
 }
 
 bool Particle::update(double t)

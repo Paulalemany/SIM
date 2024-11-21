@@ -12,14 +12,14 @@ public:
 	//virtual Vector3 generateForce(Particle& par) = 0;
 	bool onZone(Vector3 pos);
 
-	void update(double t);
+	virtual void update(double t);
 
-	Vector3 generateForce(Particle& p);
+	virtual Vector3 generateForce(Particle& p);
 
 	void show();
 	void hide();
 
-private:
+protected:
 
 	//Propiedades de generadores de fuerzas
 	float radio = 30; //Radio de la zona afectada

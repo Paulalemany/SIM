@@ -27,6 +27,7 @@ public:
 	bool getAlive() { return alive; }
 
 	Vector3 getPosition() { return pos; }
+	Vector3 getVelocity() { return vel; }
 
 	///Fuerzas
 	virtual void addForce(Vector3 F) {};

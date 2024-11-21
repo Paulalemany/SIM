@@ -125,25 +125,28 @@ void keyPress(unsigned char key, const PxTransform& camera)
 
 	gameMachine->keyPressed(key, camera);
 
-	//switch(toupper(key))
-	//{
-	////case 'B': break;
-	////case ' ':	break;
-	//case ' ':
-	//{
-	//	break;
-	//}
-	//case 'K':
-	//{
-	//	//La dirección habría que cambiarla según donde mire la cámara
-	//	//La posición inicial es la misma en todas
-	//	/*scene->addParticle(new Proyectil(camera.p, camera.q.getBasisVector2() * -25,
-	//		Vector3(0, 0, 0), 1));*/
-	//	
-	//}
-	//default:
-	//	break;
-	//}
+	switch(toupper(key))
+	{
+	//case 'B': break;
+	//case ' ':	break;
+	case ' ':
+	{
+		break;
+	}
+	case 'K':
+	{
+		//La dirección habría que cambiarla según donde mire la cámara
+		//La posición inicial es la misma en todas
+		/*scene->addParticle(new Proyectil(camera.p, camera.q.getBasisVector2() * -25,
+			Vector3(0, 0, 0), 1));*/
+
+		cout << camera.p.x << " " << camera.p.y << " " << camera.p.z << endl;
+		break;
+		
+	}
+	default:
+		break;
+	}
 
 	
 }

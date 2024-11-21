@@ -1,6 +1,7 @@
 #pragma once
 #include "RenderUtils.hpp"
 #include "Particle.h"
+#include "Zone.h"
 
 class ForceGenerator
 {
@@ -24,6 +25,7 @@ private:
 
 
 	RenderItem* renderItem = nullptr;
+	Zone* zona = nullptr;
 
 	void generateZone();
 };

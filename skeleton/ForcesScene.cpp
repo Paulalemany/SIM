@@ -8,3 +8,8 @@ ForcesScene::ForcesScene()
 ForcesScene::~ForcesScene()
 {
 }
+
+void ForcesScene::update(double t)
+{
+	fuerzas->update(t);
+}

@@ -8,6 +8,8 @@ public:
 	ForcesScene();
 	~ForcesScene();
 
+	void update(double t)override;
+
 private:
 	ForceGenerator* fuerzas = nullptr;
 };

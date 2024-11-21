@@ -14,7 +14,7 @@ public:
 
 	~Scene();
 
-	void update(double t);
+	virtual void update(double t);
 
 	void addParticle(Particle* particula);
 

@@ -3,9 +3,15 @@
 
 ForceGenerator::ForceGenerator(Vector3 ori)
 {
-	radio = 5;
-	origen = { 0,0,0 };
-	generateZone();
+	// si ya existe un render item, elimina el que esta y crea uno nuevo con el nuevo radio
+	if (!zona)
+	{
+		zona = new Zone(radio, origen);
+
+		//scene->addObject(widget);
+	}
+
+	zona->changeShape(CreateShape(physx::PxSphereGeometry(radio)));
 }
 
 ForceGenerator::~ForceGenerator()
@@ -36,14 +42,8 @@ void ForceGenerator::generateZone()
 	/*zone = new RenderItem(CreateShape(physx::PxSphereGeometry(radio)), &physx::PxTransform(origen), { 1, 1.0, 1.0, 1 });
 	RegisterRenderItem(zone);*/
 
-	Vector4 color = { 1,1,1,1 };
+	Vector4 color = { 0,0,0,1 };
 	physx::PxTransform pos = physx::PxTransform(origen);
 
-	renderItem = new RenderItem(
-		CreateShape(physx::PxSphereGeometry(5)),
-		&pos,
-		color
-	);
-
-	//RegisterRenderItem(zone);
+	zona = new Zone(radio, origen);
 }

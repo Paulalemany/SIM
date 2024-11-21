@@ -10,6 +10,9 @@ public:
 	ParticleSystemFuegosArt(Vector3 ori, Vector3 vel, int n, int l);
 	bool update(double t) override;
 
+	void show() override;
+	void hide() override;
+
 private:
 
 	std::vector<Proyectil*> ini;	//Particula que inicia el fuego

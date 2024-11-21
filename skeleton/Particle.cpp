@@ -71,3 +71,9 @@ void Particle::restLiveTime(double t)
 {
 	liveTime -= t;
 }
+
+void Particle::setVisibility(bool vi)
+{
+	if (vi) RegisterRenderItem(renderItem);
+	else DeregisterRenderItem(renderItem);
+}

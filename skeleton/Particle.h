@@ -17,7 +17,10 @@ public:
 
 	void restLiveTime(double t);
 
+	///Setters
+
 	void setLiveTime(double t) { liveTime = t; }
+	void setVisibility(bool vi);
 
 	///Getters
 	bool getAlive() { return alive; }

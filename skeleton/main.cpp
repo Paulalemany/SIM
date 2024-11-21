@@ -9,8 +9,7 @@
 #include "RenderUtils.hpp"
 #include "callbacks.hpp"
 
-#include "Scene.h"
-#include "Proyectil.h"
+#include "GameMachine.h"
 
 
 
@@ -37,7 +36,8 @@ PxScene* gScene = NULL;
 ContactReportCallback gContactReportCallback;
 #pragma endregion
 
-Scene* scene = nullptr;
+//Scene* scene = nullptr;
+GameMachine* gameMachine = nullptr;
 
 
 // Initialize physics engine
@@ -79,7 +79,7 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	scene = new Scene();
+	gameMachine = new GameMachine();
 }
 
 
@@ -96,7 +96,7 @@ void stepPhysics(bool interactive, double t)
 	
 	//Movimiento de los proyectiles
 	//llamamos al update de la escena y esta se encarga del resto
-	if (scene != nullptr) scene->update(t);
+	if (gameMachine != nullptr) gameMachine->update(t);
 	
 }
 
@@ -123,25 +123,29 @@ void keyPress(unsigned char key, const PxTransform& camera)
 {
 	PX_UNUSED(camera);
 
-	switch(toupper(key))
-	{
-	//case 'B': break;
-	//case ' ':	break;
-	case ' ':
-	{
-		break;
-	}
-	case 'K':
-	{
-		//La dirección habría que cambiarla según donde mire la cámara
-		//La posición inicial es la misma en todas
-		scene->addParticle(new Proyectil(camera.p, camera.q.getBasisVector2() * -25,
-			Vector3(0, 0, 0), 1));
-		
-	}
-	default:
-		break;
-	}
+	gameMachine->keyPressed(key, camera);
+
+	//switch(toupper(key))
+	//{
+	////case 'B': break;
+	////case ' ':	break;
+	//case ' ':
+	//{
+	//	break;
+	//}
+	//case 'K':
+	//{
+	//	//La dirección habría que cambiarla según donde mire la cámara
+	//	//La posición inicial es la misma en todas
+	//	/*scene->addParticle(new Proyectil(camera.p, camera.q.getBasisVector2() * -25,
+	//		Vector3(0, 0, 0), 1));*/
+	//	
+	//}
+	//default:
+	//	break;
+	//}
+
+	
 }
 
 void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)

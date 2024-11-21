@@ -18,12 +18,16 @@ public:
 
 	void addParticle(Particle* particula);
 
-private:
+		/// Para la gestion de escenas
+	void init();	//Pone la escena
+	void quit();	//Quita la escena
+
+protected:
 
 	//Vector que gestiona las particulas de la escena
 	vector<Particle*> particulas;
-	ParticleSystem* fuente;
-	ParticleSystem* fuegos;
-	ParticleSystem* humo;
+	vector<ParticleSystem*> sistemas;
+
+	bool active = false;
 };
 

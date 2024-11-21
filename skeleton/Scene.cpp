@@ -3,12 +3,10 @@
 
 Scene::Scene()
 {
-	//fuente = new ParticleSystemFuente(Vector3(0, 0, 0), Vector3(0, 25, -25), 500, 50000);
 
-	fuegos = new ParticleSystemFuegosArt(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000);
-
-	//humo = new ParticleSystemHumo(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000);
-
+	//sistemas.push_back(new ParticleSystemFuente(Vector3(0, 0, 0), Vector3(0, 25, -25), 500, 50000));	//Fuente
+	//sistemas.push_back(new ParticleSystemFuegosArt(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000));	//Fuegos artificiales
+	//sistemas.push_back(new ParticleSystemHumo(Vector3(0, 0, 0), Vector3(0, 20, 0), 10, 50000));			//Humo
 	//particulas.push_back(new Particle(Vector3(0, 0, 0), Vector3(0, 10, 0), Vector4(0, 1, 0, 1)));
 }
 
@@ -36,32 +34,30 @@ Scene::~Scene()
 
 void Scene::update(double t)
 {
-#pragma region Eliminacion particulas
-	//Actualiza las particulas de la escena
-//for (Particle* p : particulas) {
 
-//	//Solo queremos que actualice a las que estan vivas
-//	if (!p->update(t)) {
-
-//		//Si esta muerta la eliminamos del vector
-//		delete p;
-
-//		//Eliminamos tambien el puntero del vector
-//		auto ref = find(particulas.begin(), particulas.end(), p);
-//		particulas.erase(ref);
-//	}
-//}
-#pragma endregion
-
-	//fuente->update(t);
-
-	fuegos->update(t);
-
-	//humo->update(t);
+	///Actualizamos los sistemas que haya
+	for (auto sys : sistemas) sys->update(t);
+	
 }
 
 void Scene::addParticle(Particle* particula)
 {
 	//Anadimos la particula al vector de particulas
 	particulas.push_back(particula);
+}
+
+void Scene::init()
+{
+	//Volvemos a las particulas de la escena visibles
+	//Las particulas estan dentro de los sistemas de particulas
+	for (auto sys : sistemas) sys->show();
+
+	active = true;
+}
+
+void Scene::quit()
+{
+	//Volvemos las particulas de la escena invisibles
+	for (auto sys : sistemas) sys->hide();
+	active = false;
 }

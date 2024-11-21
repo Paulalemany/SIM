@@ -56,3 +56,17 @@ void ParticleSystem::eliminaPart(std::vector<Proyectil*> par)
 		}
 	}
 }
+
+void ParticleSystem::show()
+{
+	for (auto p : particulas) {
+		p->setVisibility(true);
+	}
+}
+
+void ParticleSystem::hide()
+{
+	for (auto p : particulas) {
+		p->setVisibility(false);
+	}
+}

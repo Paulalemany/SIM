@@ -55,6 +55,15 @@
     <ClCompile Include="OriginFuegoGenerator.cpp">
       <Filter>cpp\Generadores</Filter>
     </ClCompile>
+    <ClCompile Include="GameMachine.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="ForcesScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -111,6 +120,15 @@
     <ClInclude Include="OriginFuegoGenerator.h">
       <Filter>h\Generadores</Filter>
     </ClInclude>
+    <ClInclude Include="GameMachine.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="ForcesScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -133,6 +151,12 @@
     </Filter>
     <Filter Include="cpp\Sistemas">
       <UniqueIdentifier>{85731f64-0527-41bd-b4c9-4017dd461a52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\Escenas">
+      <UniqueIdentifier>{94d6f9e3-a6f8-47db-b4f6-512d8fc85590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\Escenas">
+      <UniqueIdentifier>{8b9ea9b0-8d3f-4313-b008-bbafa4ee270a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

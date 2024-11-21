@@ -88,3 +88,15 @@ bool ParticleSystemFuegosArt::update(double t)
 
 	return true;
 }
+
+void ParticleSystemFuegosArt::show()
+{
+	for (auto p : ini) p->setVisibility(true);
+	ParticleSystem::show();
+}
+
+void ParticleSystemFuegosArt::hide()
+{
+	for (auto p : ini) p->setVisibility(false);
+	ParticleSystem::hide();
+}

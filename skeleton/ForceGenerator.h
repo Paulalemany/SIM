@@ -14,7 +14,7 @@ public:
 
 	void update(double t);
 
-	void generateForce(Particle& p);
+	Vector3 generateForce(Particle& p);
 
 private:
 

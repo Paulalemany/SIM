@@ -28,6 +28,10 @@ public:
 
 	Vector3 getPosition() { return pos; }
 
+	///Fuerzas
+	virtual void addForce(Vector3 F) {};
+	virtual void applyForces() {};
+
 protected:
 	//Parametros de la particula
 	Vector3 pos;

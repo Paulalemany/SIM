@@ -5,6 +5,7 @@ Proyectil::Proyectil(Proyectil* p)
 	: Particle (p->pos, p->vel, p->color, p->ace, p->d)
 {
 	//Copiamos la particula que se pasa
+	grav = Vector3(0, -9.8, 0);
 }
 
 //La aceleración es a + gravedad
@@ -12,25 +13,25 @@ Proyectil::Proyectil(Proyectil* p)
 Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D)
 	: Particle(Pos, Vel, Vector4 (0.34, 0.13, 0.39, 1), a + Vector3(0, -9.8, 0), D)
 {
-	
+	grav = Vector3(0, -9.8, 0);
 }
 
 Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, double D, Vector4 color)
 	: Particle(Pos, Vel, color, a + Vector3(0, -9.8, 0), D)
 {
-
+	grav = Vector3(0, -9.8, 0);
 }
 
 bool Proyectil::update(double t)
 {
 	// si esta por debajo de una posicion, marca la particula para eliminar
-	if (pose.p.y <= -50 || pose.p.y >= 70) {
+	/*if (pose.p.y <= -50 || pose.p.y >= 70) {
 		alive = false; 
 	}
 	else if (liveTime <= 0)
 	{
 		alive = false;
-	}
+	}*/
 
 	applyForces();
 

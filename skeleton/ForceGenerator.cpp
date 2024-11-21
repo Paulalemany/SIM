@@ -22,8 +22,12 @@ void ForceGenerator::update(double t)
 	
 }
 
-void ForceGenerator::generateForce(Particle& p)
+Vector3 ForceGenerator::generateForce(Particle& p)
 {
+	//Vamos a tomar esto como si fuese inverso a la gravedad
+	Vector3 F = { 0,0,0 };
+	F = { 0, 9.8, 0 };	//Es la inversa de la gravedad simplemente
+	return F;
 }
 
 void ForceGenerator::generateZone()

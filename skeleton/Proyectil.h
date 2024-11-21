@@ -14,14 +14,14 @@ public:
 	bool update(double t) override;
 
 	///Fuerzas
-	void addForce(Vector3 F) { fuerzas.push_back(F); }
-	void applyForces();
+	void addForce(Vector3 F) override { fuerzas.push_back(F); }
+	void applyForces() override;
 
 private:
 
 	//Fuerzas
 	std::vector<Vector3> fuerzas;	//Fuerzas que actuan sobre la particula
-	float masa = 0;
+	float masa = 1;
 
 	//Gravedad en m/s
 	Vector3 grav = Vector3 (0, -9.8, 0);

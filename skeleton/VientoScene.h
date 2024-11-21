@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "VientoGenerator.h"
 
 class VientoScene : public Scene
 {

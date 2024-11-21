@@ -9,6 +9,11 @@ GameMachine::GameMachine()
 	escenas.push_back(new TorbellinoScene());
 	escenas.push_back(new ExplosionScene());
 	actual = VIENTO;	//Iniciamos automaticamente con la escena 0
+
+	//Escondemos todas las que no sean la escena actual
+	for (int i = 0; i < escenas.size(); i++) {
+		if (i != actual) escenas[i]->quit();
+	}
 }
 
 GameMachine::~GameMachine()

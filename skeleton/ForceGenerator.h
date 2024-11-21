@@ -14,6 +14,8 @@ public:
 
 	virtual void update(double t);
 
+	void setRadio(float r);
+
 	virtual Vector3 generateForce(Particle& p);
 
 	void show();

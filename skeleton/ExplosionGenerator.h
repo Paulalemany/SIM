@@ -13,8 +13,6 @@ public:
 		time = 0;
 	};
 
-	void setRadio(float r);
-
 	void update(double t) override;
 
 	Vector3 generateForce(Particle& p) override;

@@ -1,11 +1,5 @@
 #include "ExplosionGenerator.h"
 
-void ExplosionGenerator::setRadio(float r)
-{
-	radio = r;
-	generateZone();
-}
-
 void ExplosionGenerator::update(double t)
 {
 	//en el momento que es mayor a 4 ya se esta desvaneciendo

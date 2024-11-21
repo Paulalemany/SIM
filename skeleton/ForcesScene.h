@@ -8,7 +8,5 @@ public:
 	ForcesScene();
 	~ForcesScene();
 
-	void update(double t)override;
-
 };
 

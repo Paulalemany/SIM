@@ -22,6 +22,12 @@ void ForceGenerator::update(double t)
 	
 }
 
+void ForceGenerator::setRadio(float r)
+{
+	radio = r;
+	generateZone();
+}
+
 Vector3 ForceGenerator::generateForce(Particle& p)
 {
 	//Vamos a tomar esto como si fuese inverso a la gravedad
@@ -42,7 +48,12 @@ void ForceGenerator::hide()
 
 void ForceGenerator::generateZone()
 {
+	if (zona != nullptr) {
+		zona->~Particle();
+	}
+
 	//Creamos el renderItem
 	//De forma estandar la geometria de la zona va a ser una esfera
 	zona = new Particle(origen, radio, { 1,1,1,0.1 });
+	
 }

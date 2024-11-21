@@ -16,16 +16,3 @@ ForcesScene::ForcesScene()
 ForcesScene::~ForcesScene()
 {
 }
-
-void ForcesScene::update(double t)
-{
-
-	for (auto p : particulas) {
-
-		//Si las particulas estan dentro del radio de accion
-		for (auto f : fuerzas)
-		if (f->onZone(p->getPosition())) p->addForce(f->generateForce(*p));
-	}
-
-	Scene::update(t);
-}

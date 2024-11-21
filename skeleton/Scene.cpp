@@ -21,8 +21,15 @@ void Scene::update(double t)
 	///Actualizamos los sistemas que haya
 	if (active) {
 		for (auto sys : sistemas) sys->update(t);
-		for (auto force : fuerzas) force->update(t);
-		for (auto p : particulas) p->update(t);
+		
+		for (auto p : particulas) {
+
+			for (auto f : fuerzas) {
+				f->update(t);
+				if (f->onZone(p->getPosition())) p->addForce(f->generateForce(*p));
+			}
+			p->update(t);
+		}
 
 		eliminaPart();
 	}

@@ -36,6 +36,7 @@ void Scene::update(double t)
 {
 
 	///Actualizamos los sistemas que haya
+	if (active)
 	for (auto sys : sistemas) sys->update(t);
 	
 }

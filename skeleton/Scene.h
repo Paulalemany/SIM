@@ -28,6 +28,6 @@ protected:
 	vector<Particle*> particulas;
 	vector<ParticleSystem*> sistemas;
 
-	bool active = false;
+	bool active = true;
 };
 

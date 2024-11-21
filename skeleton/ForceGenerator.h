@@ -23,7 +23,7 @@ private:
 	Vector3 origen = { 0,0,0 };
 
 
-	RenderItem* zone = nullptr;
+	RenderItem* renderItem = nullptr;
 
 	void generateZone();
 };

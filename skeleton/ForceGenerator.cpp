@@ -13,7 +13,6 @@ ForceGenerator::~ForceGenerator()
 
 bool ForceGenerator::onZone(Vector3 pos)
 {
-	std::cout << ((pos - origen).magnitude() <= radio) << "\n";
 	//Comprueba si la posicion esta dentro del radio
 	return (pos - origen).magnitude() <= radio;
 }

@@ -4,9 +4,9 @@ ForcesScene::ForcesScene()
 {
 	fuerzas = new ForceGenerator(Vector3(-100,0,-50));
 
-	particulas.push_back(new Proyectil({ -200, 0, -50 }, { 50, 0, 0 }, { 2,0,0 }, 0.5));
+	particulas.push_back(new Proyectil({ -150, 0, -50 }, { 60, 0, -10 }, { 2,0,2 }, 0.5));
 
-	//for (auto p : particulas) p->setLiveTime(5);
+	for (auto p : particulas) p->setLiveTime(500);
 }
 
 ForcesScene::~ForcesScene()

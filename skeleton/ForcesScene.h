@@ -10,11 +10,5 @@ public:
 
 	void update(double t)override;
 
-	void init() override;
-	void quit() override;
-
-private:
-	ForceGenerator* fuerzas = nullptr;
-	Particle* e;
 };
 

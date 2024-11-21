@@ -1,8 +1,7 @@
 #pragma once
 #include <vector>
-#include "ParticleSystemFuente.h"
-#include "ParticleSystemHumo.h"
-#include "ParticleSystemFuegosArt.h"
+#include "ForceGenerator.h"
+#include "ParticleSystem.h"
 
 using namespace std;
 class Scene
@@ -28,6 +27,7 @@ protected:
 	//Vector que gestiona las particulas de la escena
 	vector<Particle*> particulas;
 	vector<ParticleSystem*> sistemas;
+	vector<ForceGenerator*> fuerzas;
 
 	bool active = true;
 };

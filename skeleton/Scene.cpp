@@ -12,24 +12,7 @@ Scene::Scene()
 
 Scene::~Scene()
 {
-	//Tareas
-	//1.
-	//Force Generator
-	//Particle Force Registry (P, F)
-	//Particle -> AddForce
-	//		   -> ClearForce
-	//2.
-	//Gravity Force Generator
-	//3.
-	//Wind
-	//Tornado
-	//Blast
-
-	//Integrate a = dccF/m
-	//Particle -> iniMass
-	//		   -> accF
-
-	//Sumatorio F = m * a
+	
 }
 
 void Scene::update(double t)
@@ -38,6 +21,7 @@ void Scene::update(double t)
 	///Actualizamos los sistemas que haya
 	if (active) {
 		for (auto sys : sistemas) sys->update(t);
+		for (auto force : fuerzas) force->update(t);
 		for (auto p : particulas) p->update(t);
 
 		eliminaPart();
@@ -72,6 +56,7 @@ void Scene::init()
 	//Volvemos a las particulas de la escena visibles
 	//Las particulas estan dentro de los sistemas de particulas
 	for (auto sys : sistemas) sys->show();
+	for (auto force : fuerzas) force->show();
 	for (auto p : particulas) p->setVisibility(true);
 
 	active = true;
@@ -81,6 +66,7 @@ void Scene::quit()
 {
 	//Volvemos las particulas de la escena invisibles
 	for (auto sys : sistemas) sys->hide();
+	for (auto force : fuerzas) force->hide();
 	for (auto p : particulas) p->setVisibility(false);
 	active = false;
 }

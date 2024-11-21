@@ -1,6 +1,5 @@
 #pragma once
 #include "Particle.h"
-#include <PxPhysicsAPI.h>
 
 class Proyectil : public Particle
 {

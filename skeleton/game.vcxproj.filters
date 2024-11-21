@@ -64,6 +64,9 @@
     <ClCompile Include="ForcesScene.cpp">
       <Filter>cpp\Escenas</Filter>
     </ClCompile>
+    <ClCompile Include="ForceGenerator.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -128,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="ForcesScene.h">
       <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceGenerator.h">
+      <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@ GameMachine::GameMachine()
 	//Por ahora solo tenemos una escena estandar
 	escenas.push_back(new ParticleScene());
 	escenas.push_back(new ForcesScene());
-	actual = Fuerzas;	//Iniciamos automaticamente con la escena 0
+	actual = FUERZAS;	//Iniciamos automaticamente con la escena 0
 }
 
 GameMachine::~GameMachine()
@@ -37,13 +37,13 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	{
 	case '0':
 		std::cout << "---ESCENA PARTICULAS---\n";
-		changeScene(Particulas);
+		changeScene(PARTICULAS);
 		
 		break;
 
 	case '1':
 		std::cout << "---ESCENA FUERZAS---\n";
-		changeScene(Fuerzas);
+		changeScene(FUERZAS);
 		break;
 
 	default:

@@ -8,7 +8,8 @@ GameMachine::GameMachine()
 	escenas.push_back(new VientoScene());
 	escenas.push_back(new TorbellinoScene());
 	escenas.push_back(new ExplosionScene());
-	actual = EXPLOSION;	//Iniciamos automaticamente con la escena 0
+	escenas.push_back(new MuellesScene());
+	actual = MUELLES;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) {
@@ -62,6 +63,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '4':
 		std::cout << "---ESCENA EXPLOSION---\n";
 		changeScene(EXPLOSION);
+		break;
+	case '5':
+		std::cout << "---ESCENA MUELLES---\n";
+		changeScene(MUELLES);
 		break;
 
 	default:

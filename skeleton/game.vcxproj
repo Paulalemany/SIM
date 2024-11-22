@@ -263,6 +263,9 @@
     <ClCompile Include="GameMachine.cpp" />
     <ClCompile Include="HumoGenerator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MuelleForeGenerator.cpp" />
+    <ClCompile Include="MuelleParticleGenerator.cpp" />
+    <ClCompile Include="MuellesScene.cpp" />
     <ClCompile Include="OriginFuegoGenerator.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleGenerator.cpp" />
@@ -293,6 +296,9 @@
     <ClInclude Include="FuenteGenerator.h" />
     <ClInclude Include="GameMachine.h" />
     <ClInclude Include="HumoGenerator.h" />
+    <ClInclude Include="MuelleForeGenerator.h" />
+    <ClInclude Include="MuelleParticleGenerator.h" />
+    <ClInclude Include="MuellesScene.h" />
     <ClInclude Include="OriginFuegoGenerator.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleGenerator.h" />

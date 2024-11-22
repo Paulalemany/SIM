@@ -20,7 +20,7 @@ public:
 private:
 
 	float k = 100;	//Fuerza de la explosion
-	const float q = 1;	//Constante de tiempo de la explosion
+	const float q = 10;	//Constante de tiempo de la explosion
 	const float vel = 30;	//Velocidad de la expansion de la explosion
 	float time = 0;
 };

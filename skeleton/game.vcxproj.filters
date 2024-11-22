@@ -85,6 +85,15 @@
     <ClCompile Include="VientoScene.cpp">
       <Filter>cpp\Escenas</Filter>
     </ClCompile>
+    <ClCompile Include="MuellesScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="MuelleForeGenerator.cpp">
+      <Filter>cpp\Fuerzas</Filter>
+    </ClCompile>
+    <ClCompile Include="MuelleParticleGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -170,6 +179,15 @@
     </ClInclude>
     <ClInclude Include="ExplosionScene.h">
       <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="MuellesScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="MuelleForeGenerator.h">
+      <Filter>h\Fuerzas</Filter>
+    </ClInclude>
+    <ClInclude Include="MuelleParticleGenerator.h">
+      <Filter>h\Generadores</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

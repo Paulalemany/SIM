@@ -1,6 +1,18 @@
 #include "Particle.h"
 #include <iostream>
 
+Particle::Particle()
+{
+	pose = physx::PxTransform({0,0,0});
+	vel = { 0,0,0 };
+	ace = { 0,0,0 };
+	color = { 1, 0, 1, 1 };
+
+	renderItem = new RenderItem
+	(CreateShape(physx::PxBoxGeometry(Vector3{ 5,5,5 })),
+		&pose, color);
+}
+
 Particle::Particle(physx::PxVec3 Pos, float r, Vector4 col)
 {
 	pose = physx::PxTransform(Pos);

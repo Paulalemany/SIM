@@ -1,5 +1,4 @@
 #pragma once
-#include "RenderUtils.hpp"
 #include "Particle.h"
 
 class ForceGenerator

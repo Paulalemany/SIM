@@ -6,6 +6,7 @@ class Particle
 {
 public:
 
+	Particle();
 	Particle(physx::PxVec3 Pos, float r, Vector4 col);	//Particula estatica, solo para ver las zonas
 	Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col);
 	Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D);

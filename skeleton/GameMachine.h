@@ -6,6 +6,7 @@
 #include "ExplosionScene.h"
 #include "TorbellinoScene.h"
 #include "VientoScene.h"
+#include "MuellesScene.h"
 
 
 class GameMachine
@@ -30,7 +31,8 @@ private:
 		FUERZAS,
 		VIENTO,
 		TORBELLINO,
-		EXPLOSION
+		EXPLOSION,
+		MUELLES
 	};
 
 	//Escenas

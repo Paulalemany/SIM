@@ -15,7 +15,6 @@ void ExplosionScene::update(double t)
 {
 
 	if (particulas.size() < 50) {
-
 		float x = 10, z = 10, y = 30;
 		x *= cos(alpha * pi / 180);
 		z *= sin(delta * pi / 180);

@@ -13,7 +13,11 @@ Vector3 ExplosionGenerator::generateForce(Particle& p)
 {
 	Vector3 F = { 0,0,0 };
 
-	if (time < 0 || time >= 4 * q) return F;
+	if (time < 0 || time >= 4 * q)
+	{
+		startGenerate();
+		return F;
+	}
 
 	float r = (p.getPosition() - origen).magnitude();
 

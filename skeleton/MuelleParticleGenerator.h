@@ -8,6 +8,6 @@ public:
 	~MuelleParticleGenerator();
 
 	std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) override;
-	std::vector<Particle*> CreateParticles();
+	std::vector<Proyectil*> CreateParticles() override;
 };
 

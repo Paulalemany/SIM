@@ -12,6 +12,9 @@ public:
 	void update(double t)override;
 
 protected:
-	ParticleGenerator* generator;
+	ParticleGenerator* generator = nullptr;
+	vector<Proyectil*> pium;
+	Particle* ancla;
+
 };
 

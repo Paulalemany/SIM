@@ -14,3 +14,8 @@ ParticleGenerator::ParticleGenerator(Vector3 o, Vector3 vel, int np, Vector4 col
 	numParticles = np;
 	color = col;
 }
+
+std::vector<Proyectil*> ParticleGenerator::CreateParticles()
+{
+	return std::vector<Proyectil*>();
+}

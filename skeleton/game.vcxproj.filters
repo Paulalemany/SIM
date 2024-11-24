@@ -97,6 +97,9 @@
     <ClCompile Include="AnclaFG.cpp">
       <Filter>cpp\Fuerzas</Filter>
     </ClCompile>
+    <ClCompile Include="AnclaScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -194,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="AnclaFG.h">
       <Filter>h\Fuerzas</Filter>
+    </ClInclude>
+    <ClInclude Include="AnclaScene.h">
+      <Filter>h\Escenas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

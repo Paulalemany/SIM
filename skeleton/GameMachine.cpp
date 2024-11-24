@@ -9,6 +9,7 @@ GameMachine::GameMachine()
 	escenas.push_back(new TorbellinoScene());
 	escenas.push_back(new ExplosionScene());
 	escenas.push_back(new MuellesScene());
+	escenas.push_back(new AnclaScene());
 	actual = MUELLES;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
@@ -67,6 +68,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '5':
 		std::cout << "---ESCENA MUELLES---\n";
 		changeScene(MUELLES);
+		break;
+	case '6':
+		std::cout << "---ESCENA ANCLA---\n";
+		changeScene(ANCLA);
 		break;
 
 	default:

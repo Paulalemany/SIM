@@ -254,6 +254,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnclaFG.cpp" />
+    <ClCompile Include="AnclaScene.cpp" />
     <ClCompile Include="callbacks.cpp" />
     <ClCompile Include="ExplosionGenerator.cpp" />
     <ClCompile Include="ExplosionScene.cpp" />
@@ -288,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnclaFG.h" />
+    <ClInclude Include="AnclaScene.h" />
     <ClInclude Include="callbacks.hpp" />
     <ClInclude Include="core.hpp" />
     <ClInclude Include="ExplosionGenerator.h" />

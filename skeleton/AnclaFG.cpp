@@ -12,3 +12,15 @@ AnclaFG::~AnclaFG()
 {
 	delete par;
 }
+
+void AnclaFG::show()
+{
+	par->setVisibility(true);
+	ForceGenerator::show();
+}
+
+void AnclaFG::hide()
+{
+	par->setVisibility(false);
+	ForceGenerator::hide();
+}

@@ -17,8 +17,8 @@ public:
 
 	virtual Vector3 generateForce(Particle& p);
 
-	void show();
-	void hide();
+	virtual void show();
+	virtual void hide();
 
 protected:
 

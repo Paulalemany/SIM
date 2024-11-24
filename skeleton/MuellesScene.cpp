@@ -22,6 +22,5 @@ MuellesScene::~MuellesScene()
 
 void MuellesScene::update(double t)
 {
-	
 	Scene::update(t);
 }

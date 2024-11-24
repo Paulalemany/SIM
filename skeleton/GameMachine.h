@@ -8,6 +8,7 @@
 #include "VientoScene.h"
 #include "MuellesScene.h"
 #include "AnclaScene.h"
+#include "FlotacionScene.h"
 
 
 class GameMachine
@@ -34,7 +35,8 @@ private:
 		TORBELLINO,
 		EXPLOSION,
 		MUELLES,
-		ANCLA
+		ANCLA,
+		FLOTACION
 	};
 
 	//Escenas

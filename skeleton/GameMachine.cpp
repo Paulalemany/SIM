@@ -10,7 +10,8 @@ GameMachine::GameMachine()
 	escenas.push_back(new ExplosionScene());
 	escenas.push_back(new MuellesScene());
 	escenas.push_back(new AnclaScene());
-	actual = MUELLES;	//Escena con la que iniciamos
+	escenas.push_back(new FlotacionScene());
+	actual = FLOTACION;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) {
@@ -72,6 +73,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '6':
 		std::cout << "---ESCENA ANCLA---\n";
 		changeScene(ANCLA);
+		break;
+	case '7':
+		std::cout << "---ESCENA FLOTACION---\n";
+		changeScene(FLOTACION);
 		break;
 
 	default:

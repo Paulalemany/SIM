@@ -102,3 +102,21 @@ void Particle::setVisibility(bool vi)
 	if (vi) RegisterRenderItem(renderItem);
 	else DeregisterRenderItem(renderItem);
 }
+
+void Particle::setTam(float r, int shape)
+{
+	switch (shape) {
+
+	case 0:		//Es un circulo
+		renderItem = new RenderItem
+		(CreateShape(physx::PxSphereGeometry(r)),
+			&pose, color);
+		break;
+	case 1:		//Es un cuadrado
+		renderItem = new RenderItem
+		(CreateShape(physx::PxBoxGeometry(Vector3{ r,r,r })),
+			&pose, color);
+		break;
+
+	}
+}

@@ -23,6 +23,8 @@ public:
 
 	void setLiveTime(double t) { liveTime = t; }
 	void setVisibility(bool vi);
+	void setTam(float r, int shape);
+	void setColor(Vector4 col) { color = col; }
 
 	///Getters
 	bool getAlive() { return alive; }

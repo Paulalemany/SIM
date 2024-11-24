@@ -258,6 +258,8 @@
     <ClCompile Include="callbacks.cpp" />
     <ClCompile Include="ExplosionGenerator.cpp" />
     <ClCompile Include="ExplosionScene.cpp" />
+    <ClCompile Include="FlotacionForce.cpp" />
+    <ClCompile Include="FlotacionScene.cpp" />
     <ClCompile Include="ForceGenerator.cpp" />
     <ClCompile Include="ForcesScene.cpp" />
     <ClCompile Include="FuegosArtificialesGenerator.cpp" />
@@ -294,6 +296,8 @@
     <ClInclude Include="core.hpp" />
     <ClInclude Include="ExplosionGenerator.h" />
     <ClInclude Include="ExplosionScene.h" />
+    <ClInclude Include="FlotacionForce.h" />
+    <ClInclude Include="FlotacionScene.h" />
     <ClInclude Include="ForceGenerator.h" />
     <ClInclude Include="ForcesScene.h" />
     <ClInclude Include="FuegosArtificialesGenerator.h" />

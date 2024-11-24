@@ -18,6 +18,8 @@ public:
 protected:
 	ForceGenerator* generator = nullptr;
 	AnclaFG* ancla;
+	double k = 10;
+	int rest = 5;
 
 	bool viento = false;
 

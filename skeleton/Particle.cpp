@@ -4,6 +4,7 @@
 Particle::Particle(physx::PxVec3 Pos)
 {
 	pose = physx::PxTransform(Pos);
+	pos = Pos;
 	vel = { 0,0,0 };
 	ace = { 0,0,0 };
 	color = { 1, 0, 1, 1 };

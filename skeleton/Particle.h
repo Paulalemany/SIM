@@ -51,7 +51,7 @@ protected:
 	double d = 0.98;
 
 	bool alive;
-	double liveTime;
+	double liveTime = 500;
 
 	//Al RenderItem le pasamos pose para que se actualice automaticamente
 	physx::PxTransform pose;	//Posicion inicial

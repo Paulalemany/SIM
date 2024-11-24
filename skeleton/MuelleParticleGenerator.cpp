@@ -24,19 +24,15 @@ std::vector<Proyectil*> MuelleParticleGenerator::CreateParticles(int actParticle
 	return aux;
 }
 
-std::vector<Proyectil*> MuelleParticleGenerator::CreateParticles()
+std::vector<Particle*> MuelleParticleGenerator::CreateParticles()
 {
-	std::vector<Proyectil*> aux;
+	std::vector<Particle*> aux;
 
 	//Creamos dos particulas, el ancla y la que se mueve
-	Particle* ancla = new Particle({-10, 10, 0});
-	Proyectil* p = new Proyectil({ 10,10,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);
+	Proyectil* p = new Proyectil({ -10,20,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);
+	AnclaFG* ancla = new AnclaFG({ 10, 10, 0 }, 1, 10, { 10.0, 20, 0 });
 
 	p->setMasa(2);
-
-	//Hay que ponerles tiempos de vida
-	ancla->setLiveTime(500);
-	p->setLiveTime(500);
 
 	aux.push_back(p);
 

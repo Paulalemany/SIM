@@ -12,7 +12,7 @@ public:
 	ParticleGenerator(Vector3 o, Vector3 vel, int np, Vector4 col);
 	
 	virtual std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) = 0;
-	virtual std::vector<Proyectil*> CreateParticles();
+	virtual std::vector<Particle*> CreateParticles();
 
 	void setOrigin(Vector3 o) { origen = o; }
 	Vector4 getColor() { return color; }

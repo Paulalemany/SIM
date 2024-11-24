@@ -1,5 +1,6 @@
 #pragma once
 #include "ParticleGenerator.h"
+#include "AnclaFG.h"
 
 class MuelleParticleGenerator : public ParticleGenerator
 {
@@ -8,6 +9,6 @@ public:
 	~MuelleParticleGenerator();
 
 	std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) override;
-	std::vector<Proyectil*> CreateParticles() override;
+	std::vector<Particle*> CreateParticles() override;
 };
 

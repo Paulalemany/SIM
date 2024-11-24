@@ -3,15 +3,15 @@
 MuelleForeGenerator::MuelleForeGenerator(Vector3 ori, double _k, double rl, Particle* p)
 	: ForceGenerator(ori)
 {
-	_k = k;
+	k = _k;
 	resting_length = rl;
 	par = p;
 }
 
-void MuelleForeGenerator::updateForce(Particle* p)
+Vector3 MuelleForeGenerator::generateForce(Particle& p)
 {
 	//Particle par es el origen
-	Vector3 relativePos = par->getPosition() - p->getPosition();
+	Vector3 relativePos = par->getPosition() - p.getPosition();
 	Vector3 F;
 
 	//Normalizamos el vector
@@ -20,5 +20,5 @@ void MuelleForeGenerator::updateForce(Particle* p)
 
 	F = relativePos * deltaX * k;
 
-	p->addForce(F);
+	return F;
 }

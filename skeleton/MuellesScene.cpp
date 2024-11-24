@@ -2,13 +2,16 @@
 
 MuellesScene::MuellesScene()
 {
-	generator = new MuelleParticleGenerator({ 0,0,0 }, { 0,0,0 }, 2);
-	pium = generator->CreateParticles();
-	
-	//ancla = new Particle({0,0,0});
-	//ancla->setLiveTime(500);
-	//fuerzas.push_back(new MuelleForeGenerator({ 0,0,0 }, 5, 5.5, ancla));
-	fuerzas.push_back(new MuelleForeGenerator({ 0,0,0 }, 5, 5.5, pium[0]));
+	//Creamos dos particulas, el ancla y la que se mueve
+	Proyectil* p = new Proyectil({ -10,20,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);
+	AnclaFG* ancla = new AnclaFG({ 10, 10, 0 }, 1, 10, { 10.0, 20, 0 });
+
+	p->setMasa(2);
+
+	particulas.push_back(p);
+
+	//Ponemos las fuerzas
+	fuerzas.push_back(ancla);
 }
 
 MuellesScene::~MuellesScene()
@@ -18,7 +21,6 @@ MuellesScene::~MuellesScene()
 
 void MuellesScene::update(double t)
 {
-	for (auto p : pium) p->update(t);
-
-	//ancla->update(t);
+	
+	Scene::update(t);
 }

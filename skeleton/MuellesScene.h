@@ -13,8 +13,7 @@ public:
 
 protected:
 	ParticleGenerator* generator = nullptr;
-	vector<Proyectil*> pium;
-	Particle* ancla;
+	AnclaFG* ancla;
 
 };
 

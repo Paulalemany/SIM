@@ -4,7 +4,7 @@
 class AnclaFG : public MuelleForeGenerator
 {
 public:
-	AnclaFG(Vector3 ori, double k, double descanso, const Vector3& anchor_pos);
+	AnclaFG(Vector3 ori, double k, double descanso, Vector3 anchor_pos);
 	~AnclaFG();
 };
 

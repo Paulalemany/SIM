@@ -7,7 +7,7 @@ public:
 	MuelleForeGenerator(Vector3 ori, double _k, double rl, Particle* p);
 	~MuelleForeGenerator() {}
 
-	virtual void updateForce(Particle* p);
+	Vector3 generateForce(Particle& p) override;
 
 	void setK(double _k) { k = _k; }
 

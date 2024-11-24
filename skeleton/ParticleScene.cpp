@@ -8,3 +8,8 @@ ParticleScene::ParticleScene()
 ParticleScene::~ParticleScene()
 {
 }
+
+void ParticleScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
+{
+	//Por ahora no queremos hacer nada
+}

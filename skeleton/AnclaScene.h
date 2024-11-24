@@ -9,6 +9,8 @@ public:
 	AnclaScene();
 	~AnclaScene();
 
+	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
+
 protected:
 	ParticleGenerator* generator = nullptr;
 	AnclaFG* ancla;

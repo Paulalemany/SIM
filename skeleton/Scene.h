@@ -18,7 +18,10 @@ public:
 
 	void eliminaPart();
 
-		/// Para la gestion de escenas
+	///Input de la escena
+	virtual void keyPressed(unsigned char key, const physx::PxTransform& camera) = 0;
+
+	/// Para la gestion de escenas
 	virtual void init();	//Pone la escena
 	virtual void quit();	//Quita la escena
 

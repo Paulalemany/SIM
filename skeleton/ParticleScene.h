@@ -8,6 +8,8 @@ public:
 	ParticleScene();
 	~ParticleScene();
 
+	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
+
 private:
 
 };

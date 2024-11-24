@@ -18,3 +18,8 @@ AnclaScene::AnclaScene()
 AnclaScene::~AnclaScene()
 {
 }
+
+void AnclaScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
+{
+	//Queremos que se ejecute una fuerza
+}

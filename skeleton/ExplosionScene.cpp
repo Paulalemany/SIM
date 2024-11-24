@@ -35,3 +35,8 @@ void ExplosionScene::update(double t)
 	}
 	Scene::update(t);
 }
+
+void ExplosionScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
+{
+	//Explota cuando se pulsa la tecla
+}

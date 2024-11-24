@@ -9,6 +9,7 @@ public:
 	~ExplosionScene();
 
 	void update(double t) override;
+	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 
 private:
 	float pi = 3.1415;

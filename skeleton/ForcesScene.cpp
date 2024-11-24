@@ -16,3 +16,8 @@ ForcesScene::ForcesScene()
 ForcesScene::~ForcesScene()
 {
 }
+
+void ForcesScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
+{
+	//No queremos hacer nada en especial
+}

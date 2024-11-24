@@ -23,3 +23,8 @@ void VientoScene::update(double t)
 
 	Scene::update(t);
 }
+
+void VientoScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
+{
+	//Por ahora nada
+}

@@ -75,8 +75,8 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 		break;
 
 	default:
-		/*for (auto s : escenas)
-			s->keyPressed(key, camera);*/
+
+		escenas[actual]->keyPressed(key, camera);
 		break;
 	}
 

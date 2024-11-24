@@ -20,7 +20,7 @@ public:
 
 	void changeScene(int s);
 
-	void keyPressed(unsigned char key, const physx::PxTransform& camera);;
+	void keyPressed(unsigned char key, const physx::PxTransform& camera);
 
 private:
 	int actual = 0;

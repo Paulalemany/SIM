@@ -10,6 +10,11 @@ TorbellinoScene::~TorbellinoScene()
 
 }
 
+void TorbellinoScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
+{
+	//Por ahora nada
+}
+
 void TorbellinoScene::update(double t)
 {
 	//Ponemos particulas para ver el efecto

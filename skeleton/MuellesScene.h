@@ -9,8 +9,6 @@ public:
 	MuellesScene();
 	~MuellesScene();
 
-	void update(double t)override;
-
 protected:
 	ParticleGenerator* generator = nullptr;
 	AnclaFG* ancla;

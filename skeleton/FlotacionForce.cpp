@@ -8,8 +8,7 @@ FlotacionForce::FlotacionForce(Vector3 ori, float _h, float _v, float _d)
 	volumen = _v;
 	densidad = _d;
 	//Inicializamos la particula que representa al liquido aunque no tengo muy claro que es lo que hace
-	particulaLiquida = new Particle(ori);	//Creo que es lo mismo que pongo ya para ver por donde actua el cuerpo
-	particulaLiquida->setColor({ 0.33, 0.39, 0.92, 0.5});
+	particulaLiquida = new Particle(ori, _h);	//Creo que es lo mismo que pongo ya para ver por donde actua el cuerpo
 	particulaLiquida->setTam(10, 1);	//forma '1': cubo
 }
 

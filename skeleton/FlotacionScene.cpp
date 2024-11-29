@@ -7,7 +7,7 @@ FlotacionScene::FlotacionScene()
 
 	//creamos la particula que flota
 	Proyectil* p = new Proyectil({ 0,40,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);
-	p->setMasa(100);
+	p->setMasa(500);
 	particulas.push_back(p);
 }
 

@@ -9,11 +9,16 @@ AnclaScene::AnclaScene()
 	ancla = new AnclaFG({ 10, 10, 0 }, 5, 10, { 10.0, 20, 0 });
 	ancla->setRadio(100);
 
+	//Proyectil* p2 = new Proyectil({ -20,0,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);
+
 	p->setMasa(2);
+	//p2->setMasa(2);
 
 	particulas.push_back(p);
+	//particulas.push_back(p2);
 
 	//Ponemos las fuerzas
+	
 	fuerzas.push_back(ancla);
 }
 

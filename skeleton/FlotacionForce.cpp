@@ -10,7 +10,7 @@ FlotacionForce::FlotacionForce(Vector3 ori, float _h, float _v, float _d)
 	//Inicializamos la particula que representa al liquido aunque no tengo muy claro que es lo que hace
 	particulaLiquida = new Particle(ori);	//Creo que es lo mismo que pongo ya para ver por donde actua el cuerpo
 	particulaLiquida->setColor({ 0.33, 0.39, 0.92, 0.5 });
-	particulaLiquida->setTam(10, 1);	//forma '1': cubo
+	particulaLiquida->setTam(10, 1);	//forma '1': cubo mide 10m de lado
 }
 
 Vector3 FlotacionForce::generateForce(Particle& p)

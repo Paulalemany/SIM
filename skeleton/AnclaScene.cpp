@@ -6,7 +6,7 @@ AnclaScene::AnclaScene()
 	fuerzas.push_back(new VientoGenerator({ 0,0,0 }, { 10, 10, 0 }));
 
 	Proyectil* p = new Proyectil({ -10,20,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);
-	AnclaFG* ancla = new AnclaFG({ 10, 10, 0 }, 5, 10, { 10.0, 20, 0 });
+	ancla = new AnclaFG({ 10, 10, 0 }, 5, 10, { 10.0, 20, 0 });
 	ancla->setRadio(100);
 
 	p->setMasa(2);
@@ -60,4 +60,16 @@ void AnclaScene::update(double t)
 
 		eliminaPart();
 	}
+}
+
+void AnclaScene::init()
+{
+	//ancla->show();
+	Scene::init();
+}
+
+void AnclaScene::quit()
+{
+	//ancla->hide();
+	Scene::quit();
 }

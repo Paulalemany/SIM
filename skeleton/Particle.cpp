@@ -105,6 +105,9 @@ void Particle::setVisibility(bool vi)
 
 void Particle::setTam(float r, int shape)
 {
+	//Tengo que buscar una manera de eliminar el enterior
+	DeregisterRenderItem(renderItem);
+
 	switch (shape) {
 
 	case 0:		//Es un circulo

@@ -3,7 +3,7 @@
 FlotacionScene::FlotacionScene()
 {
 	//Ponemos la fuerza
-	fuerzas.push_back(new FlotacionForce({ 0,30,0 }, 5, 10, 1));
+	fuerzas.push_back(new FlotacionForce({ 0,30,0 }, 5, 10, 997));
 
 	//creamos la particula que flota
 	Proyectil* p = new Proyectil({ 0,40,0 }, { 0,0,0 }, { 0,0,0 }, 0.85);

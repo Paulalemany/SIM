@@ -15,6 +15,10 @@ public:
 	//Tenemos que hacer nuestro propio update para la fuerza del viento
 	void update(double t) override;
 
+	/// Para la gestion de escenas
+	virtual void init() override;	//Pone la escena
+	virtual void quit() override;	//Quita la escena
+
 protected:
 	ForceGenerator* generator = nullptr;
 	AnclaFG* ancla;

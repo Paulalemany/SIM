@@ -11,7 +11,7 @@ GameMachine::GameMachine()
 	escenas.push_back(new MuellesScene());
 	escenas.push_back(new AnclaScene());
 	escenas.push_back(new FlotacionScene());
-	actual = FLOTACION;	//Escena con la que iniciamos
+	actual = ANCLA;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) {

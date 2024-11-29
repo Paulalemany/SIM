@@ -9,6 +9,10 @@ public:
 
 	Vector3 generateForce(Particle& p) override;
 
+
+	virtual void show() override;
+	virtual void hide() override;
+
 private:
 	float altura;
 	float volumen;

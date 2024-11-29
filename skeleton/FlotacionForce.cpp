@@ -1,4 +1,5 @@
 #include "FlotacionForce.h"
+#include "iostream"
 
 FlotacionForce::FlotacionForce(Vector3 ori, float _h, float _v, float _d)
 	: ForceGenerator(ori)
@@ -35,4 +36,16 @@ Vector3 FlotacionForce::generateForce(Particle& p)
 	F.y = densidad * volumen * inmerso * gravedad;
 
 	return F;
+}
+
+void FlotacionForce::show()
+{
+	particulaLiquida->setVisibility(true);
+	ForceGenerator::show();
+}
+
+void FlotacionForce::hide()
+{
+	particulaLiquida->setVisibility(false);
+	ForceGenerator::hide();
 }

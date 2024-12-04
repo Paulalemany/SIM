@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "SolidoRigido.h"
 
 using namespace physx;
 class SolidScene : public Scene

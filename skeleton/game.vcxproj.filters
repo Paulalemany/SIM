@@ -109,6 +109,9 @@
     <ClCompile Include="SolidScene.cpp">
       <Filter>cpp\Escenas</Filter>
     </ClCompile>
+    <ClCompile Include="SolidoRigido.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -218,6 +221,9 @@
     </ClInclude>
     <ClInclude Include="SolidScene.h">
       <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidoRigido.h">
+      <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,3 +16,14 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	RenderItem* item = new RenderItem(shape, solido, col);
 
 }
+
+void SolidoRigido::CreateStatic(PxScene* _scene, PxPhysics* _physics, PxTransform ori, Vector3 tam, Vector4 col)
+{
+	PxRigidStatic* estatic = _physics->createRigidStatic(ori);
+	PxShape* shapeEstatic = CreateShape(PxBoxGeometry(tam));
+	estatic->attachShape(*shapeEstatic);
+	_scene->addActor(*estatic);
+
+	RenderItem* itemEstatic = new RenderItem(shapeEstatic, estatic, col);
+
+}

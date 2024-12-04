@@ -24,5 +24,9 @@ private:
 	PxScene* scene = NULL;
 	PxPhysics* physics = NULL;
 
+	//Objetos
+	PxRigidStatic* suelo = nullptr;
+	RenderItem* item = nullptr;
+
 };
 

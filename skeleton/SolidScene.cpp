@@ -6,13 +6,12 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 	physics = _physics;
 
 	//Generar suelo
-	PxRigidStatic* suelo = physics->createRigidStatic(PxTransform({ 0,0,0 }));
+	suelo = physics->createRigidStatic(PxTransform({ 0,0,0 }));
 	PxShape* shape = CreateShape(PxBoxGeometry(100, 0.1, 100));
 	suelo->attachShape(*shape);
 	scene->addActor(*suelo);
 
 	//Pintamos el suelo
-	RenderItem* item;
 	item = new RenderItem(shape, suelo, { 0.05, 0.5, 0.23, 1 });
 
 	//Generamos actores dinamicos
@@ -57,8 +56,12 @@ void SolidScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
 
 void SolidScene::init()
 {
+	RegisterRenderItem(item);
 }
 
 void SolidScene::quit()
 {
+	//Vamos a testear los cambios de escena
+
+	DeregisterRenderItem(item);
 }

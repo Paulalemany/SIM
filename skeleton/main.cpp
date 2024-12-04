@@ -33,7 +33,7 @@ PxPvd* gPvd = NULL;
 
 PxDefaultCpuDispatcher* gDispatcher = NULL;
 PxScene* gScene = NULL;
-PxScene* solidScene = NULL;
+//PxScene* solidScene = NULL;
 ContactReportCallback gContactReportCallback;
 #pragma endregion
 
@@ -80,7 +80,7 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	gameMachine = new GameMachine();
+	gameMachine = new GameMachine(gScene);
 }
 
 

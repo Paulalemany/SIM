@@ -9,12 +9,13 @@
 #include "MuellesScene.h"
 #include "AnclaScene.h"
 #include "FlotacionScene.h"
+#include "SolidScene.h"
 
 
 class GameMachine
 {
 public:
-	GameMachine();
+	GameMachine(PxScene* s);
 	~GameMachine();
 
 	void update(double t);
@@ -36,7 +37,8 @@ private:
 		EXPLOSION,
 		MUELLES,
 		ANCLA,
-		FLOTACION
+		FLOTACION,
+		SOLIDOS
 	};
 
 	//Escenas

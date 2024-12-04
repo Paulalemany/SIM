@@ -1,6 +1,6 @@
 #include "GameMachine.h"
 
-GameMachine::GameMachine()
+GameMachine::GameMachine(PxScene* s)
 {
 	//Por ahora solo tenemos una escena estandar
 	escenas.push_back(new ParticleScene());
@@ -11,7 +11,8 @@ GameMachine::GameMachine()
 	escenas.push_back(new MuellesScene());
 	escenas.push_back(new AnclaScene());
 	escenas.push_back(new FlotacionScene());
-	actual = ANCLA;	//Escena con la que iniciamos
+	escenas.push_back(new SolidScene(s));
+	actual = SOLIDOS;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) {
@@ -77,6 +78,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '7':
 		std::cout << "---ESCENA FLOTACION---\n";
 		changeScene(FLOTACION);
+		break;
+	case '8':
+		std::cout << "---ESCENA SOLIDOS---\n";
+		changeScene(SOLIDOS);
 		break;
 
 	default:

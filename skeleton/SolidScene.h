@@ -17,6 +17,9 @@ public:
 	void init() override;	//Pone la escena
 	void quit() override;	//Quita la escena
 
+	//Iria bien un metodo de generar escenario o algo asi
+	//Podria ser un metodo privado perfectamente
+
 private:
 	PxScene* scene = NULL;
 	PxPhysics* physics = NULL;

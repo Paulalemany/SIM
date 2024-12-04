@@ -23,6 +23,7 @@ public:
 private:
 	PxScene* scene = NULL;
 	PxPhysics* physics = NULL;
+	PxMaterial* mat = NULL;
 
 	//Objetos
 	PxRigidStatic* suelo = nullptr;

@@ -6,6 +6,11 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 	physics = _physics;
 
 	//Generar suelo
+	//Se pueden crear y poner diferentes materiales
+	//PxPhysics::createMaterial(staticFriction, dynamicFriction, restitution);
+	//gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
+
+	mat = physics->createMaterial(1, 1, 0);
 	suelo = physics->createRigidStatic(PxTransform({ 0,0,0 }));
 	PxShape* shape = CreateShape(PxBoxGeometry(100, 0.1, 100));
 	suelo->attachShape(*shape);
@@ -38,7 +43,7 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 	solid->attachShape(*shape2);
 
 	//Hay que definir tambien la distribucion de masas en actores dinamicos
-	PxRigidBodyExt::updateMassAndInertia(*solid, 10);	//El 0.15 es la densidad kg/m3
+	PxRigidBodyExt::updateMassAndInertia(*solid, 100);	//El 0.15 es la densidad kg/m3
 	scene->addActor(*solid);
 
 	RenderItem* item3;

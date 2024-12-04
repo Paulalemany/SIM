@@ -15,7 +15,7 @@
 class GameMachine
 {
 public:
-	GameMachine(PxScene* s);
+	GameMachine(PxScene* s, PxPhysics* p);
 	~GameMachine();
 
 	void update(double t);

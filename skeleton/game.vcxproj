@@ -283,6 +283,7 @@
     <ClCompile Include="Render\Camera.cpp" />
     <ClCompile Include="Render\Render.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SolidScene.cpp" />
     <ClCompile Include="TorbellinoGenerator.cpp" />
     <ClCompile Include="TorbellinoScene.cpp" />
     <ClCompile Include="Vector3D.cpp" />
@@ -320,6 +321,7 @@
     <ClInclude Include="Render\Camera.h" />
     <ClInclude Include="Render\Render.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SolidScene.h" />
     <ClInclude Include="TorbellinoGenerator.h" />
     <ClInclude Include="TorbellinoScene.h" />
     <ClInclude Include="Vector3D.h" />

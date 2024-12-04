@@ -1,6 +1,6 @@
 #include "GameMachine.h"
 
-GameMachine::GameMachine(PxScene* s)
+GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 {
 	//Por ahora solo tenemos una escena estandar
 	escenas.push_back(new ParticleScene());
@@ -11,7 +11,7 @@ GameMachine::GameMachine(PxScene* s)
 	escenas.push_back(new MuellesScene());
 	escenas.push_back(new AnclaScene());
 	escenas.push_back(new FlotacionScene());
-	escenas.push_back(new SolidScene(s));
+	escenas.push_back(new SolidScene(s, p));
 	actual = SOLIDOS;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual

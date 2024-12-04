@@ -6,7 +6,7 @@ class SolidScene : public Scene
 {
 public:
 
-	SolidScene(PxScene* _scene);
+	SolidScene(PxScene* _scene, PxPhysics* _physics);
 
 	void update(double t) override;
 
@@ -19,6 +19,7 @@ public:
 
 private:
 	PxScene* scene = NULL;
+	PxPhysics* physics = NULL;
 
 };
 

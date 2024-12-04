@@ -80,7 +80,7 @@ void initPhysics(bool interactive)
 	RegisterRenderItem(_sphere);*/
 #pragma endregion
 
-	gameMachine = new GameMachine(gScene);
+	gameMachine = new GameMachine(gScene, gPhysics);
 }
 
 

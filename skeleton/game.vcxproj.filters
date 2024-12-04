@@ -106,6 +106,9 @@
     <ClCompile Include="FlotacionScene.cpp">
       <Filter>cpp\Escenas</Filter>
     </ClCompile>
+    <ClCompile Include="SolidScene.cpp">
+      <Filter>cpp\Escenas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -211,6 +214,9 @@
       <Filter>h\Fuerzas</Filter>
     </ClInclude>
     <ClInclude Include="FlotacionScene.h">
+      <Filter>h\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidScene.h">
       <Filter>h\Escenas</Filter>
     </ClInclude>
   </ItemGroup>

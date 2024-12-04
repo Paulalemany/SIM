@@ -16,11 +16,17 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 	suelo->CreateStatic(scene, physics,
 		{ 0,0,0 }, { 100, 0.1, 100 }, { 0.05, 0.5, 0.23, 1 });
 
+	objetos.push_back(suelo);
+
 	SolidoRigido* solido1 = new SolidoRigido(scene, physics, 
 		{ -70, 200, -70 }, { 0,5,0 }, { 0,0,0 }, { 5, 5, 5 }, 0.15, { 1,0,0,1 });
 
+	objetos.push_back(solido1);
+
 	SolidoRigido* solido2 = new SolidoRigido(scene, physics,
 		{ 0, 200, 0 }, { 0,10,0 }, { 5,0,0 }, { 5 ,5 ,5 }, 100, { 1,0,0,1 });
+
+	objetos.push_back(solido2);
 }
 
 void SolidScene::update(double t)

@@ -30,5 +30,8 @@ private:
 	PxRigidStatic* suelo = nullptr;
 	RenderItem* item = nullptr;
 
+	//Guardamos todos los objetos en un vector?
+	std::vector<SolidoRigido*> objetos;
+
 };
 

@@ -29,6 +29,21 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 
 	RenderItem* item2;
 	item2 = new RenderItem(shape_ad, new_solid, { 1,0,0,1 });
+
+	//Generamos actores dinamicos
+	PxRigidDynamic* solid;
+	solid = physics->createRigidDynamic(PxTransform({ 0, 200, 0 }));
+	solid->setLinearVelocity({ 0,5,0 });
+	solid->setAngularVelocity({ 0,0,0 });
+	PxShape* shape2 = CreateShape(PxBoxGeometry(5, 5, 5));
+	solid->attachShape(*shape2);
+
+	//Hay que definir tambien la distribucion de masas en actores dinamicos
+	PxRigidBodyExt::updateMassAndInertia(*solid, 10);	//El 0.15 es la densidad kg/m3
+	scene->addActor(*solid);
+
+	RenderItem* item3;
+	item3 = new RenderItem(shape2, solid, { 1,0,0,1 });
 }
 
 void SolidScene::update(double t)

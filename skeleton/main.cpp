@@ -33,6 +33,7 @@ PxPvd* gPvd = NULL;
 
 PxDefaultCpuDispatcher* gDispatcher = NULL;
 PxScene* gScene = NULL;
+PxScene* solidScene = NULL;
 ContactReportCallback gContactReportCallback;
 #pragma endregion
 

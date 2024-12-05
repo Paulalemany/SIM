@@ -45,7 +45,7 @@ void Scene::eliminaPart()
 {
 	for (int i = 0; i < particulas.size(); i++) {
 
-		if (!particulas[i]->getAlive()) {
+		if (!particulas[i]->isAlive()) {
 
 			//Si esta muerta la eliminamos del vector
 			delete particulas[i];

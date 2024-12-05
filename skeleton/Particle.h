@@ -1,8 +1,7 @@
 #pragma once
-#include "RenderUtils.hpp"
-#include <PxPhysicsAPI.h>
+#include "Entidad.h"
 
-class Particle
+class Particle : public Entidad
 {
 public:
 
@@ -13,51 +12,34 @@ public:
 	Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxVec3 a, double D);
 	~Particle();
 
-	void integrate(double t);
-
+	void integrate(double t) override;
 	virtual bool update(double t);
-
 	void restLiveTime(double t);
 
 	///Setters
-
 	void setLiveTime(double t) { liveTime = t; }
 	void setVisibility(bool vi);
 	void setTam(float r, int shape);
 	void setColor(Vector4 col) { color = col; }
+	void setVelocidad(Vector3 v) override { vel = v; }
+	void setPosition(Vector3 p) override { pose.p = p; pos = p; }
 
-	///Getters
-	bool getAlive() { return alive; }
-
-	Vector3 getPosition() { return pos; }
 	Vector3 getVelocity() { return vel; }
 
 	///Fuerzas
-	virtual void addForce(Vector3 F) {};
+	virtual void addForce(Vector3 F) override {};
 	virtual void applyForces() {};
 	virtual void setMasa(float m) {};
 
 protected:
-	//Parametros de la particula
+	//Propiedades
 	Vector3 pos;
 	physx::PxVec3 ace;	//Aceleracion inicial
-	physx::PxVec3 vel;	//Velocidad inicial
-	Vector4 color;		//Color inicial 
-
-	float tam;			//Tamaño inicial
 	float trans;		//Transparencia inicial
-	float timeLive;		//Tiempo de vida
 
 	//0 < d < 1
 	//Dumpling
 	double d = 0.98;
-
-	bool alive;
-	double liveTime = 500;
-
-	//Al RenderItem le pasamos pose para que se actualice automaticamente
-	physx::PxTransform pose;	//Posicion inicial
-	RenderItem* renderItem;
 
 };
 

@@ -25,7 +25,6 @@ private:
 
 	//Fuerzas
 	std::vector<Vector3> fuerzas;	//Fuerzas que actuan sobre la particula
-	float masa = 1;
 
 	//Gravedad en m/s
 	Vector3 grav = Vector3 (0, -9.8, 0);

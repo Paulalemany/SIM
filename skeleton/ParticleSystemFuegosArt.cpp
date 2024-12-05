@@ -39,7 +39,7 @@ bool ParticleSystemFuegosArt::update(double t)
 	//eliminacion de ini
 	for (int i = 0; i < ini.size(); i++) {
 
-		if (!ini[i]->getAlive()) {
+		if (!ini[i]->isAlive()) {
 
 			//Creamos aqui la explosion del fuego
 			fuegosGenerator->setOrigin(ini[i]->getPosition());

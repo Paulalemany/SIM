@@ -256,6 +256,7 @@
     <ClCompile Include="AnclaFG.cpp" />
     <ClCompile Include="AnclaScene.cpp" />
     <ClCompile Include="callbacks.cpp" />
+    <ClCompile Include="Entidad.cpp" />
     <ClCompile Include="ExplosionGenerator.cpp" />
     <ClCompile Include="ExplosionScene.cpp" />
     <ClCompile Include="FlotacionForce.cpp" />
@@ -266,6 +267,7 @@
     <ClCompile Include="FuenteGenerator.cpp" />
     <ClCompile Include="GameMachine.cpp" />
     <ClCompile Include="HumoGenerator.cpp" />
+    <ClCompile Include="Interactivo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MuelleForeGenerator.cpp" />
     <ClCompile Include="MuelleParticleGenerator.cpp" />
@@ -296,6 +298,7 @@
     <ClInclude Include="AnclaScene.h" />
     <ClInclude Include="callbacks.hpp" />
     <ClInclude Include="core.hpp" />
+    <ClInclude Include="Entidad.h" />
     <ClInclude Include="ExplosionGenerator.h" />
     <ClInclude Include="ExplosionScene.h" />
     <ClInclude Include="FlotacionForce.h" />
@@ -306,6 +309,7 @@
     <ClInclude Include="FuenteGenerator.h" />
     <ClInclude Include="GameMachine.h" />
     <ClInclude Include="HumoGenerator.h" />
+    <ClInclude Include="Interactivo.h" />
     <ClInclude Include="MuelleForeGenerator.h" />
     <ClInclude Include="MuelleParticleGenerator.h" />
     <ClInclude Include="MuellesScene.h" />

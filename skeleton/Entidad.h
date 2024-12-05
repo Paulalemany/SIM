@@ -10,13 +10,13 @@ public:
 
 	virtual ~Entidad() {};
 
-	//Getters
+	///Getters
 	int getVolumen() { return escala.x * escala.y * escala.z; }
 	int getAltura() { return escala.y; }
 	Vector3 getPosition() { return pose.p; }
 	bool isAlive() { return alive; }
 
-	//Setters
+	///Setters
 	virtual void setPosition(Vector3 p) = 0;
 	virtual void setVelocidad(Vector3 v) = 0;
 
@@ -26,16 +26,18 @@ public:
 	
 
 protected:
-	physx::PxTransform pose;
+	//Propiedades
+	physx::PxTransform pose;	//Transform
 	Vector3 escala;
+	Vector3 vel;
+	Vector4 color;
+	float masa = 1;
+
+	//Objetos
 	RenderItem* item = nullptr;
 	
+	//Vida
 	float liveTime = 500;	//Tiempo de vida estandar
 	bool alive = true;		//De forma predeterminada estan vivas
-
-	float masa;
-
-	Vector3 vel;
-
 };
 

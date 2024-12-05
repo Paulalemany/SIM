@@ -8,7 +8,7 @@ Particle::Particle(physx::PxVec3 Pos)
 	ace = { 0,0,0 };
 	color = { 1, 0, 1, 1 };
 
-	renderItem = new RenderItem
+	item = new RenderItem
 	(CreateShape(physx::PxBoxGeometry(Vector3{ 5,5,5 })),
 		&pose, color);
 }
@@ -20,7 +20,7 @@ Particle::Particle(physx::PxVec3 Pos, float r, Vector4 col)
 	ace = { 0,0,0 };
 	color = col;
 
-	renderItem = new RenderItem
+	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(r)),
 		&pose, color);
 }
@@ -33,7 +33,7 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col)
 	ace = Vector3(0, 0, 0);
 	color = col;
 
-	renderItem = new RenderItem
+	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
 		&pose, color);
 }
@@ -46,7 +46,7 @@ Particle::Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D)
 	d = D;
 	color = col;
 
-	renderItem = new RenderItem
+	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
 		&pose, col);
 }
@@ -60,14 +60,14 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxV
 	d = D;
 	color = col;
 
-	renderItem = new RenderItem
+	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)), 
 		&pose, col);
 }
 
 Particle::~Particle()
 {
-	DeregisterRenderItem(renderItem);
+	DeregisterRenderItem(item);
 }
 
 void Particle::integrate(double t)
@@ -98,24 +98,24 @@ void Particle::restLiveTime(double t)
 
 void Particle::setVisibility(bool vi)
 {
-	if (vi) RegisterRenderItem(renderItem);
-	else DeregisterRenderItem(renderItem);
+	if (vi) RegisterRenderItem(item);
+	else DeregisterRenderItem(item);
 }
 
 void Particle::setTam(float r, int shape)
 {
 	//Tengo que buscar una manera de eliminar el enterior
-	DeregisterRenderItem(renderItem);
+	DeregisterRenderItem(item);
 
 	switch (shape) {
 
 	case 0:		//Es un circulo
-		renderItem = new RenderItem
+		item = new RenderItem
 		(CreateShape(physx::PxSphereGeometry(r)),
 			&pose, color);
 		break;
 	case 1:		//Es un cuadrado
-		renderItem = new RenderItem
+		item = new RenderItem
 		(CreateShape(physx::PxBoxGeometry(Vector3{ r,1,r })),
 			&pose, color);
 		break;

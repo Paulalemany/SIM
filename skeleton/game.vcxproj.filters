@@ -112,6 +112,12 @@
     <ClCompile Include="SolidoRigido.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Interactivo.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Entidad.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -223,6 +229,12 @@
       <Filter>h\Escenas</Filter>
     </ClInclude>
     <ClInclude Include="SolidoRigido.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Interactivo.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Entidad.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>

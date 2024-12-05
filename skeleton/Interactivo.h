@@ -1,5 +1,6 @@
 #pragma once
 #include "core.hpp"
+#include <PxPhysicsAPI.h>
 
 //Clase padre para los objetos que sean interativos (Botones etc)
 using _tipo = std::string;	//Para mejor lectura

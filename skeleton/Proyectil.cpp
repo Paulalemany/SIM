@@ -1,5 +1,4 @@
 #include "Proyectil.h"
-#include <iostream>
 
 Proyectil::Proyectil()
 	: Particle({0,0,0}, {0,0,0}, Vector4(0.34, 0.13, 0.39, 1), {0,0,0}, 0.5)

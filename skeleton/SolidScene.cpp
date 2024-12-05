@@ -18,8 +18,10 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 
 	objetos.push_back(suelo);
 
+	//Vamos a probar lo de los momentos de inercia
 	SolidoRigido* solido1 = new SolidoRigido(scene, physics, 
 		{ -70, 200, -70 }, { 0,5,0 }, { 0,0,0 }, { 5, 5, 5 }, 0.15, { 1,0,0,1 });
+	solido1->setInertia();
 
 	objetos.push_back(solido1);
 

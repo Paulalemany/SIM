@@ -1,5 +1,4 @@
 #include "Particle.h"
-#include <iostream>
 
 Particle::Particle(physx::PxVec3 Pos)
 {

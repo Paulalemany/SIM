@@ -91,3 +91,8 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	}
 
 }
+
+void GameMachine::shoot(PxVec2 pos)
+{
+	bullet = new Particle({ pos.x / 5, pos.y / 5, -1 }, { 10, 0,0 }, { 1,0,0,1 });
+}

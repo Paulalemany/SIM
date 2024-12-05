@@ -157,6 +157,8 @@ void handleMouseInput(int button, int state, int x, int y) {
 	PxVec2 pos =
 	GetCamera()->getMousePos();
 
+	gameMachine->shoot(pos);
+
 	std::cout << " x: " << pos.x << " y: " << pos.y;
 }
 

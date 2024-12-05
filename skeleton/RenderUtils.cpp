@@ -5,6 +5,8 @@
 #include "core.hpp"
 #include "RenderUtils.hpp"
 
+#include <iostream>
+
 
 using namespace physx;
 
@@ -47,6 +49,7 @@ namespace
 {
 	Camera*	sCamera;
 
+	//Mueve la camara cuando pellizca el raton
 void motionCallback(int x, int y)
 {
 	sCamera->handleMotion(x, y);
@@ -61,9 +64,11 @@ void keyboardCallback(unsigned char key, int x, int y)
 		keyPress(key, sCamera->getTransform());
 }
 
+	//Pilla los clicks del raton
 void mouseCallback(int button, int state, int x, int y)
 {
 	sCamera->handleMouse(button, state, x, y);
+	handleMouseInput(button, state, x, y);
 }
 
 void idleCallback()

@@ -151,14 +151,17 @@ void keyPress(unsigned char key, const PxTransform& camera)
 }
 
 //Input del raton
-void handleMouseInput(int x, int y) {
+void handleMouseInput(int button, int state, int x, int y) {
 
-	std::cout << "click";
+	
+	PxVec2 pos =
+	GetCamera()->getMousePos();
+
+	std::cout << " x: " << pos.x << " y: " << pos.y;
 }
 
 void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
 {
-	std::cout << "click";
 	PX_UNUSED(actor1);
 	PX_UNUSED(actor2);
 }

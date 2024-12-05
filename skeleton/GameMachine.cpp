@@ -1,4 +1,5 @@
 #include "GameMachine.h"
+#include <iostream>
 
 GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 {
@@ -92,7 +93,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 }
 
-void GameMachine::shoot(PxVec2 pos)
+void GameMachine::shoot(PxVec3 pos)
 {
-	bullet = new Particle({ pos.x / 5, pos.y / 5, -1 }, { 10, 0,0 }, { 1,0,0,1 });
+	Vector3 ori = { pos.x, pos.y, -1 };
+
+	std::cout << " x: " << ori.x << " y: " << ori.y;
+	bullet = new Particle(ori, { 10, 0,0 }, { 1,0,0,1 });
 }

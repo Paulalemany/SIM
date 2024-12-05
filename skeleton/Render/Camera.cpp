@@ -30,7 +30,10 @@
 #include "Camera.h"
 #include <ctype.h>
 #include "foundation/PxMat33.h"
+#include "foundation/PxMat44.h"
 #include "..\core.hpp"
+
+#include <iostream>
 
 using namespace physx;
 
@@ -55,18 +58,27 @@ void Camera::handleMouse(int button, int state, int x, int y)
 
 
 //Coge la posicion del raton
-PxVec2 Camera::getMousePos()
-{
-	//Coordenadas de la pantalla
-	float ndcX = (2.0f * mMouseX) / WidthCam - 1.0f;
-	float ndcY = 1.0f - (2.0f * mMouseY) / HeightCam;
-
-	//Coordenadas del mundo
-	float viewX = ndcX * 5.0f;
-	float viewY = ndcY * 3.0f;
-
-	return { (float)viewX , (float)viewY };
-}
+//PxVec3 Camera::getMousePos(PxMat44& viewMatrix, PxMat44& projectionMatrix)
+//{
+//	
+//
+//	//Pone las coordenadas dentro del rango [-1,1]
+//	float ndcX = ((2.0f * mMouseX) / WidthCam) - 1.0f;
+//	float ndcY = 1.0f - ((2.0f * mMouseY) / HeightCam);
+//
+//	PxVec4 clipSpacePoint(ndcX, ndcY, -1, 1.0f);
+//
+//	// Transformar a espacio de cámara
+//	PxMat44 inverseProjection = projectionMatrix.inverseRT();
+//	PxVec4 cameraSpacePoint = inverseProjection.transform(clipSpacePoint);
+//
+//	// Transformar a espacio del mundo
+//	cameraSpacePoint /= cameraSpacePoint.w; // Homogeneizar
+//	PxMat44 inverseView = viewMatrix.inverseRT();
+//	PxVec4 worldSpacePoint = inverseView.transform(cameraSpacePoint);
+//
+//	return PxVec3(worldSpacePoint.x, worldSpacePoint.y, worldSpacePoint.z);
+//}
 
 bool Camera::handleKey(unsigned char key, int x, int y, float speed)
 {
@@ -119,6 +131,29 @@ PxTransform Camera::getTransform() const
 
 	PxMat33 m(mDir.cross(viewY), viewY, -mDir);
 	return PxTransform(mEye, PxQuat(m));
+}
+
+physx::PxVec3 Camera::getMousePos()
+{
+	PxMat44 projectionMatrix;
+	PxMat44 viewMatrix({ mEye, 0 }, { mDir, 0 }, { 0,1,0, 0 }, { 0.0f, 0.0, 0.0, 0.0 });
+
+	//Pone las coordenadas dentro del rango [-1,1]
+	float ndcX = ((2.0f * mMouseX) / WidthCam) - 1.0f;
+	float ndcY = 1.0f - ((2.0f * mMouseY) / HeightCam);
+
+	PxVec4 clipSpacePoint(ndcX, ndcY, -1, 1.0f);
+
+	// Transformar a espacio de cámara
+	PxMat44 inverseProjection = projectionMatrix.inverseRT();
+	PxVec4 cameraSpacePoint = inverseProjection.transform(clipSpacePoint);
+
+	// Transformar a espacio del mundo
+	cameraSpacePoint /= cameraSpacePoint.w; // Homogeneizar
+	PxMat44 inverseView = viewMatrix.inverseRT();
+	PxVec4 worldSpacePoint = inverseView.transform(cameraSpacePoint);
+
+	return PxVec3(worldSpacePoint.x, worldSpacePoint.y, worldSpacePoint.z);
 }
 
 PxVec3 Camera::getEye() const

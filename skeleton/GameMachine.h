@@ -24,7 +24,7 @@ public:
 
 	void keyPressed(unsigned char key, const physx::PxTransform& camera);
 
-	void shoot(PxVec2 pos);
+	void shoot(PxVec3 pos);
 
 private:
 	int actual = 0;

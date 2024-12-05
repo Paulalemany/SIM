@@ -46,13 +46,13 @@ public:
 	void				handleMotion(int x, int y);
 	void				handleAnalogMove(float x, float y);
 
-	physx::PxVec2	    getMousePos();
+	physx::PxVec3	    getMousePos();
 	physx::PxVec3		getEye()	const;
 	physx::PxVec3		getDir()	const;
 	physx::PxTransform	getTransform() const;
 private:
-	physx::PxVec3	mEye;
-	physx::PxVec3	mDir;
+	physx::PxVec3	mEye;	//Posicion de la camara
+	physx::PxVec3	mDir;	//Donde apunta la camara (Vector director)
 	int				mMouseX;
 	int				mMouseY;
 };

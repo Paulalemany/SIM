@@ -11,8 +11,6 @@
 
 #include "GameMachine.h"
 
-
-
 std::string display_text = "This is a test";
 
 
@@ -152,8 +150,15 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	
 }
 
+//Input del raton
+void handleMouseInput(int x, int y) {
+
+	std::cout << "click";
+}
+
 void onCollision(physx::PxActor* actor1, physx::PxActor* actor2)
 {
+	std::cout << "click";
 	PX_UNUSED(actor1);
 	PX_UNUSED(actor2);
 }

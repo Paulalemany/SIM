@@ -30,6 +30,9 @@
 #include "Render.h"
 #include <assert.h>
 
+int WidthCam = 0;
+int HeightCam = 0;
+
 using namespace physx;
 
 static float gCylinderData[]={
@@ -237,6 +240,8 @@ namespace
 void reshapeCallback(int width, int height)
 {
 	glViewport(0, 0, width, height);
+	WidthCam = width;
+	HeightCam = height;
 }
 }
 

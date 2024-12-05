@@ -47,7 +47,10 @@
 #endif
 #include <string>
 
+//Variables que podemos usar de forma externa
 extern std::string display_text;
+extern int WidthCam;
+extern int HeightCam;
 
 namespace Snippets
 {

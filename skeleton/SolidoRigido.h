@@ -1,9 +1,8 @@
 #pragma once
-#include "RenderUtils.hpp"
-#include <PxPhysicsAPI.h>
+#include "Entidad.h"
 
 using namespace physx;
-class SolidoRigido
+class SolidoRigido : public Entidad
 {
 public:
 	SolidoRigido() {}
@@ -25,19 +24,41 @@ public:
 	void CreateStatic(PxScene* _scene, PxPhysics* _physics,
 		PxTransform ori, Vector3 tam, Vector4 col);
 
+	///Setters
 	void setInertia() {
 		//Dentro simplemente se pone por el tamaño?
 		solido->setMassSpaceInertiaTensor({ size.y * size.z, size.x * size.z, size.x * size.y});
 	}
+	void setPosition(Vector3 p) override
+	{
+		pose.p = p;
+		solido->setGlobalPose(pose);
+	}
+	void setVelocidad(Vector3 v) override 
+	{
+		Lvel = v;
+		solido->setLinearVelocity(Lvel);
+	}
+
+	///Getters
+	Vector3 getPosition() override {
+		if (solido != nullptr) return solido->getGlobalPose().p;
+		else estatico->getGlobalPose().p;
+	}
+
+	void integrate(double t) override;
 
 	///Fuerzas
-	void addForce(Vector3 F);	//Los objetos dinamicos ya tienen un addForce
+	void addForce(Vector3 F) override;	//Los objetos dinamicos ya tienen un addForce
 
 protected:
 	RenderItem* item = nullptr;
 	PxRigidDynamic* solido = nullptr;
 	PxRigidStatic* estatico = nullptr;
 	Vector3 size;
+
+	Vector3 Lvel;
+	Vector3 Wvel;
 
 	//Le añadimos tiempo de vida
 	float liveTime = 500;

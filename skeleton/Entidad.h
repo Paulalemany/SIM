@@ -13,7 +13,7 @@ public:
 	///Getters
 	int getVolumen() { return escala.x * escala.y * escala.z; }
 	int getAltura() { return escala.y; }
-	Vector3 getPosition() { return pose.p; }
+	virtual Vector3 getPosition() { return pose.p; }
 	bool isAlive() { return alive; }
 
 	///Setters

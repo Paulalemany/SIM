@@ -32,6 +32,7 @@
 #include "Camera.h"
 #include <ctype.h>
 #include "foundation/PxMat33.h"
+#include "..\core.hpp"
 
 using namespace physx;
 
@@ -76,6 +77,19 @@ void Camera::handleAnalogMove(float x, float y)
 	PxVec3 viewY = mDir.cross(PxVec3(0,1,0)).getNormalized();
 	mEye += mDir*y;
 	mEye += viewY*x;
+}
+
+physx::PxVec2 Camera::getMousePos()
+{
+	return physx::PxVec2();
+
+	//float ndcX = (2.0 * mMouseX) / 
+
+	/*float ndcX = (2.0f * mMouseX) / WidthCam - 1.0f;
+	float ndcY = 1.0f - (2.0f * mMouseY) / HeightCam;
+	float viewX = ndcX * 5.0f;
+	float viewY = ndcY * 3.0f;
+	return { (float)viewX , (float)viewY };*/
 }
 
 void Camera::handleMotion(int x, int y)

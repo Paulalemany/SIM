@@ -4,6 +4,9 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, float d, Vector4 col)
 {
 	size = tam;
+	Lvel = vel;
+	Wvel = W;
+
 	solido = _physics->createRigidDynamic(ori);
 	solido->setLinearVelocity(vel);
 	solido->setAngularVelocity(W);
@@ -12,6 +15,8 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	solido->attachShape(*shape);
 
 	PxRigidBodyExt::updateMassAndInertia(*solido, d);	//El 0.15 es la densidad kg/m3
+	masa = solido->getMass();
+
 	_scene->addActor(*solido);
 
 	item = new RenderItem(shape, solido, col);
@@ -27,6 +32,14 @@ void SolidoRigido::CreateStatic(PxScene* _scene, PxPhysics* _physics, PxTransfor
 
 	item= new RenderItem(shapeEstatic, estatico, col);
 
+}
+
+void SolidoRigido::integrate(double t)
+{
+	//Gestionamos con el tiempo de vida
+	liveTime -= t;
+
+	if (liveTime <= 0) alive = false;
 }
 
 void SolidoRigido::addForce(Vector3 F)

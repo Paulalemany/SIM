@@ -49,5 +49,5 @@ void SolidScene::quit()
 {
 	//Vamos a testear los cambios de escena
 
-	DeregisterRenderItem(item);
+	//DeregisterRenderItem(item);
 }

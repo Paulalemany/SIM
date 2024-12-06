@@ -97,8 +97,8 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 void GameMachine::shoot(PxVec3 pos)
 {
-	Vector3 ori = { pos.x, pos.y, -1 };
+	Vector3 ori = pos;
 
-	//std::cout << " x: " << ori.x << " y: " << ori.y;
-	bullet = new Particle({-35, 35, -1}, {10, 0,0}, {1,0,0,1});
+	std::cout << " x: " << ori.x << " y: " << ori.y;
+	bullet = new Particle({-35, 35, -1}, {ori.x * 10, ori.y * 10, ori.z}, {1,0,0,1});
 }

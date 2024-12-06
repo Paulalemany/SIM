@@ -153,7 +153,10 @@ physx::PxVec3 Camera::getMousePos()
 	PxMat44 inverseView = viewMatrix.inverseRT();
 	PxVec4 worldSpacePoint = inverseView.transform(cameraSpacePoint);
 
-	return PxVec3(worldSpacePoint.x, worldSpacePoint.y, worldSpacePoint.z);
+	PxVec2 dir = { (float)ndcX, (float)ndcY };
+	dir.normalize();
+
+	return PxVec3(dir.x, dir.y, 0);
 }
 
 PxVec3 Camera::getEye() const

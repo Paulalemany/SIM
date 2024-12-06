@@ -29,6 +29,8 @@ void GameMachine::update(double t)
 {
 	//Solo hacemos el update de la escena en la que estamos
 	escenas[actual]->update(t);
+
+	if (bullet != nullptr) bullet->update(t);
 }
 
 void GameMachine::changeScene(int s)
@@ -97,6 +99,6 @@ void GameMachine::shoot(PxVec3 pos)
 {
 	Vector3 ori = { pos.x, pos.y, -1 };
 
-	std::cout << " x: " << ori.x << " y: " << ori.y;
-	bullet = new Particle(ori, { 10, 0,0 }, { 1,0,0,1 });
+	//std::cout << " x: " << ori.x << " y: " << ori.y;
+	bullet = new Particle({-35, 35, -1}, {10, 0,0}, {1,0,0,1});
 }

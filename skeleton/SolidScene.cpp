@@ -39,9 +39,11 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 
 	SolidoRigido* Y = new SolidoRigido();
 	Y->CreateStatic(scene, physics, { 0,1,0 }, { 0.5,0.5,0.5 }, { 0,1,0,1 });
+	
 
+	//Voy a utilizarlo de cañon
 	SolidoRigido* P = new SolidoRigido();
-	P->CreateStatic(scene, physics, { 10,0,0 }, { 0.5,0.5,0.5 }, { 0,0,0,1 });
+	P->CreateStatic(scene, physics, { -20,0,0 }, { 0.5,0.5,0.5 }, { 0,0,0,1 });
 }
 
 void SolidScene::update(double t)

@@ -99,6 +99,9 @@ void GameMachine::shoot(PxVec3 pos)
 {
 	if (bullet != nullptr) bullet->~Particle();
 
-	bullet = new Particle(pos, {0, 0, 0}, {1,0,0,1});
-	//bullet->setTam(0.5, 0);
+	//La direccion es el vector que hay entre el punto pos y el origen
+	PxVec3 ori = {-20, 0, 0};
+	PxVec3 dir = (pos - ori);
+	bullet = new Particle(ori, dir, {1,0,0,1});
+	bullet->setTam(0.5, 0);
 }

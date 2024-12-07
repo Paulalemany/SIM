@@ -143,7 +143,7 @@ void renderLoop()
 {
 	StartCounter();
 	//El pimero es el ojo, la propia posicion de la camara, la segunda hacia donde mira
-	sCamera = new Camera(PxVec3(50.0f, 50.0f, 50.0f), PxVec3(-0.0f,-0.0f,-1.0f));
+	sCamera = new Camera(PxVec3(0.0f, 0.0f, 50.0f), PxVec3(0.0f,0.0f,-1.0f));
 
 	setupDefaultWindow("Simulacion Fisica Videojuegos");
 	setupDefaultRenderState();

@@ -135,28 +135,18 @@ PxTransform Camera::getTransform() const
 
 physx::PxVec3 Camera::getMousePos()
 {
-	PxMat44 projectionMatrix;
-	PxMat44 viewMatrix({ mEye, 0 }, { mDir, 0 }, { 0,1,0, 0 }, { 0.0f, 0.0, 0.0, 0.0 });
+	//Acotamos la direccion al rango [-1, 1]
+	float ndcX = (2.0f * mMouseX) / WidthCam - 1.0f;
+	float ndcY = 1.0f - (2.0f * mMouseY) / HeightCam;
 
-	//Pone las coordenadas dentro del rango [-1,1]
-	float ndcX = ((2.0f * mMouseX) / WidthCam) - 1.0f;
-	float ndcY = 1.0f - ((2.0f * mMouseY) / HeightCam);
+	//Traspasamos a coordenadas del mundo
+	//Este numero multiplica para que acabe en la posicion del raton
+	//Para que funcione en pantalla pequeña usamos el 29
+	float viewX = ndcX * 29.0f;	
+	float viewY = ndcY * 29.0f;
 
-	PxVec4 clipSpacePoint(ndcX, ndcY, -1, 1.0f);
 
-	// Transformar a espacio de cámara
-	PxMat44 inverseProjection = projectionMatrix.inverseRT();
-	PxVec4 cameraSpacePoint = inverseProjection.transform(clipSpacePoint);
-
-	// Transformar a espacio del mundo
-	cameraSpacePoint /= cameraSpacePoint.w; // Homogeneizar
-	PxMat44 inverseView = viewMatrix.inverseRT();
-	PxVec4 worldSpacePoint = inverseView.transform(cameraSpacePoint);
-
-	PxVec2 dir = { (float)ndcX, (float)ndcY };
-	dir.normalize();
-
-	return PxVec3(dir.x, dir.y, 0);
+	return PxVec3(viewX, viewY, 0);
 }
 
 PxVec3 Camera::getEye() const

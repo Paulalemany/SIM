@@ -38,8 +38,7 @@ void GameMachine::update(double t)
 	if (bullet != nullptr) {
 		bullet->update(t);
 
-		if (bullet->inBoundingBox(target->getPosition())) std::cout << "GOOOOL";
-		if (target->inBoundingBox(bullet->getPosition())) std::cout << "GOOOOL?";
+		if (target->inBoundingBox(bullet->getPosition())) std::cout << "Felicidades eres pro";
 	}
 }
 

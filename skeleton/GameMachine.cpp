@@ -101,7 +101,7 @@ void GameMachine::shoot(PxVec3 pos)
 
 	//La direccion es el vector que hay entre el punto pos y el origen
 	PxVec3 ori = {-20, 0, 0};
-	PxVec3 dir = (pos - ori);
-	bullet = new Particle(ori, dir, {1,0,0,1});
+	PxVec3 dir = (pos - ori).getNormalized();
+	bullet = new Proyectil(ori, dir * 40, { 0,0,0 }, 0.5, { 1, 0, 0, 1 });
 	bullet->setTam(0.5, 0);
 }

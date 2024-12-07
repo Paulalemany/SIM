@@ -19,6 +19,11 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	for (int i = 0; i < escenas.size(); i++) {
 		if (i != actual) escenas[i]->quit();
 	}
+
+	//Vamos a hacer esto un poco de mala manera para testear
+
+	target = new SolidoRigido();
+	target->CreateStatic(s, p, { 20, 0, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
 }
 
 GameMachine::~GameMachine()
@@ -30,7 +35,12 @@ void GameMachine::update(double t)
 	//Solo hacemos el update de la escena en la que estamos
 	escenas[actual]->update(t);
 
-	if (bullet != nullptr) bullet->update(t);
+	if (bullet != nullptr) {
+		bullet->update(t);
+
+		if (bullet->inBoundingBox(target->getPosition())) std::cout << "GOOOOL";
+		if (target->inBoundingBox(bullet->getPosition())) std::cout << "GOOOOL?";
+	}
 }
 
 void GameMachine::changeScene(int s)

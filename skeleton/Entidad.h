@@ -6,7 +6,7 @@ class Entidad : public Interactivo	//Todas las entidades son interactivas
 {
 public:
 	Entidad() {}
-	Entidad(Vector3 p, Vector3 s, _tipo t = "Normal") : Interactivo(p, s.x, s.y, s.z, t) {};
+	Entidad(Vector3 p, Vector3 s);
 
 	virtual ~Entidad() {};
 

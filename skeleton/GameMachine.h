@@ -47,5 +47,6 @@ private:
 	std::vector<Scene*> escenas;
 
 	Particle* bullet = nullptr;
+	SolidoRigido* target = nullptr;
 };
 

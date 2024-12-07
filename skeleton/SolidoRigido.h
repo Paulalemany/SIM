@@ -40,12 +40,6 @@ public:
 		solido->setLinearVelocity(Lvel);
 	}
 
-	///Getters
-	Vector3 getPosition() override {
-		if (solido != nullptr) return solido->getGlobalPose().p;
-		else estatico->getGlobalPose().p;
-	}
-
 	void integrate(double t) override;
 
 	///Fuerzas

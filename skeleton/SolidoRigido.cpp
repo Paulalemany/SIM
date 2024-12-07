@@ -2,6 +2,7 @@
 
 SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics, 
 	PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, float d, Vector4 col)
+	: Entidad(ori.p, tam)
 {
 	size = tam;
 	Lvel = vel;
@@ -25,7 +26,10 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 
 void SolidoRigido::CreateStatic(PxScene* _scene, PxPhysics* _physics, PxTransform ori, Vector3 tam, Vector4 col)
 {
+	createCaja(ori.p,tam.x, tam.y, tam.z );
 	estatico = _physics->createRigidStatic(ori);
+	estatico->setGlobalPose(ori);
+	pose = ori;
 	PxShape* shapeEstatic = CreateShape(PxBoxGeometry(tam));
 	estatico->attachShape(*shapeEstatic);
 	_scene->addActor(*estatico);

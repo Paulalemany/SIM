@@ -1,12 +1,11 @@
 #include "Interactivo.h"
 
-Interactivo::Interactivo(Vector3 _pos, float h, float w, float l, _tipo t)
+Interactivo::Interactivo(Vector3 _pos, float h, float w, float l)
 {
 	pos = _pos;
 	altura = h;
 	ancho = w;
 	largo = l;
-	tipo = t;
 
 	//Creamos la boundingBox
 	Caja.minX = pos.x - ancho;
@@ -15,6 +14,24 @@ Interactivo::Interactivo(Vector3 _pos, float h, float w, float l, _tipo t)
 	Caja.minY = pos.y - altura;
 	Caja.maxY = pos.y + altura;
 	
+	Caja.minZ = pos.z - largo;
+	Caja.maxZ = pos.z + largo;
+}
+
+void Interactivo::createCaja(Vector3 _pos, float h, float w, float l)
+{
+	pos = _pos;
+	altura = h;
+	ancho = w;
+	largo = l;
+
+	//Creamos la boundingBox
+	Caja.minX = pos.x - ancho;
+	Caja.maxX = pos.x + ancho;
+
+	Caja.minY = pos.y - altura;
+	Caja.maxY = pos.y + altura;
+
 	Caja.minZ = pos.z - largo;
 	Caja.maxZ = pos.z + largo;
 }

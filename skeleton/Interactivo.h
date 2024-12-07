@@ -10,7 +10,9 @@ class Interactivo
 public:
 	_tipo tipo;
 	Interactivo() {};	//Constructora vacia
-	Interactivo(Vector3 _pos, float h, float w, float l, _tipo t = "NORMAL");
+	Interactivo(Vector3 _pos, float h, float w, float l);
+
+	void createCaja(Vector3 _pos, float h, float w, float l);
 
 	//Comprobacion de colisiones
 	bool inBoundingBox(Vector3 _pos);

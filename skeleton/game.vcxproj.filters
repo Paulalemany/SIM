@@ -118,6 +118,9 @@
     <ClCompile Include="Entidad.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Boton.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -235,6 +238,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Entidad.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Boton.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>

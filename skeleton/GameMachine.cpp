@@ -98,13 +98,7 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 void GameMachine::shoot(PxVec3 pos)
 {
 	if (bullet != nullptr) bullet->~Particle();
-	Vector3 dir = { 1, 0, 0 };
 
-	Vector3 MousePos = { GetCamera()->getMousePos().x, GetCamera()->getMousePos().y, -20 };
-
-	cout << "Pos: " << pos.x << " " << pos.y << " " << pos.z << endl;
-	cout << "MousePos: " << MousePos.x << " " << MousePos.y << " " << MousePos.z << endl;
-	//10 por ahora es la velocidad
 	bullet = new Particle(pos, {0, 0, 0}, {1,0,0,1});
-	bullet->setTam(0.5, 0);
+	//bullet->setTam(0.5, 0);
 }

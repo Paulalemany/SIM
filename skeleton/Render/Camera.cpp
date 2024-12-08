@@ -94,7 +94,7 @@ bool Camera::handleKey(unsigned char key, int x, int y, float speed)
 	case 'D':	mEye += viewY*2.0f*speed;		break;
 	default:							return false;
 	}*/
-	return true;
+	return false;
 }
 
 void Camera::handleAnalogMove(float x, float y)

@@ -38,7 +38,7 @@ void GameMachine::update(double t)
 	if (bullet != nullptr) {
 		bullet->update(t);
 
-		if (target->inBoundingBox(bullet->getPosition())) std::cout << "Felicidades eres pro";
+		if (target->inBoundingBox(bullet->getPosition())) ;	//Aqui simplemente poner la condicion de victoria
 	}
 }
 
@@ -96,6 +96,27 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 		changeScene(SOLIDOS);
 		break;
 
+
+		///Input para cambiar la bala
+	case 's':
+		std::cout << "---BALA PEQUEÑA---\n";
+		bulletColor = { 0, 0, 1, 1 };
+		bulletMasa = 1;
+		bulletTam = 0.5;
+		break;
+	case 'm':
+		std::cout << "---BALA MEDIANA---\n";
+		bulletColor = { 1, 0, 0, 1 };
+		bulletMasa = 10;
+		bulletTam = 1;
+		break;
+	case 'l':
+		std::cout << "---BALA GRANDE---\n";
+		bulletColor = { 0, 1, 0, 1 };
+		bulletMasa = 100;
+		bulletTam = 2;
+		break;
+
 	default:
 
 		escenas[actual]->keyPressed(key, camera);
@@ -111,6 +132,9 @@ void GameMachine::shoot(PxVec3 pos)
 	//La direccion es el vector que hay entre el punto pos y el origen
 	PxVec3 ori = {-20, 0, 0};
 	PxVec3 dir = (pos - ori).getNormalized();
-	bullet = new Proyectil(ori, dir * 40, { 0,0,0 }, 0.5, { 1, 0, 0, 1 });
-	bullet->setTam(0.5, 0);
+	bullet = new Proyectil(ori, dir * 40, { 0,0,0 }, 0.5, bulletColor);
+
+	//Estas dos cosas y el color es lo que deberia variar con cada tipo de bala
+	bullet->setMasa(bulletMasa);
+	bullet->setTam(bulletTam, 0);
 }

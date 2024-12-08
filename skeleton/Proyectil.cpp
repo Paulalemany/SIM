@@ -57,6 +57,7 @@ void Proyectil::applyForces()
 
 	ace = FuerzaTot / masa;
 
-	//Le sumamos la gravedad
+	//Le sumamos la gravedad 
+	//La aceleracion de la gravedad depende de la masa del objeto no?
 	ace += grav;
 }

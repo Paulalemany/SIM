@@ -121,6 +121,9 @@
     <ClCompile Include="Boton.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="NivelFlotacion.cpp">
+      <Filter>cpp\Niveles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -243,6 +246,9 @@
     <ClInclude Include="Boton.h">
       <Filter>h</Filter>
     </ClInclude>
+    <ClInclude Include="NivelFlotacion.h">
+      <Filter>h\Niveles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
@@ -283,6 +289,12 @@
     </Filter>
     <Filter Include="h\basics">
       <UniqueIdentifier>{e9defb86-1b85-4401-8939-cd383f4bf34a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp\Niveles">
+      <UniqueIdentifier>{e205c70e-49ca-4ff3-a5bf-047594c09256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h\Niveles">
+      <UniqueIdentifier>{cc6dbc6e-3b84-493d-956f-565c775977fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

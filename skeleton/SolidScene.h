@@ -8,30 +8,38 @@ class SolidScene : public Scene
 public:
 
 	SolidScene(PxScene* _scene, PxPhysics* _physics);
+	~SolidScene();
 
-	void update(double t) override;
+	virtual void update(double t) override;
 
 	///Input de la escena
 	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
+	virtual void shoot(Vector3 pos);
 
 	/// Para la gestion de escenas
-	void init() override;	//Pone la escena
-	void quit() override;	//Quita la escena
+	virtual void init() override;	//Pone la escena
+	virtual void quit() override;	//Quita la escena
 
 	//Iria bien un metodo de generar escenario o algo asi
 	//Podria ser un metodo privado perfectamente
 
-private:
+protected:
 	PxScene* scene = NULL;
 	PxPhysics* physics = NULL;
 	PxMaterial* mat = NULL;
 
-	//Objetos
-	PxRigidStatic* suelo = nullptr;
-	RenderItem* item = nullptr;
-
 	//Guardamos todos los objetos en un vector?
-	std::vector<SolidoRigido*> objetos;
+	vector<SolidoRigido*> objetos;
+
+	///Dedicado al gameplay
+	SolidoRigido* target = nullptr;
+	Particle* bullet = nullptr;
+
+	//Particularidades de la bala
+	//De forma predeterminada sera la mediana
+	Vector4 bulletColor = { 1,0,0,1 };
+	float bulletMasa = 5;
+	float bulletTam = 1;
 
 };
 

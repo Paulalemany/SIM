@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+//Escenas de las practicas
 #include "ParticleScene.h"
 #include "ForcesScene.h"
 #include "ExplosionScene.h"
@@ -10,6 +11,9 @@
 #include "AnclaScene.h"
 #include "FlotacionScene.h"
 #include "SolidScene.h"
+
+//Niveles
+#include "NivelFlotacion.h"
 
 
 class GameMachine
@@ -23,7 +27,6 @@ public:
 	void changeScene(int s);
 
 	void keyPressed(unsigned char key, const physx::PxTransform& camera);
-
 	void shoot(PxVec3 pos);
 
 private:
@@ -40,19 +43,15 @@ private:
 		MUELLES,
 		ANCLA,
 		FLOTACION,
-		SOLIDOS
+		SOLIDOS,
+	};
+
+	const enum Niveles {
+		N_FLOTACION = 0
 	};
 
 	//Escenas
-	std::vector<Scene*> escenas;
-
-	SolidoRigido* target = nullptr;
-	Particle* bullet = nullptr;
-
-	//Particularidades de la bala
-	//De forma predeterminada sera la mediana
-	Vector4 bulletColor = { 1,0,0,1 };
-	float bulletMasa = 5;
-	float bulletTam = 1;
+	vector<Scene*> escenas;
+	vector<SolidScene*> niveles;
 };
 

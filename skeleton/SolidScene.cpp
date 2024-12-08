@@ -24,7 +24,13 @@ void SolidScene::update(double t)
 		bullet->update(t);
 
 		if (target->inBoundingBox(bullet->getPosition()));	//Aqui simplemente poner la condicion de victoria
+		for (auto f : fuerzas) {
+			f->update(t);
+			if (f->onZone(bullet->getPosition())) bullet->addForce(f->generateForce(*bullet));
+		}
 	}
+
+	//la gestion de las fuerzas sobre la bala la hacemos aparte
 	Scene::update(t);
 }
 

@@ -40,6 +40,7 @@ protected:
 	//0 < d < 1
 	//Dumpling
 	double d = 0.98;
+	bool visibility = true;
 
 };
 

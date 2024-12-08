@@ -25,6 +25,7 @@ void ForceGenerator::update(double t)
 void ForceGenerator::setRadio(float r)
 {
 	radio = r;
+	show();
 	generateZone();
 }
 
@@ -54,6 +55,7 @@ void ForceGenerator::generateZone()
 
 	//Creamos el renderItem
 	//De forma estandar la geometria de la zona va a ser una esfera
-	zona = new Particle(origen, radio, { 1,1,1,0.1 });
-	
+	zona = new Particle(origen, radio, { 1,1,1,0 });
+
+	hide();
 }

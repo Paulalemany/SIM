@@ -98,8 +98,14 @@ void Particle::restLiveTime(double t)
 
 void Particle::setVisibility(bool vi)
 {
-	if (vi) RegisterRenderItem(item);
-	else DeregisterRenderItem(item);
+	if (vi && !visibility) {
+		RegisterRenderItem(item); 
+		visibility = vi;
+	}
+	else if (!vi && visibility) {
+		DeregisterRenderItem(item);
+		visibility = vi;
+	}
 }
 
 void Particle::setTam(float r, int shape)

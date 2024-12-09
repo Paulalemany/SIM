@@ -38,7 +38,7 @@ protected:
 	//Particularidades de la bala
 	//De forma predeterminada sera la mediana
 	Vector4 bulletColor = { 1,0,0,1 };
-	float bulletMasa = 5;
+	float bulletMasa = 5000;
 	float bulletTam = 1;
 
 };

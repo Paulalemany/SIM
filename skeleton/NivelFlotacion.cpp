@@ -43,6 +43,12 @@ void NivelFlotacion::init()
 	SolidoRigido* muro = new SolidoRigido();
 	muro->CreateStatic(scene, physics, { 0,10,0 }, { 1, 10, 1 }, { 1,1,1,1 });
 	objetos.push_back(muro);
+
+	//Le voy a hacer tambien un techo que me veo venir que lo hagan por arriba
+	//Mejor trato de huir de las diagonales
+	SolidoRigido* techo = new SolidoRigido();
+	techo->CreateStatic(scene, physics, { -9, 20, 0 }, { 10, 1, 1 }, { 1,1,1,1 });
+	objetos.push_back(techo);
 }
 
 void NivelFlotacion::quit()

@@ -36,6 +36,10 @@ void NivelFlotacion::init()
 	SolidoRigido* P = new SolidoRigido();
 	P->CreateStatic(scene, physics, { -20,0,0 }, { 0.5,0.5,0.5 }, { 0,0,0,1 });
 	objetos.push_back(P);
+
+	//Muro que obliga a usar la flotacion
+	SolidoRigido* muro = new SolidoRigido();
+	muro->CreateStatic(scene, physics, { 0,5,0 }, { 1, 10, 1 }, { 1,1,1,1 });
 }
 
 void NivelFlotacion::quit()

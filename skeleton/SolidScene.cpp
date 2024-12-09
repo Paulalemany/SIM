@@ -9,8 +9,8 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 	mat = physics->createMaterial(1, 1, 0);
 
 	//Vamos a hacer esto un poco de mala manera para testear
-	target = new SolidoRigido();
-	target->CreateStatic(scene, physics, { 20, 0, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });	//Todas las escenas tendran un target
+	//El target en cada nivel va a ser distinto
+	target = new SolidoRigido(); 	//Todas las escenas tendran un target
 }
 
 SolidScene::~SolidScene()
@@ -23,11 +23,17 @@ void SolidScene::update(double t)
 	if (bullet != nullptr) {
 		bullet->update(t);
 
-		if (target->inBoundingBox(bullet->getPosition()));	//Aqui simplemente poner la condicion de victoria
+		//Aqui simplemente poner la condicion de victoria
+		if (target->inBoundingBox(bullet->getPosition())) cout << "le has dado toma ya";	
 		for (auto f : fuerzas) {
 			f->update(t);
 			if (f->onZone(bullet->getPosition())) bullet->addForce(f->generateForce(*bullet));
 		}
+
+		//Necesito comprobar las colisiones de la bala con el resto de objetos
+		for (auto s : objetos)
+			if (s->inBoundingBox(bullet->getPosition())) 
+				bullet->setVelocidad({ 0,0,0 });
 	}
 
 	//la gestion de las fuerzas sobre la bala la hacemos aparte
@@ -48,13 +54,13 @@ void SolidScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
 	case 'm':
 		std::cout << "---BALA MEDIANA---\n";
 		bulletColor = { 1, 0, 0, 1 };
-		bulletMasa = 1000;
+		bulletMasa = 5000;	//Con este se hunde pero mas o menos flota
 		bulletTam = 1;
 		break;
 	case 'l':
 		std::cout << "---BALA GRANDE---\n";
 		bulletColor = { 0, 1, 0, 1 };
-		bulletMasa = 5000;
+		bulletMasa = 10000;	//Quiero que sea una masa que le haga undirse
 		bulletTam = 2;
 		break;
 	default:

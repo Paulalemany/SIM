@@ -11,6 +11,7 @@ Particle::Particle(physx::PxVec3 Pos)
 	item = new RenderItem
 	(CreateShape(physx::PxBoxGeometry(Vector3{ 5,5,5 })),
 		&pose, color);
+	createCaja(pos, 5, 5, 5);
 }
 
 Particle::Particle(physx::PxVec3 Pos, float r, Vector4 col)
@@ -23,6 +24,8 @@ Particle::Particle(physx::PxVec3 Pos, float r, Vector4 col)
 	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(r)),
 		&pose, color);
+
+	createCaja(pose.p, r, r, r);
 }
 
 Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col)
@@ -36,6 +39,8 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col)
 	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
 		&pose, color);
+
+	createCaja(pos, 5, 5, 5);
 }
 
 Particle::Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D)
@@ -49,6 +54,8 @@ Particle::Particle(physx::PxVec3 Pos, Vector4 col, physx::PxVec3 a, double D)
 	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)),
 		&pose, col);
+
+	createCaja(pos, 5, 5, 5);
 }
 
 Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxVec3 a, double D)
@@ -63,6 +70,8 @@ Particle::Particle(physx::PxVec3 Pos, physx::PxVec3 Vel, Vector4 col, physx::PxV
 	item = new RenderItem
 	(CreateShape(physx::PxSphereGeometry(5)), 
 		&pose, col);
+
+	createCaja(pos, 5, 5, 5);
 }
 
 Particle::~Particle()
@@ -119,11 +128,13 @@ void Particle::setTam(float r, int shape)
 		item = new RenderItem
 		(CreateShape(physx::PxSphereGeometry(r)),
 			&pose, color);
+		createCaja(pose.p, r, r, r);
 		break;
 	case 1:		//Es un cuadrado
 		item = new RenderItem
 		(CreateShape(physx::PxBoxGeometry(Vector3{ r,1,r })),
 			&pose, color);
+		createCaja(pose.p, r, 1, r);
 		break;
 
 	}

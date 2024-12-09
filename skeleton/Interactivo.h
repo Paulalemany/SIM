@@ -26,9 +26,9 @@ protected:
 	float largo;
 
 	struct BoundingBox {	//Pongo las 3 coordenadas aunque mi idea es que sea un mundo "2D"
-		int minX, maxX;
-		int minY, maxY;
-		int minZ, maxZ;
+		float minX, maxX;
+		float minY, maxY;
+		float minZ, maxZ;
 	};
 
 	BoundingBox Caja;

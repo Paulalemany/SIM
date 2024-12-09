@@ -32,14 +32,17 @@ void NivelFlotacion::keyPressed(unsigned char key, const physx::PxTransform& cam
 
 void NivelFlotacion::init()
 {
-	//Voy a utilizarlo de cañon
-	SolidoRigido* P = new SolidoRigido();
-	P->CreateStatic(scene, physics, { -20,0,0 }, { 0.5,0.5,0.5 }, { 0,0,0,1 });
-	objetos.push_back(P);
+	//Target del nivel
+	target->CreateStatic(scene, physics, { 20, -5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
+
+	//Para que no nos colisione con el cañon hago que este sea una particula 
+	Particle* canon = new Particle({ -20, 0, 0 });
+	canon->setTam(0.5, 1);
 
 	//Muro que obliga a usar la flotacion
 	SolidoRigido* muro = new SolidoRigido();
-	muro->CreateStatic(scene, physics, { 0,5,0 }, { 1, 10, 1 }, { 1,1,1,1 });
+	muro->CreateStatic(scene, physics, { 0,10,0 }, { 1, 10, 1 }, { 1,1,1,1 });
+	objetos.push_back(muro);
 }
 
 void NivelFlotacion::quit()

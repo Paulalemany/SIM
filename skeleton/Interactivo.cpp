@@ -18,12 +18,12 @@ Interactivo::Interactivo(Vector3 _pos, float h, float w, float l)
 	Caja.maxZ = pos.z + largo;
 }
 
-void Interactivo::createCaja(Vector3 _pos, float h, float w, float l)
+void Interactivo::createCaja(Vector3 _pos, float x, float y, float z)
 {
 	pos = _pos;
-	altura = h;
-	ancho = w;
-	largo = l;
+	altura = y;
+	ancho  = x;
+	largo = z;
 
 	//Creamos la boundingBox
 	Caja.minX = pos.x - ancho;

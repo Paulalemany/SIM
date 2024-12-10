@@ -7,6 +7,7 @@ NivelViento::NivelViento(PxScene* _scene, PxPhysics* _physics)
 
 	//Añadimos la fuerza del viento
 	fuerzas.push_back(new VientoGenerator({ 0,0,0 }, { -10, 10, 0 }));	//Ya veremos cuanta fuerza le ponemos al viento
+	viento = false;
 }
 
 void NivelViento::update(double t)
@@ -38,19 +39,35 @@ void NivelViento::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 	//Con la v activamos y desactivamos el viento 
 	if (key == 'v') viento = !viento;
+
+	cout << " viento: " << viento;
 }
 
 void NivelViento::init()
 {
 	Scene::init();
 
-	//creamos la escena
+	///Creamos el nivel
+
 	//Target del nivel
-	target->CreateStatic(scene, physics, { 20, -5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
+	target->CreateStatic(scene, physics, { -5, 5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
+
+	//Cañon
+	Particle* canon = new Particle({ -20, 0, 0 });
+	canon->setTam(0.5, 1);
+
+	SolidoRigido* muro = new SolidoRigido();
+	muro->CreateStatic(scene, physics, { -10, 0, 0 }, { 1, 10, 1 }, { 1,1,1,1 });
+	objetos.push_back(muro);
+
+	SolidoRigido* techo = new SolidoRigido();
+	techo->CreateStatic(scene, physics, { -4, 10, 0 }, { 7, 1, 1 }, { 1,1,1,1 });
+	objetos.push_back(techo);
 }
 
 void NivelViento::quit()
 {
+	viento = false;
 	SolidScene::quit();
 	Scene::quit();
 }

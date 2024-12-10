@@ -1,6 +1,7 @@
 #pragma once
 #include "SolidScene.h"
 #include "VientoGenerator.h"
+#include "ParticleSystemViento.h"
 
 class NivelViento : public SolidScene
 {

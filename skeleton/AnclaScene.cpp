@@ -18,7 +18,6 @@ AnclaScene::AnclaScene()
 	//particulas.push_back(p2);
 
 	//Ponemos las fuerzas
-	
 	fuerzas.push_back(ancla);
 }
 

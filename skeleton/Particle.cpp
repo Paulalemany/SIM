@@ -103,6 +103,8 @@ bool Particle::update(double t)
 void Particle::restLiveTime(double t)
 {
 	liveTime -= t;
+
+	if (liveTime <= 0) alive = false;
 }
 
 void Particle::setVisibility(bool vi)

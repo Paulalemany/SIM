@@ -30,7 +30,7 @@ std::vector<Proyectil*> VientoParticleGenerator::CreateParticles(int actParticle
 		z = origen.z + Ndistribution(generator);
 		
 		//Les pasamos la velocidad del viento
-		aux.push_back(new Proyectil({x,y,z}, velMed, {0,0,0}, 0.8, {0.69, 1, 1, 1}));
+		aux.push_back(new Proyectil({(float)x, (float)y, (float)z}, velMed, {0,0,0}, 0.8, {0.69, 1, 1, 1}));
 	}
 
 	return aux;

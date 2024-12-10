@@ -7,7 +7,6 @@
 #include "ExplosionScene.h"
 #include "TorbellinoScene.h"
 #include "VientoScene.h"
-#include "MuellesScene.h"
 #include "AnclaScene.h"
 #include "FlotacionScene.h"
 #include "SolidScene.h"
@@ -41,7 +40,6 @@ private:
 		VIENTO,
 		TORBELLINO,
 		EXPLOSION,
-		MUELLES,
 		ANCLA,
 		FLOTACION,
 		SOLIDOS,

@@ -9,7 +9,6 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	escenas.push_back(new VientoScene());
 	escenas.push_back(new TorbellinoScene());
 	escenas.push_back(new ExplosionScene());
-	escenas.push_back(new MuellesScene());
 	escenas.push_back(new AnclaScene());
 	escenas.push_back(new FlotacionScene());
 	escenas.push_back(new SolidScene(s, p));

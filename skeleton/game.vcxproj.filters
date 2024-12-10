@@ -85,9 +85,6 @@
     <ClCompile Include="VientoScene.cpp">
       <Filter>cpp\Escenas</Filter>
     </ClCompile>
-    <ClCompile Include="MuellesScene.cpp">
-      <Filter>cpp\Escenas</Filter>
-    </ClCompile>
     <ClCompile Include="MuelleForeGenerator.cpp">
       <Filter>cpp\Fuerzas</Filter>
     </ClCompile>
@@ -115,17 +112,17 @@
     <ClCompile Include="Interactivo.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Entidad.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Boton.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
     <ClCompile Include="NivelFlotacion.cpp">
       <Filter>cpp\Niveles</Filter>
     </ClCompile>
     <ClCompile Include="NivelViento.cpp">
       <Filter>cpp\Niveles</Filter>
+    </ClCompile>
+    <ClCompile Include="VientoParticleGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemViento.cpp">
+      <Filter>cpp\Sistemas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -213,9 +210,6 @@
     <ClInclude Include="ExplosionScene.h">
       <Filter>h\Escenas</Filter>
     </ClInclude>
-    <ClInclude Include="MuellesScene.h">
-      <Filter>h\Escenas</Filter>
-    </ClInclude>
     <ClInclude Include="MuelleForeGenerator.h">
       <Filter>h\Fuerzas</Filter>
     </ClInclude>
@@ -246,14 +240,17 @@
     <ClInclude Include="Entidad.h">
       <Filter>h</Filter>
     </ClInclude>
-    <ClInclude Include="Boton.h">
-      <Filter>h</Filter>
-    </ClInclude>
     <ClInclude Include="NivelFlotacion.h">
       <Filter>h\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="NivelViento.h">
       <Filter>h\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="VientoParticleGenerator.h">
+      <Filter>h\Generadores</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemViento.h">
+      <Filter>h\Sistemas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

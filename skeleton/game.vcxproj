@@ -255,9 +255,7 @@
   <ItemGroup>
     <ClCompile Include="AnclaFG.cpp" />
     <ClCompile Include="AnclaScene.cpp" />
-    <ClCompile Include="Boton.cpp" />
     <ClCompile Include="callbacks.cpp" />
-    <ClCompile Include="Entidad.cpp" />
     <ClCompile Include="ExplosionGenerator.cpp" />
     <ClCompile Include="ExplosionScene.cpp" />
     <ClCompile Include="FlotacionForce.cpp" />
@@ -272,7 +270,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MuelleForeGenerator.cpp" />
     <ClCompile Include="MuelleParticleGenerator.cpp" />
-    <ClCompile Include="MuellesScene.cpp" />
     <ClCompile Include="NivelFlotacion.cpp" />
     <ClCompile Include="NivelViento.cpp" />
     <ClCompile Include="OriginFuegoGenerator.cpp" />
@@ -283,6 +280,7 @@
     <ClCompile Include="ParticleSystemFuegosArt.cpp" />
     <ClCompile Include="ParticleSystemFuente.cpp" />
     <ClCompile Include="ParticleSystemHumo.cpp" />
+    <ClCompile Include="ParticleSystemViento.cpp" />
     <ClCompile Include="Proyectil.cpp" />
     <ClCompile Include="RenderUtils.cpp" />
     <ClCompile Include="Render\Camera.cpp" />
@@ -294,12 +292,12 @@
     <ClCompile Include="TorbellinoScene.cpp" />
     <ClCompile Include="Vector3D.cpp" />
     <ClCompile Include="VientoGenerator.cpp" />
+    <ClCompile Include="VientoParticleGenerator.cpp" />
     <ClCompile Include="VientoScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnclaFG.h" />
     <ClInclude Include="AnclaScene.h" />
-    <ClInclude Include="Boton.h" />
     <ClInclude Include="callbacks.hpp" />
     <ClInclude Include="core.hpp" />
     <ClInclude Include="Entidad.h" />
@@ -316,7 +314,6 @@
     <ClInclude Include="Interactivo.h" />
     <ClInclude Include="MuelleForeGenerator.h" />
     <ClInclude Include="MuelleParticleGenerator.h" />
-    <ClInclude Include="MuellesScene.h" />
     <ClInclude Include="NivelFlotacion.h" />
     <ClInclude Include="NivelViento.h" />
     <ClInclude Include="OriginFuegoGenerator.h" />
@@ -327,6 +324,7 @@
     <ClInclude Include="ParticleSystemFuegosArt.h" />
     <ClInclude Include="ParticleSystemFuente.h" />
     <ClInclude Include="ParticleSystemHumo.h" />
+    <ClInclude Include="ParticleSystemViento.h" />
     <ClInclude Include="Proyectil.h" />
     <ClInclude Include="RenderUtils.hpp" />
     <ClInclude Include="Render\Camera.h" />
@@ -338,6 +336,7 @@
     <ClInclude Include="TorbellinoScene.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="VientoGenerator.h" />
+    <ClInclude Include="VientoParticleGenerator.h" />
     <ClInclude Include="VientoScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

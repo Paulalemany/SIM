@@ -11,14 +11,14 @@ std::vector<Proyectil*> VientoParticleGenerator::CreateParticles(int actParticle
 
 	//Generamos un numero random de particulas
 	int par = maxParticles - actParticles;	//Particulas maximas que podemos crear
-	if (actParticles >= maxParticles) par -= actParticles;
+	//if (actParticles >= maxParticles) par -= actParticles;
 
 	std::uniform_int_distribution<int> distribution(0, par);
 	int numPar = distribution(generator);  // generates number in the range 1..par
 
 	//La primera variable es la media, indica como de lejos van
 	//La segunda en la desviacion tipica, indica la dispersion
-	std::normal_distribution<double> Ndistribution(5.0, 3.0);
+	std::normal_distribution<double> Ndistribution(20, 10.0);
 	double x, y, z;
 
 	//creamos las particulas que toquen

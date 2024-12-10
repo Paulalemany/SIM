@@ -37,7 +37,7 @@ bool ParticleSystem::update(double t)
 	return true;
 }
 
-void ParticleSystem::eliminaPart(std::vector<Proyectil*> par)
+void ParticleSystem::eliminaPart(std::vector<Particle*> par)
 {
 	for (int i = 0; i < particulas.size(); i++) {
 

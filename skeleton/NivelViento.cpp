@@ -7,7 +7,7 @@ NivelViento::NivelViento(PxScene* _scene, PxPhysics* _physics)
 
 	//Añadimos la fuerza del viento
 	fuerzas.push_back(new VientoGenerator({ 0,0,0 }, { -10, 10, 0 }));	//Ya veremos cuanta fuerza le ponemos al viento
-	sistemas.push_back(new ParticleSystemViento({ 0,0,0 }, { -10, 10, 0 }, 1, 50000));
+	sistemas.push_back(new ParticleSystemViento({ 0,0,0 }, { -10, 10, 0 }, 100, 50000));
 	viento = false;
 }
 
@@ -25,6 +25,7 @@ void NivelViento::update(double t)
 			if (fuerzas[0]->onZone(bullet->getPosition())) bullet->addForce(fuerzas[0]->generateForce(*bullet));
 
 			//Creamos particulas para simbolizar el viento? serviria un generador
+			sistemas[0]->update(t);
 
 		}
 
@@ -33,8 +34,6 @@ void NivelViento::update(double t)
 			if (o->inBoundingBox(bullet->getPosition()))
 				bullet->setVelocidad({ 0,0,0 });	//Esto si me da tiempo cambiarlo porque seria increible ponerle efectos
 	}
-
-	Scene::update(t);
 }
 
 void NivelViento::keyPressed(unsigned char key, const physx::PxTransform& camera)
@@ -42,7 +41,12 @@ void NivelViento::keyPressed(unsigned char key, const physx::PxTransform& camera
 	SolidScene::keyPressed(key, camera);	//Lo que hacemos es ademas de lo que se hace en la clase padre
 
 	//Con la v activamos y desactivamos el viento 
-	if (key == 'v') viento = !viento;
+	if (key == 'v') {
+		viento = !viento;
+
+		if(viento) sistemas[0]->show();
+		else sistemas[0]->hide();
+	}
 
 	cout << " viento: " << viento;
 }

@@ -10,7 +10,7 @@ public:
 
 	virtual bool update(double t) = 0;
 
-	void eliminaPart(std::vector<Proyectil*> par);
+	void eliminaPart(std::vector<Particle*> par);
 
 	/// Para gestionar la visibilidad de las particulas
 	//Los hacemos virtuales para los sistemas que tienen más de un vector de particulas
@@ -20,8 +20,8 @@ public:
 protected:
 
 	//Generador de particulas
-	std::vector<Proyectil*> particulas;
-	std::vector<Proyectil*> aux;
+	std::vector<Particle*> particulas;
+	std::vector<Particle*> aux;
 	Vector3 origen;
 	Vector3 velMed;
 	int numParticles;

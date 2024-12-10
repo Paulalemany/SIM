@@ -124,6 +124,9 @@
     <ClCompile Include="NivelFlotacion.cpp">
       <Filter>cpp\Niveles</Filter>
     </ClCompile>
+    <ClCompile Include="NivelViento.cpp">
+      <Filter>cpp\Niveles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -247,6 +250,9 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="NivelFlotacion.h">
+      <Filter>h\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="NivelViento.h">
       <Filter>h\Niveles</Filter>
     </ClInclude>
   </ItemGroup>

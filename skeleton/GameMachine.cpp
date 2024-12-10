@@ -15,11 +15,12 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	escenas.push_back(new SolidScene(s, p));
 
 	niveles.push_back(new NivelFlotacion(s, p));
-	actual = N_FLOTACION;	//Escena con la que iniciamos
+	niveles.push_back(new NivelViento(s, p));
+	actual = N_VIENTO;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas
-	for (int i = 0; i < niveles.size(); i++) niveles[i]->quit(); 
+	for (int i = 0; i < niveles.size(); i++) niveles[i]->quit(); //Tambien escondemos todos los niveles
 
 	niveles[actual]->init();
 }
@@ -62,6 +63,9 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '1':
 		/*std::cout << "---ESCENA FUERZAS---\n";
 		changeScene(FUERZAS);*/
+
+		cout << "---NIVEL VIENTO---\n";
+		changeScene(N_VIENTO);
 		break;
 	case '2':
 		/*std::cout << "---ESCENA VIENTO---\n";

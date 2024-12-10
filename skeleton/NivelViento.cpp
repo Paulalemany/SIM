@@ -51,5 +51,6 @@ void NivelViento::init()
 
 void NivelViento::quit()
 {
+	SolidScene::quit();
 	Scene::quit();
 }

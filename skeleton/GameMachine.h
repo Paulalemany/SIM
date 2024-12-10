@@ -14,6 +14,7 @@
 
 //Niveles
 #include "NivelFlotacion.h"
+#include "NivelViento.h"
 
 
 class GameMachine
@@ -47,7 +48,8 @@ private:
 	};
 
 	const enum Niveles {
-		N_FLOTACION = 0
+		N_FLOTACION = 0,
+		N_VIENTO
 	};
 
 	//Escenas

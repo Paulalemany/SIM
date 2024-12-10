@@ -49,8 +49,12 @@ void NivelFlotacion::init()
 	SolidoRigido* techo = new SolidoRigido();
 	techo->CreateStatic(scene, physics, { -9, 20, 0 }, { 10, 1, 1 }, { 1,1,1,1 });
 	objetos.push_back(techo);
+
+	Scene::init();
 }
 
 void NivelFlotacion::quit()
 {
+	SolidScene::quit();
+	Scene::quit();
 }

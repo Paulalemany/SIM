@@ -19,3 +19,8 @@ std::vector<Particle*> ParticleGenerator::CreateParticles()
 {
 	return std::vector<Particle*>();
 }
+
+std::vector<Particle*> ParticleGenerator::CreateStaticParticles(int actParticles, int maxParticles)
+{
+	return std::vector<Particle*>();
+}

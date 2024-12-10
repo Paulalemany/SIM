@@ -13,6 +13,7 @@ public:
 	
 	virtual std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) = 0;
 	virtual std::vector<Particle*> CreateParticles();
+	virtual std::vector<Particle*> CreateStaticParticles(int actParticles, int maxParticles);
 
 	void setOrigin(Vector3 o) { origen = o; }
 	Vector4 getColor() { return color; }

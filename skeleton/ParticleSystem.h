@@ -21,7 +21,7 @@ protected:
 
 	//Generador de particulas
 	std::vector<Particle*> particulas;
-	std::vector<Particle*> aux;
+	std::vector<Proyectil*> aux;
 	Vector3 origen;
 	Vector3 velMed;
 	int numParticles;

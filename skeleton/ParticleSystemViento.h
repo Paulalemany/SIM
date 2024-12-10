@@ -11,5 +11,8 @@ public:
 	bool update(double t) override;
 
 	//tal vez tengo que poner un metodo para pararlas y ocultarlas aqui
+
+private:
+	std::vector<Particle*> staticAux;
 };
 

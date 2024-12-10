@@ -22,6 +22,9 @@ void NivelViento::update(double t)
 		if (viento) {
 			fuerzas[0]->update(t);
 			if (fuerzas[0]->onZone(bullet->getPosition())) bullet->addForce(fuerzas[0]->generateForce(*bullet));
+
+			//Creamos particulas para simbolizar el viento? serviria un generador
+
 		}
 
 		//Comprobamos las colisiones con el resto de sitios

@@ -26,6 +26,13 @@ void NivelTornado::init()
 {
 
 	///Creamos el nivel
+
+	target = new SolidoRigido();
+	target->CreateStatic(scene, physics, { 20, 0, 0 }, { 2,2,2 }, { 0,0,0,1 });
+	objetos.push_back(target);
+
+	canon = new Particle({ -20, 0, 0 });
+	canon->setTam(0.5, 1);
 }
 
 void NivelTornado::quit()

@@ -12,12 +12,12 @@ public:
 	Interactivo() {};	//Constructora vacia
 	Interactivo(Vector3 _pos, float h, float w, float l);
 
-	void createCaja(Vector3 _pos, float h, float w, float l);
-
 	//Comprobacion de colisiones
 	bool inBoundingBox(Vector3 _pos);
 
 protected:
+
+	void createCaja(Vector3 _pos, float h, float w, float l);
 
 	Vector3 pos;
 

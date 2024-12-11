@@ -16,5 +16,10 @@ public:
 	///Para la gestion de escenas
 	void init() override;	//Pone la escena
 	void quit() override;	//Quita la escena
+
+private:
+
+	float size = 10;
+	Vector3 TPos = { 0,0,0 };
 };
 

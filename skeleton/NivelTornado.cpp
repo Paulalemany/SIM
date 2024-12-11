@@ -1,12 +1,12 @@
 #include "NivelTornado.h"
+#include <iostream>
 
 NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 	:SolidScene(_scene, _physics)
 {
 	//Añadimos las fuerzas
-	fuerzas.push_back(new TorbellinoGenerator({ 0,0,0 }));
-	fuerzas[0]->setRadio(5);
-
+	fuerzas.push_back(new TorbellinoGenerator(TPos));
+	fuerzas[0]->setRadio(size);
 	//Cuando esté hecho habrá que ponerle el sistema de particulas
 }
 
@@ -34,6 +34,10 @@ void NivelTornado::init()
 
 	canon = new Particle({ -20, 0, 0 });
 	canon->setTam(0.5, 1);
+
+	Particle* zone = new Particle(TPos);
+	zone->setColor({ 1,1,1,0.5 });
+	zone->setTam(size, 0);
 }
 
 void NivelTornado::quit()

@@ -1,6 +1,7 @@
 #pragma once
 #include "SolidScene.h"
 #include "TorbellinoGenerator.h"
+#include "ParticleSystemTornado.h"
 
 class NivelTornado : public SolidScene
 {

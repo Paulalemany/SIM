@@ -281,6 +281,7 @@
     <ClCompile Include="ParticleSystemFuegosArt.cpp" />
     <ClCompile Include="ParticleSystemFuente.cpp" />
     <ClCompile Include="ParticleSystemHumo.cpp" />
+    <ClCompile Include="ParticleSystemTornado.cpp" />
     <ClCompile Include="ParticleSystemViento.cpp" />
     <ClCompile Include="Proyectil.cpp" />
     <ClCompile Include="RenderUtils.cpp" />
@@ -291,6 +292,7 @@
     <ClCompile Include="SolidScene.cpp" />
     <ClCompile Include="TorbellinoGenerator.cpp" />
     <ClCompile Include="TorbellinoScene.cpp" />
+    <ClCompile Include="TornadoParticleGenerator.cpp" />
     <ClCompile Include="Vector3D.cpp" />
     <ClCompile Include="VientoGenerator.cpp" />
     <ClCompile Include="VientoParticleGenerator.cpp" />
@@ -326,6 +328,7 @@
     <ClInclude Include="ParticleSystemFuegosArt.h" />
     <ClInclude Include="ParticleSystemFuente.h" />
     <ClInclude Include="ParticleSystemHumo.h" />
+    <ClInclude Include="ParticleSystemTornado.h" />
     <ClInclude Include="ParticleSystemViento.h" />
     <ClInclude Include="Proyectil.h" />
     <ClInclude Include="RenderUtils.hpp" />
@@ -336,6 +339,7 @@
     <ClInclude Include="SolidScene.h" />
     <ClInclude Include="TorbellinoGenerator.h" />
     <ClInclude Include="TorbellinoScene.h" />
+    <ClInclude Include="TornadoParticleGenerator.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="VientoGenerator.h" />
     <ClInclude Include="VientoParticleGenerator.h" />

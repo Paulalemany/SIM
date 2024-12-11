@@ -1,12 +1,14 @@
-#include "ParticleSystemViento.h"
+#include "ParticleSystemTornado.h"
 
-ParticleSystemViento::ParticleSystemViento(Vector3 ori, Vector3 vel, int n, int l)
+ParticleSystemTornado::ParticleSystemTornado(Vector3 ori, Vector3 vel, int n, int l, float r)
 	:ParticleSystem(ori, vel, n, l)
 {
-	generator = new VientoParticleGenerator(origen, velMed, numParticles);
+	generator = new TornadoParticleGenerator(ori, vel, n, r);
+	fuerza = new TorbellinoGenerator(ori);
+	fuerza->setRadio(r);
 }
 
-bool ParticleSystemViento::update(double t)
+bool ParticleSystemTornado::update(double t)
 {
 	//Actualiza el tiempo que lleva vivo el sistema
 	liveTime -= t;
@@ -24,8 +26,13 @@ bool ParticleSystemViento::update(double t)
 
 	//Eliminar particulas que mueren
 	//Actualiza las particulas de la escena
+
+	//Añadimos la fuerza al propio sistema de particulas para que le sigan?
 	for (auto p : particulas) {
 		p->update(t);
+
+		if (fuerza->onZone(p->getPosition()))
+			p->addForce(fuerza->generateForce(*p));
 	}
 
 	eliminaPart(particulas);

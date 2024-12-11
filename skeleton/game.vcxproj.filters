@@ -127,6 +127,12 @@
     <ClCompile Include="SolidScene.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="TornadoParticleGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemTornado.cpp">
+      <Filter>cpp\Sistemas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -257,6 +263,12 @@
     </ClInclude>
     <ClInclude Include="SolidScene.h">
       <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="TornadoParticleGenerator.h">
+      <Filter>h\Generadores</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemTornado.h">
+      <Filter>h\Sistemas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

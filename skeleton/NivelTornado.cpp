@@ -7,12 +7,13 @@ NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 	//Añadimos las fuerzas
 	fuerzas.push_back(new TorbellinoGenerator(TPos));
 	fuerzas[0]->setRadio(size);
+
 	//Cuando esté hecho habrá que ponerle el sistema de particulas
+	sistemas.push_back(new ParticleSystemTornado(TPos, { 0,0,0 }, 100, 50000, size));
 }
 
 void NivelTornado::update(double t)
 {
-
 	//ya veremos como hay que hacerlo aqui para que funcione
 	SolidScene::update(t);
 }
@@ -25,7 +26,6 @@ void NivelTornado::keyPressed(unsigned char key, const physx::PxTransform& camer
 
 void NivelTornado::init()
 {
-
 	///Creamos el nivel
 
 	target = new SolidoRigido();
@@ -38,6 +38,8 @@ void NivelTornado::init()
 	Particle* zone = new Particle(TPos);
 	zone->setColor({ 1,1,1,0.5 });
 	zone->setTam(size, 0);
+
+	active = true;
 }
 
 void NivelTornado::quit()

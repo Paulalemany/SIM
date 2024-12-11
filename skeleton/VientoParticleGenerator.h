@@ -9,7 +9,5 @@ public:
 
 	std::vector<Proyectil*> CreateParticles(int actParticles, int maxParticles) override;
 	std::vector<Particle*> CreateStaticParticles(int actParticles, int maxParticles) override;
-
-
 };
 

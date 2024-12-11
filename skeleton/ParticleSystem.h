@@ -12,6 +12,8 @@ public:
 
 	void eliminaPart(std::vector<Particle*> par);
 
+	std::vector<Particle*> getParticles() { return particulas; }
+
 	/// Para gestionar la visibilidad de las particulas
 	//Los hacemos virtuales para los sistemas que tienen más de un vector de particulas
 	virtual void show();

@@ -4,7 +4,7 @@
 ForceGenerator::ForceGenerator(Vector3 ori)
 {
 	origen = ori;
-	generateZone();
+	//generateZone();
 }
 
 ForceGenerator::~ForceGenerator()
@@ -25,8 +25,8 @@ void ForceGenerator::update(double t)
 void ForceGenerator::setRadio(float r)
 {
 	radio = r;
-	show();
-	generateZone();
+	//show();
+	//generateZone();
 }
 
 Vector3 ForceGenerator::generateForce(Particle& p)
@@ -39,12 +39,12 @@ Vector3 ForceGenerator::generateForce(Particle& p)
 
 void ForceGenerator::show()
 {
-	zona->setVisibility(true);
+	//zona->setVisibility(true);
 }
 
 void ForceGenerator::hide()
 {
-	zona->setVisibility(false);
+	//zona->setVisibility(false);
 }
 
 void ForceGenerator::generateZone()
@@ -55,7 +55,7 @@ void ForceGenerator::generateZone()
 
 	//Creamos el renderItem
 	//De forma estandar la geometria de la zona va a ser una esfera
-	zona = new Particle(origen, radio, { 1,1,1,0 });
+	zona = new Particle(origen, radio, { 1,1,1, 0 });
 
 	hide();
 }

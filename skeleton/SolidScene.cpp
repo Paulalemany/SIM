@@ -26,7 +26,8 @@ void SolidScene::update(double t)
 		if (target->inBoundingBox(bullet->getPosition())) {cout << "le has dado toma ya";}
 		for (auto f : fuerzas) {
 			f->update(t);
-			if (f->onZone(bullet->getPosition())) bullet->addForce(f->generateForce(*bullet));
+			if (f->onZone(bullet->getPosition()))
+				bullet->addForce(f->generateForce(*bullet));
 		}
 
 		//Fuerza a las particulas del sistema

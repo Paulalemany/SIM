@@ -5,6 +5,7 @@ NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 {
 	//Añadimos las fuerzas
 	fuerzas.push_back(new TorbellinoGenerator({ 0,0,0 }));
+	fuerzas[0]->setRadio(5);
 
 	//Cuando esté hecho habrá que ponerle el sistema de particulas
 }

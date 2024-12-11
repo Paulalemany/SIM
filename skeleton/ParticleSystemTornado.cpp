@@ -17,7 +17,7 @@ bool ParticleSystemTornado::update(double t)
 
 	//Creamos las particulas nuevas y las guardamos en el vector de particulas
 	//Deberia hacer aqui el random? Para que no se creen en cada frame
-	staticAux = generator->CreateStaticParticles(particulas.size(), numParticles);
+	aux = generator->CreateParticles(particulas.size(), numParticles);
 
 	for (int i = 0; i < staticAux.size(); i++) {	//Añadimos las particulas a nuestro vector
 

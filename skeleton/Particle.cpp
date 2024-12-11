@@ -141,19 +141,3 @@ void Particle::setTam(float r, int shape)
 
 	}
 }
-
-void Particle::applyForces()
-{
-	////Calculamos la fuerza total que hay sobre la particula
-	////Lo hacemos con un sumatorio
-
-	//Vector3 FuerzaTot = { 0,0,0 };
-	//for (auto f : fuerzas) FuerzaTot += f;
-
-	////hay que limpiar el vector de fuerzas???
-	//fuerzas.clear();
-
-	////La fuerza resultante sigue la formula F = m * a
-
-	//ace = FuerzaTot / masa;
-}

@@ -15,7 +15,7 @@ public:
 	bool update(double t) override;
 
 	///Fuerzas
-	void addForce(Vector3 F) override { fuerzas.push_back(F); }
+	void addForce(Vector3 F) override { fuerzas.push_back(F); };
 	void applyForces() override;
 
 	///Setters

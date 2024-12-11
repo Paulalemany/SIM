@@ -28,7 +28,7 @@ public:
 
 	///Fuerzas
 	virtual void addForce(Vector3 F) override {};
-	virtual void applyForces();
+	virtual void applyForces() {};
 	virtual void setMasa(float m) {};
 
 protected:

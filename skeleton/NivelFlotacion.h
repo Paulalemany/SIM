@@ -14,8 +14,5 @@ public:
 	/// Para la gestion de escenas
 	void init() override;	//Pone la escena
 	void quit() override;	//Quita la escena
-
-private:
-
 };
 

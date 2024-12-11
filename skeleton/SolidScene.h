@@ -33,6 +33,7 @@ protected:
 
 	///Dedicado al gameplay
 	SolidoRigido* target = nullptr;
+	Particle* canon = nullptr;
 	Particle* bullet = nullptr;
 
 	//Particularidades de la bala

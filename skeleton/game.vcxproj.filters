@@ -103,9 +103,6 @@
     <ClCompile Include="FlotacionScene.cpp">
       <Filter>cpp\Escenas</Filter>
     </ClCompile>
-    <ClCompile Include="SolidScene.cpp">
-      <Filter>cpp\Escenas</Filter>
-    </ClCompile>
     <ClCompile Include="SolidoRigido.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
@@ -123,6 +120,12 @@
     </ClCompile>
     <ClCompile Include="ParticleSystemViento.cpp">
       <Filter>cpp\Sistemas</Filter>
+    </ClCompile>
+    <ClCompile Include="NivelTornado.cpp">
+      <Filter>cpp\Niveles</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidScene.cpp">
+      <Filter>cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -228,9 +231,6 @@
     <ClInclude Include="FlotacionScene.h">
       <Filter>h\Escenas</Filter>
     </ClInclude>
-    <ClInclude Include="SolidScene.h">
-      <Filter>h\Escenas</Filter>
-    </ClInclude>
     <ClInclude Include="SolidoRigido.h">
       <Filter>h</Filter>
     </ClInclude>
@@ -251,6 +251,12 @@
     </ClInclude>
     <ClInclude Include="ParticleSystemViento.h">
       <Filter>h\Sistemas</Filter>
+    </ClInclude>
+    <ClInclude Include="NivelTornado.h">
+      <Filter>h\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidScene.h">
+      <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

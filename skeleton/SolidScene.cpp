@@ -10,7 +10,6 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 
 	//Vamos a hacer esto un poco de mala manera para testear
 	//El target en cada nivel va a ser distinto
-	target = new SolidoRigido(); 	//Todas las escenas tendran un target
 }
 
 SolidScene::~SolidScene()
@@ -24,11 +23,14 @@ void SolidScene::update(double t)
 		bullet->update(t);
 
 		//Aqui simplemente poner la condicion de victoria
-		if (target->inBoundingBox(bullet->getPosition())) cout << "le has dado toma ya";	
+		if (target->inBoundingBox(bullet->getPosition())) {cout << "le has dado toma ya";}
 		for (auto f : fuerzas) {
 			f->update(t);
 			if (f->onZone(bullet->getPosition())) bullet->addForce(f->generateForce(*bullet));
 		}
+
+		//Fuerza a las particulas del sistema
+		for (auto s : sistemas) s->update(t); 
 
 		//Necesito comprobar las colisiones de la bala con el resto de objetos
 		for (auto s : objetos)
@@ -84,7 +86,7 @@ void SolidScene::shoot(Vector3 pos)
 
 void SolidScene::init()
 {
-	///Vamos a dibujar los ejes
+
 	SolidoRigido* O = new SolidoRigido();
 	O->CreateStatic(scene, physics, { 0,0,0 }, { 0.5,0.5,0.5 }, { 1,1,1,1 });
 	objetos.push_back(O);
@@ -108,5 +110,8 @@ void SolidScene::quit()
 {
 	//Esto seria por ahora eliminar todos los solidoRigidos del vector
 	for (auto e : objetos) e->~SolidoRigido();
+	if (canon != nullptr) canon->~Particle();
+
+	Scene::quit();
 	
 }

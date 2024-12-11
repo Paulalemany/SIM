@@ -57,10 +57,12 @@ void NivelViento::init()
 	///Creamos el nivel
 
 	//Target del nivel
+	target = new SolidoRigido();
 	target->CreateStatic(scene, physics, { -5, 5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
+	objetos.push_back(target);
 
 	//Cañon
-	Particle* canon = new Particle({ -20, 0, 0 });
+	canon = new Particle({ -20, 0, 0 });
 	canon->setTam(0.5, 1);
 
 	SolidoRigido* muro = new SolidoRigido();
@@ -76,5 +78,4 @@ void NivelViento::quit()
 {
 	viento = false;
 	SolidScene::quit();
-	Scene::quit();
 }

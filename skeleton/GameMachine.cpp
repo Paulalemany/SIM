@@ -15,7 +15,8 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 
 	niveles.push_back(new NivelFlotacion(s, p));
 	niveles.push_back(new NivelViento(s, p));
-	actual = N_VIENTO;	//Escena con la que iniciamos
+	niveles.push_back(new NivelTornado(s, p));
+	actual = N_TORNADO;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas
@@ -69,6 +70,9 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	case '2':
 		/*std::cout << "---ESCENA VIENTO---\n";
 		changeScene(VIENTO);*/
+
+		cout << "---NIVEL TORNADO---\n";
+		changeScene(N_TORNADO);
 		break;
 	case '3':
 		/*std::cout << "---ESCENA TORBELLINO---\n";

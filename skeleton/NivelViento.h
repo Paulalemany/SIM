@@ -9,7 +9,7 @@ public:
 	NivelViento(PxScene* _scene, PxPhysics* _physics);
 
 	///Input de la escena 
-	void update(double t) override;
+	bool update(double t) override;
 	//Se va a encargar de generar el viento
 	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 

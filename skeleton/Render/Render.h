@@ -57,6 +57,7 @@ extern std::string _ExplicacionS;
 extern std::string _ExplicacionM;
 extern std::string _ExplicacionL;
 extern std::string _selector;
+extern std::string _selector2;
 extern std::string _nivelFlotacion;
 extern std::string _nivelViento;
 extern std::string _nivelTornado;

@@ -41,7 +41,7 @@ void AnclaScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
 	}
 }
 
-void AnclaScene::update(double t)
+bool AnclaScene::update(double t)
 {
 	///Actualizamos los sistemas que haya
 	if (active) {
@@ -64,6 +64,8 @@ void AnclaScene::update(double t)
 
 		eliminaPart();
 	}
+
+	return false;
 }
 
 void AnclaScene::init()

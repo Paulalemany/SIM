@@ -16,7 +16,7 @@ Scene::~Scene()
 	
 }
 
-void Scene::update(double t)
+bool Scene::update(double t)
 {
 
 	///Actualizamos los sistemas que haya
@@ -34,6 +34,8 @@ void Scene::update(double t)
 
 		eliminaPart();
 	}
+
+	return false;
 }
 
 void Scene::addParticle(Particle* particula)

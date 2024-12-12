@@ -16,14 +16,14 @@ SolidScene::~SolidScene()
 {
 }
 
-void SolidScene::update(double t)
+bool SolidScene::update(double t)
 {
 	///Particulas del gameplay
 	if (bullet != nullptr) {
 		bullet->update(t);
 
 		//Aqui simplemente poner la condicion de victoria
-		if (target->inBoundingBox(bullet->getPosition())) {cout << "le has dado toma ya";}
+		if (target->inBoundingBox(bullet->getPosition())) return true;
 		for (auto f : fuerzas) {
 			f->update(t);
 			if (f->onZone(bullet->getPosition()))
@@ -41,6 +41,8 @@ void SolidScene::update(double t)
 
 	//la gestion de las fuerzas sobre la bala la hacemos aparte
 	Scene::update(t);
+
+	return false;
 }
 
 void SolidScene::keyPressed(unsigned char key, const physx::PxTransform& camera)

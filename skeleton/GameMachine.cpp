@@ -16,8 +16,9 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelFlotacion(s, p));
 	niveles.push_back(new NivelViento(s, p));
 	niveles.push_back(new NivelTornado(s, p));
+	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
-	actual = START;	//Escena con la que iniciamos
+	actual = NIVELES;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas

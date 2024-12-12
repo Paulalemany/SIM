@@ -13,7 +13,7 @@ public:
 	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 
 	//Tenemos que hacer nuestro propio update para la fuerza del viento
-	void update(double t) override;
+	bool update(double t) override;
 
 	/// Para la gestion de escenas
 	virtual void init() override;	//Pone la escena

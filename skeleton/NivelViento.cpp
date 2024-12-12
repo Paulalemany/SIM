@@ -11,14 +11,14 @@ NivelViento::NivelViento(PxScene* _scene, PxPhysics* _physics)
 	viento = false;
 }
 
-void NivelViento::update(double t)
+bool NivelViento::update(double t)
 {
 	//La base es igual que en la padre pero las fuerzas hay que cambiarlas
 	if (bullet != nullptr) {
 		bullet->update(t);
 
 		//Comprobamos si ha llegado al target
-		if (target->inBoundingBox(bullet->getPosition())) cout << " Buah como mola el viento";
+		if (target->inBoundingBox(bullet->getPosition())) return true;
 		//Ponemos las fuerzas pero solo si esta activada
 		if (viento) {
 			fuerzas[0]->update(t);
@@ -33,6 +33,8 @@ void NivelViento::update(double t)
 
 	//Creamos particulas para simbolizar el viento? serviria un generador
 	if (viento) sistemas[0]->update(t);
+
+	return false;
 }
 
 void NivelViento::keyPressed(unsigned char key, const physx::PxTransform& camera)

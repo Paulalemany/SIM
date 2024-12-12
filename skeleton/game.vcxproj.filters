@@ -142,6 +142,9 @@
     <ClCompile Include="ParticleSystemBrillitos.cpp">
       <Filter>cpp\Sistemas</Filter>
     </ClCompile>
+    <ClCompile Include="Niveles_Menu.cpp">
+      <Filter>cpp\Niveles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -287,6 +290,9 @@
     </ClInclude>
     <ClInclude Include="ParticleSystemBrillitos.h">
       <Filter>h\Sistemas</Filter>
+    </ClInclude>
+    <ClInclude Include="Niveles_Menu.h">
+      <Filter>h\Niveles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

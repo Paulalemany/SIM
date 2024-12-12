@@ -8,7 +8,7 @@ public:
 	VientoScene();
 	~VientoScene();
 
-	void update(double t)override;
+	bool update(double t)override;
 	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 
 };

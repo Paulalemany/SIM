@@ -44,6 +44,7 @@ std::string _ExplicacionS = " ";
 std::string _ExplicacionM = " ";
 std::string _ExplicacionL = " ";
 std::string _selector = " ";
+std::string _selector2 = " ";
 std::string _nivelFlotacion = " ";
 std::string _nivelViento = " ";
 std::string _nivelTornado = " ";

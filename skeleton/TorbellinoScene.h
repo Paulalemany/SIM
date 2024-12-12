@@ -10,6 +10,6 @@ public:
 
 	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 
-	void update(double t) override;
+	bool update(double t) override;
 };
 

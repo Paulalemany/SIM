@@ -18,6 +18,7 @@
 
 //Menus
 #include "Start_Menu.h"
+#include "Niveles_Menu.h"
 
 class GameMachine
 {
@@ -52,6 +53,7 @@ private:
 		N_FLOTACION = 0,
 		N_VIENTO,
 		N_TORNADO,
+		NIVELES,
 		START
 	};
 

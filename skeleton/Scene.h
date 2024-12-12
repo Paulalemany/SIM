@@ -12,7 +12,7 @@ public:
 
 	~Scene();
 
-	virtual void update(double t);
+	virtual bool update(double t);
 
 	void addParticle(Particle* particula);
 

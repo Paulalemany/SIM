@@ -15,7 +15,7 @@ void TorbellinoScene::keyPressed(unsigned char key, const physx::PxTransform& ca
 	//Por ahora nada
 }
 
-void TorbellinoScene::update(double t)
+bool TorbellinoScene::update(double t)
 {
 	//Ponemos particulas para ver el efecto
 	if (particulas.size() == 0) {
@@ -27,5 +27,5 @@ void TorbellinoScene::update(double t)
 		particulas.push_back(p);
 	}
 
-	Scene::update(t);
+	return Scene::update(t);
 }

@@ -10,7 +10,7 @@ ExplosionScene::~ExplosionScene()
 
 }
 
-void ExplosionScene::update(double t)
+bool ExplosionScene::update(double t)
 {
 
 	if (particulas.size() == 0) {
@@ -33,7 +33,7 @@ void ExplosionScene::update(double t)
 		}
 		
 	}
-	Scene::update(t);
+	return Scene::update(t);
 }
 
 void ExplosionScene::keyPressed(unsigned char key, const physx::PxTransform& camera)

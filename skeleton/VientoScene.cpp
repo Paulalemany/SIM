@@ -11,7 +11,7 @@ VientoScene::~VientoScene()
 {
 }
 
-void VientoScene::update(double t)
+bool VientoScene::update(double t)
 {
 	//Vamos generando particulas para que se lleve el viento
 	if (particulas.size() < 5) {
@@ -21,7 +21,7 @@ void VientoScene::update(double t)
 		particulas.push_back(p);
 	}
 
-	Scene::update(t);
+	return Scene::update(t);
 }
 
 void VientoScene::keyPressed(unsigned char key, const physx::PxTransform& camera)

@@ -10,7 +10,7 @@ public:
 	SolidScene(PxScene* _scene, PxPhysics* _physics);
 	~SolidScene();
 
-	virtual void update(double t) override;
+	virtual bool update(double t) override;
 
 	///Input de la escena
 	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;

@@ -12,11 +12,6 @@ NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 	sistemas.push_back(new ParticleSystemTornado(TPos, { 0,0, 0 }, 100, 50000, size));
 }
 
-void NivelTornado::update(double t)
-{
-	SolidScene::update(t);
-}
-
 void NivelTornado::init()
 {
 	///Creamos el nivel

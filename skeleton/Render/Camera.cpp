@@ -117,9 +117,9 @@ physx::PxVec3 Camera::getMousePos()
 
 	//Traspasamos a coordenadas del mundo
 	//Este numero multiplica para que acabe en la posicion del raton
-	//Para que funcione en pantalla pequeña usamos el 29
-	float viewX = ndcX * 29.0f;	
-	float viewY = ndcY * 29.0f;
+	//Para la ventana actual usamos estos numeros
+	float viewX = ndcX * 53.0f;	
+	float viewY = ndcY * 27.0f;
 
 
 	return PxVec3(viewX, viewY, 0);

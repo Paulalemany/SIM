@@ -254,7 +254,7 @@ void setupDefaultWindow(const char *name)
 
 	glutInit(&argc, argv);
 	
-	glutInitWindowSize(512, 512);	//Tamaño de la ventana
+	glutInitWindowSize(2038, 1014);	//Tamaño de la ventana
 	glutInitDisplayMode(GLUT_RGB|GLUT_DOUBLE|GLUT_DEPTH);
 	int mainHandle = glutCreateWindow(name);
 	glutSetWindow(mainHandle);
@@ -296,7 +296,7 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	glColor4f(0.75f, 0.26f, 0.47f, 1.0f);
 
 	//Nombre
-	drawText(_name, 200, 5);
+	drawText(_name, 0, 10);	//los textos se ven a partir de la y = 10
 	//drawText(_start, 100, 100);
 
 	// Setup camera

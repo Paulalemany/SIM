@@ -266,7 +266,8 @@ void setupDefaultWindow(const char *name)
 void setupDefaultRenderState()
 {
 	// Setup default render states
-	glClearColor(0.3f, 0.4f, 0.5f, 1.0);
+	//glClearColor(0.3f, 0.4f, 0.5f, 1.0);	//Color del original
+	glClearColor(1.0f, 0.82f, 0.86f, 1.0);	//Color del fondo	(Rosa bebe)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_COLOR_MATERIAL);
 	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -295,8 +296,8 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	glColor4f(0.75f, 0.26f, 0.47f, 1.0f);
 
 	//Nombre
-	drawText(_name, 5, 5);
-	drawText(_start, 100, 100);
+	drawText(_name, 200, 5);
+	//drawText(_start, 100, 100);
 
 	// Setup camera
 	glMatrixMode(GL_PROJECTION);

@@ -290,6 +290,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SolidoRigido.cpp" />
     <ClCompile Include="SolidScene.cpp" />
+    <ClCompile Include="Start_Menu.cpp" />
     <ClCompile Include="TorbellinoGenerator.cpp" />
     <ClCompile Include="TorbellinoScene.cpp" />
     <ClCompile Include="TornadoParticleGenerator.cpp" />
@@ -337,6 +338,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SolidoRigido.h" />
     <ClInclude Include="SolidScene.h" />
+    <ClInclude Include="Start_Menu.h" />
     <ClInclude Include="TorbellinoGenerator.h" />
     <ClInclude Include="TorbellinoScene.h" />
     <ClInclude Include="TornadoParticleGenerator.h" />

@@ -297,7 +297,7 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 
 	//Nombre
 	drawText(_name, 0, 10);	//los textos se ven a partir de la y = 10
-	//drawText(_start, 100, 100);
+	drawText(_start, 200, 300);
 
 	// Setup camera
 	glMatrixMode(GL_PROJECTION);

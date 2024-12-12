@@ -12,7 +12,7 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	solido->setLinearVelocity(vel);
 	solido->setAngularVelocity(W);
 
-	PxShape* shape = CreateShape(PxBoxGeometry(tam));
+	shape = CreateShape(PxBoxGeometry(tam));
 	solido->attachShape(*shape);
 
 	PxRigidBodyExt::updateMassAndInertia(*solido, d);	//El 0.15 es la densidad kg/m3
@@ -26,16 +26,48 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 
 void SolidoRigido::CreateStatic(PxScene* _scene, PxPhysics* _physics, PxTransform ori, Vector3 tam, Vector4 col)
 {
+	pose = ori;
+	color = col;
+	size = tam;
+
 	createCaja(ori.p,tam.x, tam.y, tam.z );
 	estatico = _physics->createRigidStatic(ori);
 	estatico->setGlobalPose(ori);
-	pose = ori;
-	PxShape* shapeEstatic = CreateShape(PxBoxGeometry(tam));
-	estatico->attachShape(*shapeEstatic);
+	
+	shape= CreateShape(PxBoxGeometry(tam));
+	estatico->attachShape(*shape);
 	_scene->addActor(*estatico);
 
-	item= new RenderItem(shapeEstatic, estatico, col);
+	item= new RenderItem(shape, estatico, col);
 
+	///Shapes existentes
+	//PxSphereGeometry
+	//PxCapsuleGeometry
+	//PxBoxGeometry
+
+}
+
+void SolidoRigido::changeShape(int s)
+{
+	item->release();
+
+	switch (s)
+	{
+	case 0:
+		shape = CreateShape(PxBoxGeometry(size));
+		break;
+	case 1:
+		shape = CreateShape(PxCapsuleGeometry(size.x, size.y));
+		break;
+	case 2:
+		shape = CreateShape(PxSphereGeometry(size.x));
+		break;
+
+	default:
+		break;
+	}
+
+	item = new RenderItem(shape, estatico, color);
 }
 
 void SolidoRigido::integrate(double t)

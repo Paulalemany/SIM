@@ -16,7 +16,8 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelFlotacion(s, p));
 	niveles.push_back(new NivelViento(s, p));
 	niveles.push_back(new NivelTornado(s, p));
-	actual = N_TORNADO;	//Escena con la que iniciamos
+	niveles.push_back(new Start_Menu(s, p));
+	actual = START;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas
@@ -51,63 +52,67 @@ void GameMachine::changeScene(int s)
 
 void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera)
 {
-	switch (key)
-	{
-	case '0':
-		/*std::cout << "---ESCENA PARTICULAS---\n";
-		changeScene(PARTICULAS);*/
-
-		std::cout << "---NIVEL FLOTACION---\n";
-		changeScene(N_FLOTACION);
-		break;
-	case '1':
-		/*std::cout << "---ESCENA FUERZAS---\n";
-		changeScene(FUERZAS);*/
-
-		cout << "---NIVEL VIENTO---\n";
-		changeScene(N_VIENTO);
-		break;
-	case '2':
-		/*std::cout << "---ESCENA VIENTO---\n";
-		changeScene(VIENTO);*/
-
-		cout << "---NIVEL TORNADO---\n";
-		changeScene(N_TORNADO);
-		break;
-	case '3':
-		/*std::cout << "---ESCENA TORBELLINO---\n";
-		changeScene(TORBELLINO);*/
-		break;
-	case '4':
-		/*std::cout << "---ESCENA EXPLOSION---\n";
-		changeScene(EXPLOSION);*/
-		break;
-	case '5':
-		/*std::cout << "---ESCENA MUELLES---\n";
-		changeScene(MUELLES);*/
-		break;
-	case '6':
-		/*std::cout << "---ESCENA ANCLA---\n";
-		changeScene(ANCLA);*/
-		break;
-	case '7':
-		/*std::cout << "---ESCENA FLOTACION---\n";
-		changeScene(FLOTACION);*/
-		break;
-	case '8':
-		std::cout << "---ESCENA SOLIDOS---\n";
-		changeScene(SOLIDOS);
-		break;
-	case '9':
-		
-		break;
-
-	default:
-
-		niveles[actual]->keyPressed(key, camera);
-		break;
+	if (actual >= 3) {
+		changeScene(actual - 1);	//cambiamos al siguiente
 	}
+	else {
+		switch (key)
+		{
+		case '0':
+			/*std::cout << "---ESCENA PARTICULAS---\n";
+			changeScene(PARTICULAS);*/
 
+			std::cout << "---NIVEL FLOTACION---\n";
+			changeScene(N_FLOTACION);
+			break;
+		case '1':
+			/*std::cout << "---ESCENA FUERZAS---\n";
+			changeScene(FUERZAS);*/
+
+			cout << "---NIVEL VIENTO---\n";
+			changeScene(N_VIENTO);
+			break;
+		case '2':
+			/*std::cout << "---ESCENA VIENTO---\n";
+			changeScene(VIENTO);*/
+
+			cout << "---NIVEL TORNADO---\n";
+			changeScene(N_TORNADO);
+			break;
+		case '3':
+			/*std::cout << "---ESCENA TORBELLINO---\n";
+			changeScene(TORBELLINO);*/
+			break;
+		case '4':
+			/*std::cout << "---ESCENA EXPLOSION---\n";
+			changeScene(EXPLOSION);*/
+			break;
+		case '5':
+			/*std::cout << "---ESCENA MUELLES---\n";
+			changeScene(MUELLES);*/
+			break;
+		case '6':
+			/*std::cout << "---ESCENA ANCLA---\n";
+			changeScene(ANCLA);*/
+			break;
+		case '7':
+			/*std::cout << "---ESCENA FLOTACION---\n";
+			changeScene(FLOTACION);*/
+			break;
+		case '8':
+			std::cout << "---ESCENA SOLIDOS---\n";
+			changeScene(SOLIDOS);
+			break;
+		case '9':
+
+			break;
+
+		default:
+
+			niveles[actual]->keyPressed(key, camera);
+			break;
+		}
+	}
 }
 
 void GameMachine::shoot(PxVec3 pos)

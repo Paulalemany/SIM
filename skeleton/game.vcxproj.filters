@@ -133,6 +133,9 @@
     <ClCompile Include="ParticleSystemTornado.cpp">
       <Filter>cpp\Sistemas</Filter>
     </ClCompile>
+    <ClCompile Include="Start_Menu.cpp">
+      <Filter>cpp\Niveles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -269,6 +272,9 @@
     </ClInclude>
     <ClInclude Include="ParticleSystemTornado.h">
       <Filter>h\Sistemas</Filter>
+    </ClInclude>
+    <ClInclude Include="Start_Menu.h">
+      <Filter>h\Niveles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

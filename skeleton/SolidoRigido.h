@@ -24,6 +24,8 @@ public:
 	void CreateStatic(PxScene* _scene, PxPhysics* _physics,
 		PxTransform ori, Vector3 tam, Vector4 col);
 
+	void changeShape(int s);
+
 	///Setters
 	void setInertia() {
 		//Dentro simplemente se pone por el tamaño?
@@ -47,9 +49,11 @@ public:
 
 protected:
 	RenderItem* item = nullptr;
+	PxShape* shape = nullptr;
 	PxRigidDynamic* solido = nullptr;
 	PxRigidStatic* estatico = nullptr;
 	Vector3 size;
+	Vector4 color;
 
 	Vector3 Lvel;
 	Vector3 Wvel;

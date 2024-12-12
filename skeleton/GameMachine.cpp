@@ -50,6 +50,9 @@ void GameMachine::update(double t)
 	if (completados.size() == niv) {	//Se ha completado el juego
 
 		cout << "LOS HAS COMPLETADO TODOS FELICIDADES";
+		for (int i = 0; i < niv; i++) botones.push_back(rest);
+		niveles[NIVELES]->setColors(botones);
+		changeScene(START);
 
 		completados.clear();
 	}

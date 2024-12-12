@@ -34,7 +34,8 @@ public:
 	void setPosition(Vector3 p) override
 	{
 		pose.p = p;
-		solido->setGlobalPose(pose);
+		if (solido != nullptr) solido->setGlobalPose(pose);
+		else if (estatico != nullptr) estatico->setGlobalPose(pose);
 	}
 	void setVelocidad(Vector3 v) override 
 	{

@@ -15,6 +15,7 @@ public:
 	void integrate(double t) override;
 	virtual bool update(double t);
 	void restLiveTime(double t);
+	void restTransparencia(float t) { trans -= t; }
 
 	///Setters
 	void setLiveTime(double t) { liveTime = t; }

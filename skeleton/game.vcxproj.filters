@@ -136,6 +136,12 @@
     <ClCompile Include="Start_Menu.cpp">
       <Filter>cpp\Niveles</Filter>
     </ClCompile>
+    <ClCompile Include="BrillitosParticleGenerator.cpp">
+      <Filter>cpp\Generadores</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystemBrillitos.cpp">
+      <Filter>cpp\Sistemas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -275,6 +281,12 @@
     </ClInclude>
     <ClInclude Include="Start_Menu.h">
       <Filter>h\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="BrillitosParticleGenerator.h">
+      <Filter>h\Generadores</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystemBrillitos.h">
+      <Filter>h\Sistemas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #pragma once
 #include "SolidScene.h"
+#include "ParticleSystemBrillitos.h"
 
 extern std::string _start;
 class Start_Menu : public SolidScene

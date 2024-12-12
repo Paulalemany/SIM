@@ -24,6 +24,9 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas
 	for (int i = 0; i < niveles.size(); i++) niveles[i]->quit(); //Tambien escondemos todos los niveles
 
+	for (int i = 0; i < niv; i++) botones.push_back(rest);
+	niveles[NIVELES]->setColors(botones);
+
 	niveles[actual]->init();
 }
 
@@ -35,7 +38,21 @@ void GameMachine::update(double t)
 {
 	//Solo hacemos el update de la escena en la que estamos
 	//escenas[actual]->update(t);
-	niveles[actual]->update(t);
+	if (niveles[actual]->update(t))	//Si devuelve true es que se han completado los niveles
+	{
+		completados.insert(actual);
+		botones[actual] = completed;
+		niveles[NIVELES]->setColors(botones);
+		changeScene(NIVELES);
+		
+	}
+
+	if (completados.size() == niv) {	//Se ha completado el juego
+
+		cout << "LOS HAS COMPLETADO TODOS FELICIDADES";
+
+		completados.clear();
+	}
 }
 
 void GameMachine::changeScene(int s)
@@ -53,7 +70,7 @@ void GameMachine::changeScene(int s)
 
 void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera)
 {
-	if (actual >= 3) {
+	if (actual > niv) {
 		changeScene(actual - 1);	//cambiamos al siguiente
 	}
 	else {
@@ -118,6 +135,6 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 void GameMachine::shoot(PxVec3 pos)
 {
-	if (actual >= 3) return;
+	if (actual >= niv) return;
 	niveles[actual]->shoot(pos);
 }

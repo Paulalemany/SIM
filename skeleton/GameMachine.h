@@ -20,6 +20,9 @@
 #include "Start_Menu.h"
 #include "Niveles_Menu.h"
 
+//Para completarlos
+#include <unordered_set>
+
 class GameMachine
 {
 public:
@@ -60,5 +63,12 @@ private:
 	//Escenas
 	vector<Scene*> escenas;
 	vector<SolidScene*> niveles;
+
+	unordered_set<int> completados;
+	const int niv = 3;
+
+	vector<Vector4> botones;
+	const Vector4 completed = { 0.97, 0.97, 0.68, 1 };
+	const Vector4 rest = { 0.85, 0.69, 0.97, 1 };
 };
 

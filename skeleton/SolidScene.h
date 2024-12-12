@@ -20,8 +20,7 @@ public:
 	virtual void init() override;	//Pone la escena
 	virtual void quit() override;	//Quita la escena
 
-	//Iria bien un metodo de generar escenario o algo asi
-	//Podria ser un metodo privado perfectamente
+	virtual void setColors(vector<Vector4> c) { colors = c; }
 
 protected:
 	PxScene* scene = NULL;
@@ -30,6 +29,7 @@ protected:
 
 	//Guardamos todos los objetos en un vector?
 	vector<SolidoRigido*> objetos;
+	vector<Vector4> colors;
 
 	///Dedicado al gameplay
 	SolidoRigido* target = nullptr;

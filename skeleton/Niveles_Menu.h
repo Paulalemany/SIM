@@ -1,5 +1,6 @@
 #pragma once
 #include "SolidScene.h"
+#include <vector>
 
 extern std::string _selector;
 extern std::string _selector2;
@@ -12,9 +13,5 @@ public:
 	void init() override;	//Pone la escena
 	void quit() override;	//Quita la escena
 
-private:
-	SolidoRigido* N1 = nullptr;
-	SolidoRigido* N2 = nullptr;
-	SolidoRigido* N3 = nullptr;
 };
 

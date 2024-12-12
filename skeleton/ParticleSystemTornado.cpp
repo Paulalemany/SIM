@@ -40,3 +40,15 @@ bool ParticleSystemTornado::update(double t)
 
 	return true;
 }
+
+void ParticleSystemTornado::show()
+{
+	fuerza->show();
+	ParticleSystem::show();
+}
+
+void ParticleSystemTornado::hide()
+{
+	fuerza->hide();
+	ParticleSystem::hide();
+}

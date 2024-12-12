@@ -117,5 +117,6 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 void GameMachine::shoot(PxVec3 pos)
 {
+	if (actual >= 3) return;
 	niveles[actual]->shoot(pos);
 }

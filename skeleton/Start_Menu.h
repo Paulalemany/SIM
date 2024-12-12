@@ -3,15 +3,16 @@
 #include "ParticleSystemBrillitos.h"
 
 extern std::string _start;
+extern std::string _intro;
+extern std::string _balas;
+extern std::string _ExplicacionS;
+extern std::string _ExplicacionM;
+extern std::string _ExplicacionL;
+
 class Start_Menu : public SolidScene
 {
 public:
 	Start_Menu(PxScene* _scene, PxPhysics* _physics);
-
-	///Input de la escena 
-	void update(double t) override;
-	
-	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 
 
 	///Para la gestion de escenas

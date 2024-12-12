@@ -297,7 +297,17 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 
 	//Nombre
 	drawText(_name, 0, 10);	//los textos se ven a partir de la y = 10
-	drawText(_start, 200, 300);
+	drawText(_intro, 120, 400);
+	drawText(_balas, 190, 350);
+	drawText(_ExplicacionS, 110, 320);
+	drawText(_ExplicacionM, 110, 300);
+	drawText(_ExplicacionL, 110, 280);
+	drawText(_start, 182, 180);
+
+	/*extern std::string _intro;
+	extern std::string _ExplicacionS;
+	extern std::string _ExplicacionM;
+	extern std::string _ExplicacionL;*/
 
 	// Setup camera
 	glMatrixMode(GL_PROJECTION);
@@ -408,7 +418,7 @@ void drawText(const std::string& text, int x, int y)
 
 	for (int i = 0; i < length; i++) {
 		//La primera variable es el tipo de letra del texto
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)text[i]);
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, (int)text[i]);
 
 		///Tipografías disponibles 
 		//GLUT_BITMAP_8_BY_13

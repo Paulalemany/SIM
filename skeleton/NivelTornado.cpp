@@ -14,14 +14,7 @@ NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 
 void NivelTornado::update(double t)
 {
-	//ya veremos como hay que hacerlo aqui para que funcione
 	SolidScene::update(t);
-}
-
-void NivelTornado::keyPressed(unsigned char key, const physx::PxTransform& camera)
-{
-	//Ya veremos como lo hacemos aqui también
-	SolidScene::keyPressed(key, camera);
 }
 
 void NivelTornado::init()
@@ -35,13 +28,9 @@ void NivelTornado::init()
 	canon = new Particle({ -20, 0, 0 });
 	canon->setTam(0.5, 1);
 
-	Particle* zone = new Particle(TPos);
-	zone->setColor({ 1,1,1,0.5 });
-	zone->setTam(size, 0);
-
 	active = true;
 
-	_start = "HOLAAAA <3";
+	Scene::init();
 }
 
 void NivelTornado::quit()

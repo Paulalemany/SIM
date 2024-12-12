@@ -11,9 +11,6 @@
 
 #include "GameMachine.h"
 
-std::string display_text = "This is a test";
-
-
 using namespace physx;
 
 #pragma region Inicializacion
@@ -42,6 +39,10 @@ GameMachine* gameMachine = nullptr;
 std::string _name = "Paula Alemany Rodriguez";
 std::string _start = " ";
 std::string _intro = " ";
+std::string _balas = " ";
+std::string _ExplicacionS = " ";
+std::string _ExplicacionM = " ";
+std::string _ExplicacionL = " ";
 std::string _selector = " ";
 std::string _nivelFlotacion = " ";
 std::string _nivelViento = " ";

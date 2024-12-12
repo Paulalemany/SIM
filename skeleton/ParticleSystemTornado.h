@@ -11,6 +11,9 @@ public:
 
 	bool update(double t) override;
 
+	void show() override;
+	void hide() override;
+
 private:
 	std::vector<Particle*> staticAux;
 

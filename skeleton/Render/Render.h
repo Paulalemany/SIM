@@ -49,6 +49,14 @@
 
 //Variables que podemos usar de forma externa
 extern std::string display_text;
+extern std::string _name;
+extern std::string _start;
+extern std::string _intro;
+extern std::string _selector;
+extern std::string _nivelFlotacion;
+extern std::string _nivelViento;
+extern std::string _nivelTornado;
+extern std::string _fin;
 
 extern int WidthCam;
 extern int HeightCam;

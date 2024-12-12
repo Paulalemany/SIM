@@ -20,7 +20,7 @@ public:
 
 private:
 
-	float size = 20;
+	float size = 50;
 	Vector3 TPos = { 0,0,0 };
 };
 

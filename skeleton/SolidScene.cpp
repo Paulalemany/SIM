@@ -49,22 +49,22 @@ void SolidScene::keyPressed(unsigned char key, const physx::PxTransform& camera)
 	{
 	case 's':
 		std::cout << "---BALA PEQUEÑA---\n";
-		bulletColor = { 0, 0, 1, 1 };
-		bulletMasa = 10;
-		bulletTam = 0.5;
+		bulletColor = SbulletCol;
+		bulletMasa = SbulletMasa;
+		bulletTam = SbulletTam;
 
 		break;
 	case 'm':
 		std::cout << "---BALA MEDIANA---\n";
-		bulletColor = { 1, 0, 0, 1 };
-		bulletMasa = 5000;	//Con este se hunde pero mas o menos flota
-		bulletTam = 1;
+		bulletColor = MbulletCol;
+		bulletMasa = MbulletMasa;	//Con este se hunde pero mas o menos flota
+		bulletTam = MbulletTam;
 		break;
 	case 'l':
 		std::cout << "---BALA GRANDE---\n";
-		bulletColor = { 0, 1, 0, 1 };
-		bulletMasa = 10000;	//Quiero que sea una masa que le haga undirse
-		bulletTam = 2;
+		bulletColor = LbulletCol;
+		bulletMasa = LbulletMasa;	//Quiero que sea una masa que le haga undirse
+		bulletTam = LbulletTam;
 		break;
 	default:
 		break;

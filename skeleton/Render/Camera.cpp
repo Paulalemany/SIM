@@ -56,30 +56,6 @@ void Camera::handleMouse(int button, int state, int x, int y)
 	mMouseY = y;
 }
 
-
-//Coge la posicion del raton
-//PxVec3 Camera::getMousePos(PxMat44& viewMatrix, PxMat44& projectionMatrix)
-//{
-//	
-//
-//	//Pone las coordenadas dentro del rango [-1,1]
-//	float ndcX = ((2.0f * mMouseX) / WidthCam) - 1.0f;
-//	float ndcY = 1.0f - ((2.0f * mMouseY) / HeightCam);
-//
-//	PxVec4 clipSpacePoint(ndcX, ndcY, -1, 1.0f);
-//
-//	// Transformar a espacio de cámara
-//	PxMat44 inverseProjection = projectionMatrix.inverseRT();
-//	PxVec4 cameraSpacePoint = inverseProjection.transform(clipSpacePoint);
-//
-//	// Transformar a espacio del mundo
-//	cameraSpacePoint /= cameraSpacePoint.w; // Homogeneizar
-//	PxMat44 inverseView = viewMatrix.inverseRT();
-//	PxVec4 worldSpacePoint = inverseView.transform(cameraSpacePoint);
-//
-//	return PxVec3(worldSpacePoint.x, worldSpacePoint.y, worldSpacePoint.z);
-//}
-
 bool Camera::handleKey(unsigned char key, int x, int y, float speed)
 {
 	PX_UNUSED(x);

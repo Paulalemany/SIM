@@ -19,9 +19,9 @@ bool ParticleSystemTornado::update(double t)
 	//Deberia hacer aqui el random? Para que no se creen en cada frame
 	aux = generator->CreateParticles(particulas.size(), numParticles);
 
-	for (int i = 0; i < staticAux.size(); i++) {	//Añadimos las particulas a nuestro vector
+	for (int i = 0; i < aux.size(); i++) {	//Añadimos las particulas a nuestro vector
 
-		particulas.push_back(staticAux[i]);
+		particulas.push_back(aux[i]);
 	}
 
 	//Eliminar particulas que mueren

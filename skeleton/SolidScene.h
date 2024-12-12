@@ -38,9 +38,22 @@ protected:
 
 	//Particularidades de la bala
 	//De forma predeterminada sera la mediana
-	Vector4 bulletColor = { 1,0,0,1 };
-	float bulletMasa = 5000;
-	float bulletTam = 1;
+
+	const float SbulletMasa = 10;
+	const float MbulletMasa = 1000;
+	const float LbulletMasa = 10000;
+
+	const float SbulletTam = 0.5;
+	const float MbulletTam = 1;
+	const float LbulletTam = 2;
+
+	const Vector4 SbulletCol = { 0, 0, 1, 1 };
+	const Vector4 MbulletCol = { 1, 0, 0, 1 };
+	const Vector4 LbulletCol = { 0, 1, 0, 1 };
+
+	Vector4 bulletColor = MbulletCol;
+	float bulletMasa = MbulletMasa;
+	float bulletTam = MbulletTam;
 
 };
 

@@ -9,7 +9,7 @@ NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 	fuerzas[0]->setRadio(size);
 
 	//Cuando esté hecho habrá que ponerle el sistema de particulas
-	sistemas.push_back(new ParticleSystemTornado(TPos, { 5,0,0 }, 100, 50000, size));
+	sistemas.push_back(new ParticleSystemTornado(TPos, { 0,0, 0 }, 100, 50000, size));
 }
 
 void NivelTornado::update(double t)

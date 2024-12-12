@@ -16,6 +16,16 @@
 #include "NivelViento.h"
 #include "NivelTornado.h"
 
+//Referencias para los textos
+extern std::string _name;
+extern std::string _start;
+extern std::string _intro;
+extern std::string _selector;
+extern std::string _nivelFlotacion;
+extern std::string _nivelViento;
+extern std::string _nivelTornado;
+extern std::string _fin;
+
 
 class GameMachine
 {

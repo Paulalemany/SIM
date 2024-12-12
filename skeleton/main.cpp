@@ -38,6 +38,16 @@ ContactReportCallback gContactReportCallback;
 //Scene* scene = nullptr;
 GameMachine* gameMachine = nullptr;
 
+//Textos del juego
+std::string _name = "Paula Alemany Rodriguez";
+std::string _start = " ";
+std::string _intro = " ";
+std::string _selector = " ";
+std::string _nivelFlotacion = " ";
+std::string _nivelViento = " ";
+std::string _nivelTornado = " ";
+std::string _fin = " ";
+
 
 // Initialize physics engine
 void initPhysics(bool interactive)

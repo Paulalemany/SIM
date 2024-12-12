@@ -12,6 +12,7 @@ public:
 private:
 
 	//Rozamiento
-	float k = 0.5;
+	//Con 10 es suficiente para desviar la bala pequeña
+	float k = 1000;
 };
 

@@ -29,7 +29,7 @@ Proyectil::Proyectil(physx::PxVec3 Pos, physx::PxVec3 Vel, physx::PxVec3 a, doub
 bool Proyectil::update(double t)
 {
 	// si esta por debajo de una posicion, marca la particula para eliminar
-	if (pose.p.y <= -50 || pose.p.y >= 70) {
+	if (pose.p.y <= -100 || pose.p.y >= 100) {
 		alive = false; 
 	}
 	else if (liveTime <= 0)

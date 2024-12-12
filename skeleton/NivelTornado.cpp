@@ -40,6 +40,8 @@ void NivelTornado::init()
 	zone->setTam(size, 0);
 
 	active = true;
+
+	_start = "HOLAAAA <3";
 }
 
 void NivelTornado::quit()

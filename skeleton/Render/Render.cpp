@@ -292,11 +292,11 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// Display text
-	glColor4f(1.0f, 0.2f, 0.2f, 1.0f);
-	//drawText(display_text, 0, 0);
+	glColor4f(0.75f, 0.26f, 0.47f, 1.0f);
 
 	//Nombre
 	drawText(_name, 5, 5);
+	drawText(_start, 100, 100);
 
 	// Setup camera
 	glMatrixMode(GL_PROJECTION);
@@ -406,7 +406,17 @@ void drawText(const std::string& text, int x, int y)
 	int length = text.length();
 
 	for (int i = 0; i < length; i++) {
-		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, (int)text[i]);
+		//La primera variable es el tipo de letra del texto
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)text[i]);
+
+		///Tipografías disponibles 
+		//GLUT_BITMAP_8_BY_13
+		// GLUT_BITMAP_9_BY_15
+		//GLUT_BITMAP_HELVETICA_10
+		//GLUT_BITMAP_HELVETICA_12
+		//GLUT_BITMAP_HELVETICA_18			<3
+		//GLUT_BITMAP_TIMES_ROMAN_10
+		//GLUT_BITMAP_TIMES_ROMAN_24		<3
 	}
 	glPopMatrix();
 	glMatrixMode(GL_PROJECTION);

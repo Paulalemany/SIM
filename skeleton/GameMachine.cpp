@@ -18,7 +18,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelTornado(s, p));
 	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
-	actual = NIVELES;	//Escena con la que iniciamos
+	actual = START;	//Escena con la que iniciamos
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas
@@ -28,6 +28,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles[NIVELES]->setColors(botones);
 
 	niveles[actual]->init();
+	//escenas[actual]->init();
 }
 
 GameMachine::~GameMachine()
@@ -38,6 +39,7 @@ void GameMachine::update(double t)
 {
 	//Solo hacemos el update de la escena en la que estamos
 	//escenas[actual]->update(t);
+
 	if (niveles[actual]->update(t))	//Si devuelve true es que se han completado los niveles
 	{
 		completados.insert(actual);
@@ -52,6 +54,7 @@ void GameMachine::update(double t)
 		cout << "LOS HAS COMPLETADO TODOS FELICIDADES";
 		for (int i = 0; i < niv; i++) botones.push_back(rest);
 		niveles[NIVELES]->setColors(botones);
+		niveles[START]->setWin(true);
 		changeScene(START);
 
 		completados.clear();

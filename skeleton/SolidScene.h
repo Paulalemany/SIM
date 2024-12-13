@@ -21,6 +21,7 @@ public:
 	virtual void quit() override;	//Quita la escena
 
 	virtual void setColors(vector<Vector4> c) { colors = c; }
+	virtual void setWin(bool b) {}
 
 protected:
 	PxScene* scene = NULL;

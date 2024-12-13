@@ -8,6 +8,7 @@ extern std::string _balas;
 extern std::string _ExplicacionS;
 extern std::string _ExplicacionM;
 extern std::string _ExplicacionL;
+extern std::string _fin;
 
 class Start_Menu : public SolidScene
 {
@@ -18,5 +19,10 @@ public:
 	///Para la gestion de escenas
 	void init() override;	//Pone la escena
 	void quit() override;	//Quita la escena
+
+	void setWin(bool b) override { win = b; }
+
+private:
+	bool win = false;
 };
 

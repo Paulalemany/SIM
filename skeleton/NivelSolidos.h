@@ -8,7 +8,6 @@ public:
 
 	bool update(double t) override;
 
-	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 	void shoot(Vector3 pos) override;
 
 	void init() override;	//Pone la escena

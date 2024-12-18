@@ -10,10 +10,6 @@ bool NivelSolidos::update(double t)
 	return false;
 }
 
-void NivelSolidos::keyPressed(unsigned char key, const physx::PxTransform& camera)
-{
-}
-
 void NivelSolidos::shoot(Vector3 pos)
 {
 	if (solidBullet != nullptr) solidBullet->~SolidoRigido();	//Solo queremos una bala en escena

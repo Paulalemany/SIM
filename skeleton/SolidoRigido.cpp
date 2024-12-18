@@ -12,7 +12,7 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	solido->setLinearVelocity(vel);
 	solido->setAngularVelocity(W);
 
-	shape = CreateShape(PxBoxGeometry(tam));
+	shape = CreateShape(PxSphereGeometry(tam.x));
 	solido->attachShape(*shape);
 
 	PxRigidBodyExt::updateMassAndInertia(*solido, d);	//El 0.15 es la densidad kg/m3

@@ -20,7 +20,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
 	//niveles.push_back(new Text_Menu(s, p));
-	actual = NIVELES;	//Escena con la que iniciamos
+	actual = START;	//Escena con la que iniciamos
 
 	for (int i = 0; i < niv; i++) botones.push_back(rest);
 	niveles[NIVELES]->setColors(botones);

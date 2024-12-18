@@ -51,6 +51,7 @@ std::string _nivelFlotacion = " ";
 std::string _nivelViento = " ";
 std::string _nivelTornado = " ";
 std::string _nivelSolidos = " ";
+std::string _explicacionContinuar = " ";
 std::string _fin = " ";
 
 

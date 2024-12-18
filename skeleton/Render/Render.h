@@ -61,6 +61,8 @@ extern std::string _selector2;
 extern std::string _nivelFlotacion;
 extern std::string _nivelViento;
 extern std::string _nivelTornado;
+extern std::string _nivelSolidos;
+extern std::string _explicacionContinuar;
 extern std::string _fin;
 
 extern int WidthCam;

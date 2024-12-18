@@ -2,6 +2,8 @@
 #include "SolidScene.h"
 #include "FlotacionForce.h"
 
+extern std::string _nivelFlotacion;
+extern std::string _explicacionContinuar;
 class NivelFlotacion : public SolidScene
 {
 public:

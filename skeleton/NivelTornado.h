@@ -3,6 +3,8 @@
 #include "TorbellinoGenerator.h"
 #include "ParticleSystemTornado.h"
 
+extern std::string _nivelTornado;
+extern std::string _explicacionContinuar;
 class NivelTornado : public SolidScene
 {
 public:

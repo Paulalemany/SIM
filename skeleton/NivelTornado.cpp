@@ -14,21 +14,29 @@ NivelTornado::NivelTornado(PxScene* _scene, PxPhysics* _physics)
 
 void NivelTornado::init()
 {
-	///Creamos el nivel
+	if (flag) {
+		///Creamos el nivel
+		target = new SolidoRigido();
+		target->CreateStatic(scene, physics, { 20, 0, 0 }, { 2,2,2 }, { 0,0,0,1 });
+		objetos.push_back(target);
 
-	target = new SolidoRigido();
-	target->CreateStatic(scene, physics, { 20, 0, 0 }, { 2,2,2 }, { 0,0,0,1 });
-	objetos.push_back(target);
+		canon = new Particle({ -20, 0, 0 });
+		canon->setTam({ 0.5, 1, 0.5 }, 1);
 
-	canon = new Particle({ -20, 0, 0 });
-	canon->setTam({ 0.5, 1, 0.5 }, 1);
+		active = true;
 
-	active = true;
-
-	Scene::init();
+		Scene::init();
+	}
+	else {
+		_nivelTornado = "___¡Oh no, un tornado!___";
+		_explicacionContinuar = "___Pulse el mismo numero para continuar___";
+	}
+	
 }
 
 void NivelTornado::quit()
 {
+	_nivelTornado = "";
+	_explicacionContinuar = "";
 	SolidScene::quit();
 }

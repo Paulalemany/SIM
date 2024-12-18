@@ -1,6 +1,8 @@
 #pragma once
 #include "SolidScene.h"
 
+extern std::string _nivelSolidos;
+extern std::string _explicacionContinuar;
 class NivelSolidos : public SolidScene
 {
 public:

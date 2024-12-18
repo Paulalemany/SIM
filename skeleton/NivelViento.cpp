@@ -54,30 +54,39 @@ void NivelViento::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 void NivelViento::init()
 {
-	Scene::init();
+	if (flag) {
+		Scene::init();
 
-	///Creamos el nivel
+		///Creamos el nivel
 
-	//Target del nivel
-	target = new SolidoRigido();
-	target->CreateStatic(scene, physics, { -5, 5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
-	objetos.push_back(target);
+		//Target del nivel
+		target = new SolidoRigido();
+		target->CreateStatic(scene, physics, { -5, 5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
+		objetos.push_back(target);
 
-	//Cañon
-	canon = new Particle({ -20, 0, 0 });
-	canon->setTam({ 0.5, 1, 0.5 }, 1);
+		//Cañon
+		canon = new Particle({ -20, 0, 0 });
+		canon->setTam({ 0.5, 1, 0.5 }, 1);
 
-	SolidoRigido* muro = new SolidoRigido();
-	muro->CreateStatic(scene, physics, { -10, 0, 0 }, { 1, 10, 1 }, { 1,1,1,1 });
-	objetos.push_back(muro);
+		SolidoRigido* muro = new SolidoRigido();
+		muro->CreateStatic(scene, physics, { -10, 0, 0 }, { 1, 10, 1 }, { 1,1,1,1 });
+		objetos.push_back(muro);
 
-	SolidoRigido* techo = new SolidoRigido();
-	techo->CreateStatic(scene, physics, { -4, 10, 0 }, { 7, 1, 1 }, { 1,1,1,1 });
-	objetos.push_back(techo);
+		SolidoRigido* techo = new SolidoRigido();
+		techo->CreateStatic(scene, physics, { -4, 10, 0 }, { 7, 1, 1 }, { 1,1,1,1 });
+		objetos.push_back(techo);
+	}
+	else {
+		_nivelViento = "___Pulsa 'v' para activar/desactivar viento___";
+		_explicacionContinuar = "___Pulse el mismo numero para continuar___";
+	}
+	
 }
 
 void NivelViento::quit()
 {
+	_nivelViento = "";
+	_explicacionContinuar = "";
 	viento = false;
 	SolidScene::quit();
 }

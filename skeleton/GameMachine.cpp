@@ -66,14 +66,13 @@ void GameMachine::update(double t)
 
 void GameMachine::changeScene(int s)
 {
-	if (s != actual || s > niv) {
-
-		//Ocultamos las particulas de la escena actual
-		niveles[actual]->quit();
-		//Ponemos en marcha los de la nueva
-		niveles[s]->init();
-		actual = s;
-	}
+	//Quitamos la condicion para poder reiniciar los niveles
+	
+	//Ocultamos las particulas de la escena actual
+	niveles[actual]->quit();
+	//Ponemos en marcha los de la nueva
+	niveles[s]->init();
+	actual = s;
 	
 }
 
@@ -89,26 +88,62 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 			changeScene(actual - 1);	//cambiamos al siguiente
 	}
 	else {
+
 		switch (key)
 		{
 		
 		case '1':
+
 			std::cout << "---NIVEL FLOTACION---\n";
-			changeScene(N_FLOTACION);
+
+			if (!niveles[N_FLOTACION]->getWin()) {	//Si tienen la flag falsa es que debemos mostrar el texto
+
+				changeScene(N_FLOTACION);
+				niveles[N_FLOTACION]->setWin(true);	//Se ha mostrado el texto
+			}
+			else {
+				changeScene(N_FLOTACION);
+				niveles[N_FLOTACION]->setWin(false);
+			}
 			
 			break;
 		case '2':
 			cout << "---NIVEL VIENTO---\n";
-			changeScene(N_VIENTO);
+			if (!niveles[N_VIENTO]->getWin()) {	//Si tienen la flag falsa es que debemos mostrar el texto
+
+				changeScene(N_VIENTO);
+				niveles[N_VIENTO]->setWin(true);	//Se ha mostrado el texto
+			}
+			else {
+				changeScene(N_VIENTO);
+				niveles[N_VIENTO]->setWin(false);
+			}
 			
 			break;
 		case '3':
 			cout << "---NIVEL TORNADO---\n";
-			changeScene(N_TORNADO);
+			if (!niveles[N_TORNADO]->getWin()) {	//Si tienen la flag falsa es que debemos mostrar el texto
+
+				changeScene(N_TORNADO);
+				niveles[N_TORNADO]->setWin(true);	//Se ha mostrado el texto
+			}
+			else {
+				changeScene(N_TORNADO);
+				niveles[N_TORNADO]->setWin(false);
+			}
+
 			break;
 		case '4':
 			std::cout << "---ESCENA SOLIDOS---\n";
-			changeScene(N_SOLIDOS);
+			if (!niveles[N_SOLIDOS]->getWin()) {	//Si tienen la flag falsa es que debemos mostrar el texto
+
+				changeScene(N_SOLIDOS);
+				niveles[N_SOLIDOS]->setWin(true);	//Se ha mostrado el texto
+			}
+			else {
+				changeScene(N_SOLIDOS);
+				niveles[N_SOLIDOS]->setWin(false);
+			}
 			break;
 
 		default:

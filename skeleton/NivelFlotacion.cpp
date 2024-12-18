@@ -32,30 +32,39 @@ void NivelFlotacion::keyPressed(unsigned char key, const physx::PxTransform& cam
 
 void NivelFlotacion::init()
 {
-	//Target del nivel
-	target = new SolidoRigido();
-	target->CreateStatic(scene, physics, { 20, -5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
-	objetos.push_back(target);
+	if (flag) {
+		//Target del nivel
+		target = new SolidoRigido();
+		target->CreateStatic(scene, physics, { 20, -5, -0.5 }, { 2, 2, 2 }, { 0, 0, 0, 1 });
+		objetos.push_back(target);
 
-	//Para que no nos colisione con el cañon hago que este sea una particula 
-	canon = new Particle({ -20, 0, 0 });
-	canon->setTam({ 0.5,1,0.5 }, 1);
+		//Para que no nos colisione con el cañon hago que este sea una particula 
+		canon = new Particle({ -20, 0, 0 });
+		canon->setTam({ 0.5,1,0.5 }, 1);
 
-	//Muro que obliga a usar la flotacion
-	SolidoRigido* muro = new SolidoRigido();
-	muro->CreateStatic(scene, physics, { 0,9,0 }, { 1, 10, 1 }, { 1,1,1,1 });
-	objetos.push_back(muro);
+		//Muro que obliga a usar la flotacion
+		SolidoRigido* muro = new SolidoRigido();
+		muro->CreateStatic(scene, physics, { 0,9,0 }, { 1, 10, 1 }, { 1,1,1,1 });
+		objetos.push_back(muro);
 
-	//Le voy a hacer tambien un techo que me veo venir que lo hagan por arriba
-	//Mejor trato de huir de las diagonales
-	SolidoRigido* techo = new SolidoRigido();
-	techo->CreateStatic(scene, physics, { -9, 20, 0 }, { 10, 1, 1 }, { 1,1,1,1 });
-	objetos.push_back(techo);
+		//Le voy a hacer tambien un techo que me veo venir que lo hagan por arriba
+		//Mejor trato de huir de las diagonales
+		SolidoRigido* techo = new SolidoRigido();
+		techo->CreateStatic(scene, physics, { -9, 20, 0 }, { 10, 1, 1 }, { 1,1,1,1 });
+		objetos.push_back(techo);
 
-	Scene::init();
+		Scene::init();
+	}
+	else {
+		_nivelFlotacion = "___¡Cuidado con el agua!___";
+		_explicacionContinuar = "___Pulse el mismo numero para continuar___";
+	}
+	
 }
 
 void NivelFlotacion::quit()
 {
+	_nivelFlotacion = "";
+	_explicacionContinuar = "";
 	SolidScene::quit();
 }

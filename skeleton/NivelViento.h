@@ -3,6 +3,8 @@
 #include "VientoGenerator.h"
 #include "ParticleSystemViento.h"
 
+extern std::string _nivelViento;
+extern std::string _explicacionContinuar;
 class NivelViento : public SolidScene
 {
 public:

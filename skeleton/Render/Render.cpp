@@ -308,9 +308,11 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	drawText(_selector, 120, 400);
 	drawText(_selector2, 120, 100);
 
-	drawText(_nivelFlotacion, 120, 100);
-	drawText(_nivelViento, 120, 100);
-	drawText(_nivelTornado, 120, 100);
+	drawText(_nivelFlotacion, 200, 300);
+	drawText(_nivelViento, 190, 300);
+	drawText(_nivelTornado, 215, 300);
+	drawText(_nivelSolidos, 200, 300);
+	drawText(_explicacionContinuar, 186, 250);
 
 	drawText(_fin, 190, 300);
 

@@ -19,5 +19,7 @@ private:
 
 	SolidoRigido* solidBullet = nullptr;
 
+	const Vector3 oriSolid = { -30, 0, 0 };
+
 };
 

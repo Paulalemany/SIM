@@ -75,7 +75,6 @@ void SolidScene::shoot(Vector3 pos)
 	if (bullet != nullptr) bullet->~Particle();
 
 	//La direccion es el vector que hay entre el punto pos y el origen
-	PxVec3 ori = { -20, 0, 0 };
 	PxVec3 dir = (pos - ori).getNormalized();
 	bullet = new Proyectil(ori, dir * 40, { 0,0,0 }, 0.5, bulletColor);
 

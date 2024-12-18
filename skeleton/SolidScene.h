@@ -56,5 +56,7 @@ protected:
 	float bulletMasa = MbulletMasa;
 	float bulletTam = MbulletTam;
 
+	const Vector3 ori = { -20, 0, 0 };
+
 };
 

@@ -24,7 +24,7 @@ void NivelSolidos::shoot(Vector3 pos)
 	//Esta vez la bala es un solido dinamico
 	solidBullet = new SolidoRigido(scene, physics,
 		{ oriSolid.x, oriSolid.y, oriSolid.z }, dir * 25, { 0,0,0 }, { bulletTam, bulletTam, bulletTam }, 
-		SolidoRigido::ESFERA, bulletColor);
+		SolidoRigido::ESFERA, bulletMasa, bulletColor);
 }
 
 void NivelSolidos::init()

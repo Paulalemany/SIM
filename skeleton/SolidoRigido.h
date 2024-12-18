@@ -9,7 +9,7 @@ public:
 
 	SolidoRigido(PxScene* _scene, PxPhysics* _physics, 
 		PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, 
-		int f, Vector4 col);
+		int f, float bulletMass, Vector4 col);
 
 	~SolidoRigido() {
 

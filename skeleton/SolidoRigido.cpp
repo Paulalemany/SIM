@@ -1,7 +1,8 @@
 #include "SolidoRigido.h"
 
 SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics, 
-	PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, int f, Vector4 col)
+	PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, 
+	int f, float bulletMass, Vector4 col)
 	: Entidad(ori.p, tam)
 {
 	size = tam;
@@ -18,7 +19,8 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	else if (f == ESFERA) shape = CreateShape(PxSphereGeometry(tam.x));
 	
 	solido->attachShape(*shape);
-	masa = solido->getMass();
+	masa = bulletMass;
+	solido->setMass(bulletMass);
 
 	setDensity(f);
 	PxRigidBodyExt::updateMassAndInertia(*solido, density);

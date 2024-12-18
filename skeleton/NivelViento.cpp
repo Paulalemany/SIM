@@ -65,7 +65,7 @@ void NivelViento::init()
 
 	//Cañon
 	canon = new Particle({ -20, 0, 0 });
-	canon->setTam(0.5, 1);
+	canon->setTam({ 0.5, 1, 0.5 }, 1);
 
 	SolidoRigido* muro = new SolidoRigido();
 	muro->CreateStatic(scene, physics, { -10, 0, 0 }, { 1, 10, 1 }, { 1,1,1,1 });

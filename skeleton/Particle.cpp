@@ -119,7 +119,7 @@ void Particle::setVisibility(bool vi)
 	}
 }
 
-void Particle::setTam(float r, int shape)
+void Particle::setTam(Vector3 r, int shape)
 {
 	//Tengo que buscar una manera de eliminar el enterior
 	DeregisterRenderItem(item);
@@ -128,15 +128,15 @@ void Particle::setTam(float r, int shape)
 
 	case 0:		//Es un circulo
 		item = new RenderItem
-		(CreateShape(physx::PxSphereGeometry(r)),
+		(CreateShape(physx::PxSphereGeometry(r.x)),
 			&pose, color);
-		createCaja(pose.p, r, r, r);
+		createCaja(pose.p, r.x, r.y, r.z);
 		break;
 	case 1:		//Es un cuadrado
 		item = new RenderItem
-		(CreateShape(physx::PxBoxGeometry(Vector3{ r,r,r })),
+		(CreateShape(physx::PxBoxGeometry(Vector3{ r.x,r.y,r.z })),
 			&pose, color);
-		createCaja(pose.p, r, r, r);
+		createCaja(pose.p, r.x, r.y, r.z);
 		break;
 
 	}

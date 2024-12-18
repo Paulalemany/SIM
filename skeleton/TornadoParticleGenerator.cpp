@@ -37,7 +37,7 @@ std::vector<Proyectil*> TornadoParticleGenerator::CreateParticles(int actParticl
 
 		//Les pasamos la velocidad del viento
 		aux.push_back(new Proyectil({ x, -30, z }, velMed, { 0,0,0 }, 0.8, { 0.76, 0.76, 0.76, 0.5 }));
-		aux[i]->setTam(1, 0);
+		aux[i]->setTam({ 1,1,1 }, 0);
 		aux[i]->setMasa(5000);
 		aux[i]->setLiveTime(liveTime);
 	}
@@ -73,7 +73,7 @@ std::vector<Particle*> TornadoParticleGenerator::CreateStaticParticles(int actPa
 
 		//Les pasamos la velocidad del viento
 		aux.push_back(new Particle({ origen.x - 5, origen.y, origen.z }, velMed, { 0.76, 0.76, 0.76, 0.5 }));
-		aux[i]->setTam(2, 0);
+		aux[i]->setTam({ 2,2,2 }, 0);
 		aux[i]->setMasa(70000);
 		aux[i]->setLiveTime(1000);
 	}

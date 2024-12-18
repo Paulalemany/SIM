@@ -39,23 +39,23 @@ Vector3 ForceGenerator::generateForce(Particle& p)
 
 void ForceGenerator::show()
 {
-	zona->setVisibility(true);
+	//zona->setVisibility(true);
 }
 
 void ForceGenerator::hide()
 {
-	zona->setVisibility(false);
+	//zona->setVisibility(false);
 }
 
 void ForceGenerator::generateZone()
 {
-	if (zona != nullptr) {
-		zona->~Particle();
-	}
+	//if (zona != nullptr) {
+	//	zona->~Particle();
+	//}
 
-	//Creamos el renderItem
-	//De forma estandar la geometria de la zona va a ser una esfera
-	zona = new Particle(origen, radio, { 1,1,1, 0.5 });
+	////Creamos el renderItem
+	////De forma estandar la geometria de la zona va a ser una esfera
+	//zona = new Particle(origen, radio, { 1,1,1, 0.5 });
 
-	hide();
+	//hide();
 }

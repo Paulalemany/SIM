@@ -38,7 +38,7 @@ std::vector<Particle*> BrillitosParticleGenerator::CreateStaticParticles(int act
 
 		//Les pasamos la velocidad del viento
 		aux.push_back(new Particle({ (float)x, (float)y, (float)z }, velMed, { 0.97, 0.97, 0.68, 1 }));
-		aux[i]->setTam(0.5, 0);
+		aux[i]->setTam({ 0.5, 0.5, 0.5 }, 0);
 		aux[i]->setLiveTime(liveTime);
 	}
 

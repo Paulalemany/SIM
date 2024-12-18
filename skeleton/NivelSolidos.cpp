@@ -38,12 +38,12 @@ void NivelSolidos::init()
 {
 	//Target del nivel
 	solidtarget = new Particle({ 15, 0, 0 });
-	solidtarget->setTam(2, 1);
+	solidtarget->setTam({2,2,2}, 1);
 	
 
 	//Ponemos el cañon
 	canon = new Particle(oriSolid);
-	canon->setTam(0.5, 1);
+	canon->setTam({ 0.5, 1, 0.5 }, 1);
 
 	//Vamos a poner un suelo a ver que pasa
 	SolidoRigido* suelo = new SolidoRigido();

@@ -20,7 +20,7 @@ public:
 	///Setters
 	void setLiveTime(double t) { liveTime = t; }
 	void setVisibility(bool vi);
-	void setTam(float r, int shape);
+	void setTam(Vector3 r, int shape);
 	void setColor(Vector4 col) { color = col; }
 	void setVelocidad(Vector3 v) override { vel = v; }
 	void setPosition(Vector3 p) override { pose.p = p; pos = p; }

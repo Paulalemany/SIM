@@ -21,7 +21,7 @@ void NivelTornado::init()
 	objetos.push_back(target);
 
 	canon = new Particle({ -20, 0, 0 });
-	canon->setTam(0.5, 1);
+	canon->setTam({ 0.5, 1, 0.5 }, 1);
 
 	active = true;
 

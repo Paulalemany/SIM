@@ -32,7 +32,7 @@ std::vector<Proyectil*> VientoParticleGenerator::CreateParticles(int actParticle
 		
 		//Les pasamos la velocidad del viento
 		aux.push_back(new Proyectil({(float)x, (float)y, (float)z}, velMed, {0,0,0}, 0.8, {0.69, 1, 1, 1}));
-		aux[i]->setTam(0.3, 0);
+		aux[i]->setTam({ 0.3, 0.3, 0.3 }, 0);
 	}
 
 	return aux;
@@ -67,7 +67,7 @@ std::vector<Particle*> VientoParticleGenerator::CreateStaticParticles(int actPar
 
 		//Les pasamos la velocidad del viento
 		aux.push_back(new Particle({ (float)x, (float)y, (float)z }, velMed, { 0.69, 1, 1, 1 }));
-		aux[i]->setTam(0.3, 0);
+		aux[i]->setTam({ 0.3, 0.3, 0.3 }, 0);
 		aux[i]->setLiveTime(liveTime);
 	}
 

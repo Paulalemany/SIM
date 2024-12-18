@@ -39,11 +39,11 @@ void NivelFlotacion::init()
 
 	//Para que no nos colisione con el cañon hago que este sea una particula 
 	canon = new Particle({ -20, 0, 0 });
-	canon->setTam(0.5, 1);
+	canon->setTam({ 0.5,1,0.5 }, 1);
 
 	//Muro que obliga a usar la flotacion
 	SolidoRigido* muro = new SolidoRigido();
-	muro->CreateStatic(scene, physics, { 0,10,0 }, { 1, 10, 1 }, { 1,1,1,1 });
+	muro->CreateStatic(scene, physics, { 0,9,0 }, { 1, 10, 1 }, { 1,1,1,1 });
 	objetos.push_back(muro);
 
 	//Le voy a hacer tambien un techo que me veo venir que lo hagan por arriba

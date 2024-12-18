@@ -80,7 +80,7 @@ void SolidScene::shoot(Vector3 pos)
 
 	//Estas dos cosas y el color es lo que deberia variar con cada tipo de bala
 	bullet->setMasa(bulletMasa);
-	bullet->setTam(bulletTam, 0);
+	bullet->setTam({ bulletTam, bulletTam, bulletTam }, 0);
 }
 
 void SolidScene::init()

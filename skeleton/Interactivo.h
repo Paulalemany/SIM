@@ -14,10 +14,9 @@ public:
 
 	//Comprobacion de colisiones
 	bool inBoundingBox(Vector3 _pos);
+	void createCaja(Vector3 _pos, float h, float w, float l);
 
 protected:
-
-	void createCaja(Vector3 _pos, float h, float w, float l);
 
 	Vector3 pos;
 

@@ -44,6 +44,8 @@ public:
 	}
 	void setDensity(int f);
 
+	Vector3 getPosition() override { return solido->getGlobalPose().p; }
+
 	void integrate(double t) override;
 
 	///Fuerzas

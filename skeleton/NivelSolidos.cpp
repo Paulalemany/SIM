@@ -1,5 +1,7 @@
 #include "NivelSolidos.h"
 
+#include <iostream>
+
 NivelSolidos::NivelSolidos(PxScene* _scene, PxPhysics* _physics)
 	:SolidScene(_scene, _physics)
 {
@@ -7,7 +9,16 @@ NivelSolidos::NivelSolidos(PxScene* _scene, PxPhysics* _physics)
 
 bool NivelSolidos::update(double t)
 {
+	///Particulas del gameplay
+	if (solidBullet != nullptr) {
+
+		//Aqui simplemente poner la condicion de victoria
+		if (solidtarget->inBoundingBox(solidBullet->getPosition()))
+			return true;
+	}
+
 	return false;
+
 }
 
 void NivelSolidos::shoot(Vector3 pos)
@@ -19,12 +30,15 @@ void NivelSolidos::shoot(Vector3 pos)
 
 	//Esta vez la bala es un solido dinamico
 	solidBullet = new SolidoRigido(scene, physics,
-		{ oriSolid.x, oriSolid.y, oriSolid.z }, dir * 25, { 0,0,0 }, { bulletTam, bulletTam, bulletTam }, 
+		{ oriSolid.x, oriSolid.y, oriSolid.z }, dir * 60, { 0,0,0 }, { bulletTam, bulletTam, bulletTam }, 
 		SolidoRigido::ESFERA, bulletMasa, bulletColor);
 }
 
 void NivelSolidos::init()
 {
+	//Target del nivel
+	solidtarget = new Particle({ -5, 5, -1 });
+	
 
 	//Ponemos el cañon
 	canon = new Particle(oriSolid);
@@ -32,11 +46,24 @@ void NivelSolidos::init()
 
 	//Vamos a poner un suelo a ver que pasa
 	SolidoRigido* suelo = new SolidoRigido();
-	suelo->CreateStatic(scene, physics, { 0,-10,0 }, { 10, 1, 1 }, { 1,1,1,1 });
+	suelo->CreateStatic(scene, physics, { -10,-20,0 }, { 5, 1, 1 }, { 1,1,1,1 });
+	objetos.push_back(suelo);
 
-	//Vamos a probar los distintos tensores de inercia
+	//Pared derecha
+	SolidoRigido* paredDer = new SolidoRigido();
+	paredDer->CreateStatic(scene, physics, { 5, -5, 0 }, { 1, 7, 1 }, { 1,1,1,1 });
+	objetos.push_back(paredDer);
+
+	//Pared izquierda
+	SolidoRigido* paredIzq = new SolidoRigido();
+	paredIzq->CreateStatic(scene, physics, { -10, 5, 0 }, { 1, 7, 1 }, { 1,1,1,1 });
+	objetos.push_back(paredIzq);
+
+
 }
 
 void NivelSolidos::quit()
 {
+	if (solidtarget != nullptr) solidtarget->~Particle();
+	SolidScene::quit();
 }

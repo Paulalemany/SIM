@@ -273,6 +273,7 @@
     <ClCompile Include="MuelleParticleGenerator.cpp" />
     <ClCompile Include="Niveles_Menu.cpp" />
     <ClCompile Include="NivelFlotacion.cpp" />
+    <ClCompile Include="NivelSolidos.cpp" />
     <ClCompile Include="NivelTornado.cpp" />
     <ClCompile Include="NivelViento.cpp" />
     <ClCompile Include="OriginFuegoGenerator.cpp" />
@@ -324,6 +325,7 @@
     <ClInclude Include="MuelleParticleGenerator.h" />
     <ClInclude Include="Niveles_Menu.h" />
     <ClInclude Include="NivelFlotacion.h" />
+    <ClInclude Include="NivelSolidos.h" />
     <ClInclude Include="NivelTornado.h" />
     <ClInclude Include="NivelViento.h" />
     <ClInclude Include="OriginFuegoGenerator.h" />

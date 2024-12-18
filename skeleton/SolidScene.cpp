@@ -7,9 +7,6 @@ SolidScene::SolidScene(PxScene* _scene, PxPhysics* _physics)
 	physics = _physics;
 
 	mat = physics->createMaterial(1, 1, 0);
-
-	//Vamos a hacer esto un poco de mala manera para testear
-	//El target en cada nivel va a ser distinto
 }
 
 SolidScene::~SolidScene()

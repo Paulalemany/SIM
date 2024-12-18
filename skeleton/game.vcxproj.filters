@@ -145,6 +145,9 @@
     <ClCompile Include="Niveles_Menu.cpp">
       <Filter>cpp\Niveles</Filter>
     </ClCompile>
+    <ClCompile Include="NivelSolidos.cpp">
+      <Filter>cpp\Niveles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Render\Camera.h">
@@ -292,6 +295,9 @@
       <Filter>h\Sistemas</Filter>
     </ClInclude>
     <ClInclude Include="Niveles_Menu.h">
+      <Filter>h\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="NivelSolidos.h">
       <Filter>h\Niveles</Filter>
     </ClInclude>
   </ItemGroup>

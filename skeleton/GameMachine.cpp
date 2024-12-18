@@ -16,16 +16,17 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelFlotacion(s, p));
 	niveles.push_back(new NivelViento(s, p));
 	niveles.push_back(new NivelTornado(s, p));
+	niveles.push_back(new NivelSolidos(s, p));
 	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
-	actual = NIVELES;	//Escena con la que iniciamos
+	actual = N_SOLIDOS;	//Escena con la que iniciamos
+
+	for (int i = 0; i < niv; i++) botones.push_back(rest);
+	niveles[NIVELES]->setColors(botones);
 
 	//Escondemos todas las que no sean la escena actual
 	for (int i = 0; i < escenas.size(); i++) escenas[i]->quit(); //Ahora que estamos con el proyecto final voy a ignorar las escenas
 	for (int i = 0; i < niveles.size(); i++) niveles[i]->quit(); //Tambien escondemos todos los niveles
-
-	for (int i = 0; i < niv; i++) botones.push_back(rest);
-	niveles[NIVELES]->setColors(botones);
 
 	niveles[actual]->init();
 }
@@ -49,7 +50,6 @@ void GameMachine::update(double t)
 
 	if (completados.size() == niv) {	//Se ha completado el juego
 
-		cout << "LOS HAS COMPLETADO TODOS FELICIDADES";
 		for (int i = 0; i < niv; i++) botones.push_back(rest);
 		niveles[NIVELES]->setColors(botones);
 		changeScene(START);
@@ -80,29 +80,20 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 		switch (key)
 		{
 		case '0':
-			/*std::cout << "---ESCENA PARTICULAS---\n";
-			changeScene(PARTICULAS);*/
-
 			std::cout << "---NIVEL FLOTACION---\n";
 			changeScene(N_FLOTACION);
 			break;
 		case '1':
-			/*std::cout << "---ESCENA FUERZAS---\n";
-			changeScene(FUERZAS);*/
-
 			cout << "---NIVEL VIENTO---\n";
 			changeScene(N_VIENTO);
 			break;
 		case '2':
-			/*std::cout << "---ESCENA VIENTO---\n";
-			changeScene(VIENTO);*/
-
 			cout << "---NIVEL TORNADO---\n";
 			changeScene(N_TORNADO);
 			break;
 		case '3':
-			/*std::cout << "---ESCENA TORBELLINO---\n";
-			changeScene(TORBELLINO);*/
+			std::cout << "---ESCENA SOLIDOS---\n";
+			changeScene(N_SOLIDOS);
 			break;
 		case '4':
 			/*std::cout << "---ESCENA EXPLOSION---\n";
@@ -121,8 +112,8 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 			changeScene(FLOTACION);*/
 			break;
 		case '8':
-			std::cout << "---ESCENA SOLIDOS---\n";
-			changeScene(SOLIDOS);
+			/*std::cout << "---ESCENA SOLIDOS---\n";
+			changeScene(SOLIDOS);*/
 			break;
 		case '9':
 

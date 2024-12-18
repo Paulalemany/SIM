@@ -13,7 +13,7 @@ public:
 	virtual bool update(double t) override;
 
 	///Input de la escena
-	void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
+	virtual void keyPressed(unsigned char key, const physx::PxTransform& camera) override;
 	virtual void shoot(Vector3 pos);
 
 	/// Para la gestion de escenas

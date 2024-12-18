@@ -15,6 +15,7 @@
 #include "NivelFlotacion.h"
 #include "NivelViento.h"
 #include "NivelTornado.h"
+#include "NivelSolidos.h"
 
 //Menus
 #include "Start_Menu.h"
@@ -56,16 +57,19 @@ private:
 		N_FLOTACION = 0,
 		N_VIENTO,
 		N_TORNADO,
+		N_SOLIDOS,
 		NIVELES,
 		START
 	};
+
+	const int niv = NIVELES;
 
 	//Escenas
 	vector<Scene*> escenas;
 	vector<SolidScene*> niveles;
 
 	unordered_set<int> completados;
-	const int niv = 3;
+	
 
 	vector<Vector4> botones;
 	const Vector4 completed = { 0.97, 0.97, 0.68, 1 };

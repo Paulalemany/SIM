@@ -22,6 +22,8 @@ public:
 
 	virtual void setColors(vector<Vector4> c) { colors = c; }
 	virtual void setWin(bool b) {}
+	virtual bool getWin() { return false; }
+
 
 protected:
 	PxScene* scene = NULL;

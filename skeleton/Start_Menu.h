@@ -21,6 +21,7 @@ public:
 	void quit() override;	//Quita la escena
 
 	void setWin(bool b) override { win = b; }
+	bool getWin() { return win; }
 
 private:
 	bool win = false;

@@ -77,6 +77,8 @@ void GameMachine::changeScene(int s)
 void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera)
 {
 	if (actual > niv) {
+
+		if (actual == START && niveles[START]->getWin()) niveles[START]->setWin(false);
 		changeScene(actual - 1);	//cambiamos al siguiente
 	}
 	else {

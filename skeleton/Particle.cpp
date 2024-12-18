@@ -134,9 +134,9 @@ void Particle::setTam(float r, int shape)
 		break;
 	case 1:		//Es un cuadrado
 		item = new RenderItem
-		(CreateShape(physx::PxBoxGeometry(Vector3{ r,1,r })),
+		(CreateShape(physx::PxBoxGeometry(Vector3{ r,r,r })),
 			&pose, color);
-		createCaja(pose.p, r, 1, r);
+		createCaja(pose.p, r, r, r);
 		break;
 
 	}

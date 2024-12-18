@@ -37,7 +37,8 @@ void NivelSolidos::shoot(Vector3 pos)
 void NivelSolidos::init()
 {
 	//Target del nivel
-	solidtarget = new Particle({ -5, 5, -1 });
+	solidtarget = new Particle({ 15, 0, 0 });
+	solidtarget->setTam(2, 1);
 	
 
 	//Ponemos el cañon
@@ -65,5 +66,6 @@ void NivelSolidos::init()
 void NivelSolidos::quit()
 {
 	if (solidtarget != nullptr) solidtarget->~Particle();
+	if (solidBullet != nullptr) solidBullet->~SolidoRigido();
 	SolidScene::quit();
 }

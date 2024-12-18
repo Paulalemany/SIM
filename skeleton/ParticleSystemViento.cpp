@@ -8,9 +8,7 @@ ParticleSystemViento::ParticleSystemViento(Vector3 ori, Vector3 vel, int n, int 
 
 bool ParticleSystemViento::update(double t)
 {
-	//Actualiza el tiempo que lleva vivo el sistema
-	liveTime -= t;
-	if (liveTime == 0) return false;
+	//Quiero que este sistema no muera por tiempo
 
 
 	//Creamos las particulas nuevas y las guardamos en el vector de particulas

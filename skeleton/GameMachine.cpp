@@ -19,7 +19,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelSolidos(s, p));
 	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
-	actual = N_SOLIDOS;	//Escena con la que iniciamos
+	actual = NIVELES;	//Escena con la que iniciamos
 
 	for (int i = 0; i < niv; i++) botones.push_back(rest);
 	niveles[NIVELES]->setColors(botones);
@@ -84,44 +84,24 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 	else {
 		switch (key)
 		{
-		case '0':
+		
+		case '1':
 			std::cout << "---NIVEL FLOTACION---\n";
 			changeScene(N_FLOTACION);
-			break;
-		case '1':
-			cout << "---NIVEL VIENTO---\n";
-			changeScene(N_VIENTO);
+			
 			break;
 		case '2':
+			cout << "---NIVEL VIENTO---\n";
+			changeScene(N_VIENTO);
+			
+			break;
+		case '3':
 			cout << "---NIVEL TORNADO---\n";
 			changeScene(N_TORNADO);
 			break;
-		case '3':
+		case '4':
 			std::cout << "---ESCENA SOLIDOS---\n";
 			changeScene(N_SOLIDOS);
-			break;
-		case '4':
-			/*std::cout << "---ESCENA EXPLOSION---\n";
-			changeScene(EXPLOSION);*/
-			break;
-		case '5':
-			/*std::cout << "---ESCENA MUELLES---\n";
-			changeScene(MUELLES);*/
-			break;
-		case '6':
-			/*std::cout << "---ESCENA ANCLA---\n";
-			changeScene(ANCLA);*/
-			break;
-		case '7':
-			/*std::cout << "---ESCENA FLOTACION---\n";
-			changeScene(FLOTACION);*/
-			break;
-		case '8':
-			/*std::cout << "---ESCENA SOLIDOS---\n";
-			changeScene(SOLIDOS);*/
-			break;
-		case '9':
-
 			break;
 
 		default:

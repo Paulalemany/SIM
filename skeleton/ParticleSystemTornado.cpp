@@ -10,9 +10,7 @@ ParticleSystemTornado::ParticleSystemTornado(Vector3 ori, Vector3 vel, int n, in
 
 bool ParticleSystemTornado::update(double t)
 {
-	//Actualiza el tiempo que lleva vivo el sistema
-	liveTime -= t;
-	if (liveTime == 0) return false;
+	//Este sistema es inmortal
 
 
 	//Creamos las particulas nuevas y las guardamos en el vector de particulas

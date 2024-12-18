@@ -8,6 +8,7 @@ ParticleSystemBrillitos::ParticleSystemBrillitos(Vector3 ori, Vector3 vel, int n
 
 bool ParticleSystemBrillitos::update(double t)
 {
+	//Este sistema es inmortal
 
 	//Creamos las particulas nuevas y las guardamos en el vector de particulas
 	pAux = generator->CreateStaticParticles(particulas.size(), numParticles);

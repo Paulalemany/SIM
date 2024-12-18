@@ -19,7 +19,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelSolidos(s, p));
 	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
-	niveles.push_back(new Text_Menu(s, p));
+	//niveles.push_back(new Text_Menu(s, p));
 	actual = NIVELES;	//Escena con la que iniciamos
 
 	for (int i = 0; i < niv; i++) botones.push_back(rest);
@@ -66,7 +66,7 @@ void GameMachine::update(double t)
 
 void GameMachine::changeScene(int s)
 {
-	if (s != actual) {
+	if (s != actual || s > niv) {
 
 		//Ocultamos las particulas de la escena actual
 		niveles[actual]->quit();

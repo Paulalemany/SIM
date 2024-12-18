@@ -37,6 +37,7 @@ GameMachine* gameMachine = nullptr;
 
 //Textos del juego
 std::string _name = "Paula Alemany Rodriguez";
+
 std::string _start = " ";
 std::string _intro = " ";
 std::string _balas = " ";
@@ -45,9 +46,11 @@ std::string _ExplicacionM = " ";
 std::string _ExplicacionL = " ";
 std::string _selector = " ";
 std::string _selector2 = " ";
+
 std::string _nivelFlotacion = " ";
 std::string _nivelViento = " ";
 std::string _nivelTornado = " ";
+std::string _nivelSolidos = " ";
 std::string _fin = " ";
 
 

@@ -20,6 +20,7 @@
 //Menus
 #include "Start_Menu.h"
 #include "Niveles_Menu.h"
+#include "Text_Menu.h"
 
 //Para completarlos
 #include <unordered_set>
@@ -59,7 +60,8 @@ private:
 		N_TORNADO,
 		N_SOLIDOS,
 		NIVELES,
-		START
+		START,
+		TEXT
 	};
 
 	const int niv = NIVELES;

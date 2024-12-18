@@ -308,6 +308,10 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 	drawText(_selector, 120, 400);
 	drawText(_selector2, 120, 100);
 
+	drawText(_nivelFlotacion, 120, 100);
+	drawText(_nivelViento, 120, 100);
+	drawText(_nivelTornado, 120, 100);
+
 	drawText(_fin, 190, 300);
 
 	// Setup camera

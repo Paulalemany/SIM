@@ -19,6 +19,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	niveles.push_back(new NivelSolidos(s, p));
 	niveles.push_back(new Niveles_Menu(s, p));
 	niveles.push_back(new Start_Menu(s, p));
+	niveles.push_back(new Text_Menu(s, p));
 	actual = NIVELES;	//Escena con la que iniciamos
 
 	for (int i = 0; i < niv; i++) botones.push_back(rest);
@@ -82,9 +83,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 
 		if (actual == START && niveles[START]->getWin()) {
 			niveles[START]->setWin(false);
-			niveles[NIVELES]->setWin(false);
+			changeScene(actual);	//para volver al texto del inicio
 		}
-		changeScene(actual - 1);	//cambiamos al siguiente
+		else
+			changeScene(actual - 1);	//cambiamos al siguiente
 	}
 	else {
 		switch (key)

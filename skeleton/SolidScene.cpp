@@ -111,7 +111,10 @@ void SolidScene::quit()
 	//Esto seria por ahora eliminar todos los solidoRigidos del vector
 	for (auto e : objetos) e->~SolidoRigido();
 	if (canon != nullptr) canon->~Particle();
-	if (bullet != nullptr) bullet->~Particle();
+	if (bullet != nullptr) {
+		bullet->~Particle();
+		bullet = nullptr;
+	}
 
 	objetos.clear();
 

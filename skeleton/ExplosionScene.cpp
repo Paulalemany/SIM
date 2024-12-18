@@ -2,7 +2,7 @@
 
 ExplosionScene::ExplosionScene()
 {
-	fuerzas.push_back(new ExplosionGenerator({ 10,35,0 }, 200));
+	fuerzas.push_back(new ExplosionGenerator({ 10,0,-60 }, 200));
 }
 
 ExplosionScene::~ExplosionScene()

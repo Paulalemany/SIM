@@ -29,6 +29,7 @@ GameMachine::GameMachine(PxScene* s, PxPhysics* p)
 	for (int i = 0; i < niveles.size(); i++) niveles[i]->quit(); //Tambien escondemos todos los niveles
 
 	niveles[actual]->init();
+	//escenas[actual]->init();
 }
 
 GameMachine::~GameMachine()
@@ -39,6 +40,7 @@ void GameMachine::update(double t)
 {
 	//Solo hacemos el update de la escena en la que estamos
 	//escenas[actual]->update(t);
+
 	if (niveles[actual]->update(t))	//Si devuelve true es que se han completado los niveles
 	{
 		completados.insert(actual);
@@ -52,6 +54,7 @@ void GameMachine::update(double t)
 
 		for (int i = 0; i < niv; i++) botones.push_back(rest);
 		niveles[NIVELES]->setColors(botones);
+		niveles[START]->setWin(true);
 		changeScene(START);
 
 		completados.clear();

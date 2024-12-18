@@ -52,12 +52,14 @@ void GameMachine::update(double t)
 
 	if (completados.size() == niv) {	//Se ha completado el juego
 
+		botones.clear();
 		for (int i = 0; i < niv; i++) botones.push_back(rest);
 		niveles[NIVELES]->setColors(botones);
 		niveles[START]->setWin(true);
 		changeScene(START);
 
 		completados.clear();
+		
 	}
 }
 
@@ -78,7 +80,10 @@ void GameMachine::keyPressed(unsigned char key, const physx::PxTransform& camera
 {
 	if (actual > niv) {
 
-		if (actual == START && niveles[START]->getWin()) niveles[START]->setWin(false);
+		if (actual == START && niveles[START]->getWin()) {
+			niveles[START]->setWin(false);
+			niveles[NIVELES]->setWin(false);
+		}
 		changeScene(actual - 1);	//cambiamos al siguiente
 	}
 	else {

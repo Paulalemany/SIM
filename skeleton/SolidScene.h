@@ -21,11 +21,14 @@ public:
 	virtual void quit() override;	//Quita la escena
 
 	virtual void setColors(vector<Vector4> c) { colors = c; }
-	virtual void setWin(bool b) {}
+	virtual void setWin(bool b) { flag = b; }
 	virtual bool getWin() { return false; }
 
 
 protected:
+
+	bool flag = false;
+
 	PxScene* scene = NULL;
 	PxPhysics* physics = NULL;
 	PxMaterial* mat = NULL;

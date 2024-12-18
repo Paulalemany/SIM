@@ -10,14 +10,14 @@ void Niveles_Menu::init()
 	_selector = "___PULSE (EN EL TECLADO) EL NUMERO DEL NIVEL AL QUE DESEA IR___";
 	_selector2 = "___CUANDO LO COMPLETES CAMBIARA DE COLOR. COMPLETALOS TODOS!___ ";
 
-	float x = -40;
+	float x = -30;
 
-	for (int i = 0; i < colors.size(); i++) {
+	for (int i = 0; i < 4; i++) {
 
 		objetos.push_back(new SolidoRigido());
-		objetos[i]->CreateStatic(scene, physics, { x, 0, -10 }, { 10, 10, 10 }, colors[i]);
+		objetos[i]->CreateStatic(scene, physics, { x, 0, -10 }, { 5, 5, 5 }, colors[i]);
 
-		x += 40.0;
+		x += 20.0;
 	}
 }
 
@@ -26,4 +26,6 @@ void Niveles_Menu::quit()
 	_selector = " ";
 	_selector2 = " ";
 	SolidScene::quit();
+
+	if (flag) colors.clear();
 }

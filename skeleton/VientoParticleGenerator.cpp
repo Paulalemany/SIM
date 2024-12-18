@@ -48,6 +48,7 @@ std::vector<Particle*> VientoParticleGenerator::CreateStaticParticles(int actPar
 
 	std::uniform_int_distribution<int> distribution(0, par);
 	std::uniform_int_distribution<int> distribution2(0, 5);
+	std::uniform_int_distribution<int> distribution3(-1, 1);
 	int numPar = distribution(generator);  // generates number in the range 1..par
 	int liveTime;
 
@@ -55,14 +56,25 @@ std::vector<Particle*> VientoParticleGenerator::CreateStaticParticles(int actPar
 	//La segunda en la desviacion tipica, indica la dispersion
 	std::normal_distribution<double> Ndistribution(20, 10.0);
 	double x, y, z;
+	double nx, ny, nz;
 
 	//creamos las particulas que toquen
 	for (int i = 0; i < numPar; i++) {
 
+		nx = distribution3(generator);
+		if (nx == 0) nx = -1;
+		ny = distribution3(generator);
+		if (ny == 0) ny = -1;
+		nz = distribution3(generator);
+		if (nz == 0) nz = -1;
+ 
+
+		//Quiero que haya una probabilidad 50% de que sea en el sitio negativo
 		//Queremos randomizar la posicion
-		x = origen.x + Ndistribution(generator);
-		y = origen.y + Ndistribution(generator);
-		z = origen.z + Ndistribution(generator);
+		x = (origen.x + Ndistribution(generator)) * nx;
+		y = (origen.y + Ndistribution(generator)) * ny;
+		z = (origen.z + Ndistribution(generator)) * nz;
+
 		liveTime = distribution2(generator);
 
 		//Les pasamos la velocidad del viento

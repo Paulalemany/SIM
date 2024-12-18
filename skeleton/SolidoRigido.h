@@ -9,7 +9,7 @@ public:
 
 	SolidoRigido(PxScene* _scene, PxPhysics* _physics, 
 		PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, 
-		float d, Vector4 col);
+		int f, Vector4 col);
 
 	~SolidoRigido() {
 
@@ -42,11 +42,20 @@ public:
 		Lvel = v;
 		solido->setLinearVelocity(Lvel);
 	}
+	void setDensity(int f);
 
 	void integrate(double t) override;
 
 	///Fuerzas
 	void addForce(Vector3 F) override;	//Los objetos dinamicos ya tienen un addForce
+
+
+	///Enum para los tipos de formas
+	enum forma {
+		CAJA = 0,
+		CAPSULA,
+		ESFERA
+	};
 
 protected:
 	RenderItem* item = nullptr;
@@ -61,6 +70,8 @@ protected:
 
 	//Le añadimos tiempo de vida
 	float liveTime = 500;
+
+	float density = 0;
 
 };
 

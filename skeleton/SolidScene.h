@@ -40,10 +40,12 @@ protected:
 	//Particularidades de la bala
 	//De forma predeterminada sera la mediana
 
+	//masa
 	const float SbulletMasa = 10;
 	const float MbulletMasa = 1000;
 	const float LbulletMasa = 10000;
 
+	//radio
 	const float SbulletTam = 0.5;
 	const float MbulletTam = 1;
 	const float LbulletTam = 2;

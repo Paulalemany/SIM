@@ -1,7 +1,7 @@
 #include "SolidoRigido.h"
 
 SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics, 
-	PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, float d, Vector4 col)
+	PxTransform ori, Vector3 vel, Vector3 W, Vector3 tam, int f, Vector4 col)
 	: Entidad(ori.p, tam)
 {
 	size = tam;
@@ -12,11 +12,17 @@ SolidoRigido::SolidoRigido(PxScene* _scene, PxPhysics* _physics,
 	solido->setLinearVelocity(vel);
 	solido->setAngularVelocity(W);
 
-	shape = CreateShape(PxSphereGeometry(tam.x));
+	//Hacemos la forma que queramos
+	if(f == CAJA) shape = CreateShape(PxBoxGeometry(tam));
+	else if (f == CAPSULA) shape = CreateShape(PxCapsuleGeometry(tam.x, tam.y));
+	else if (f == ESFERA) shape = CreateShape(PxSphereGeometry(tam.x));
+	
 	solido->attachShape(*shape);
-
-	PxRigidBodyExt::updateMassAndInertia(*solido, d);	//El 0.15 es la densidad kg/m3
 	masa = solido->getMass();
+
+	setDensity(f);
+	PxRigidBodyExt::updateMassAndInertia(*solido, density);
+	
 
 	_scene->addActor(*solido);
 
@@ -53,13 +59,13 @@ void SolidoRigido::changeShape(int s)
 
 	switch (s)
 	{
-	case 0:
+	case CAJA:
 		shape = CreateShape(PxBoxGeometry(size));
 		break;
-	case 1:
+	case CAPSULA:
 		shape = CreateShape(PxCapsuleGeometry(size.x, size.y));
 		break;
-	case 2:
+	case ESFERA:
 		shape = CreateShape(PxSphereGeometry(size.x));
 		break;
 
@@ -68,6 +74,18 @@ void SolidoRigido::changeShape(int s)
 	}
 
 	item = new RenderItem(shape, estatico, color);
+}
+
+void SolidoRigido::setDensity(int f)
+{
+	//Calculamos el volumen de la esfera cuando cambiamos la esfera
+	float V = 0;
+
+	if (f == CAJA) V = size.x * size.y * size.z;
+	else if (f == CAPSULA) V = 0;	//pi * h * r * r
+	else if (f == ESFERA) V = (4 / 3) * PxPi * size.x * size.x * size.x;
+
+	density = masa / V;
 }
 
 void SolidoRigido::integrate(double t)

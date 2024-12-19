@@ -6,7 +6,7 @@ NivelViento::NivelViento(PxScene* _scene, PxPhysics* _physics)
 {
 
 	//Añadimos la fuerza del viento
-	fuerzas.push_back(new VientoGenerator({ 0,0,0 }, { -10, 10, 0 }));	//Ya veremos cuanta fuerza le ponemos al viento
+	fuerzas.push_back(new VientoGenerator({ 0,0,0 }, { -10, 10, 0 }));	
 	sistemas.push_back(new ParticleSystemViento({ 0,0,0 }, { -10, 10, 0 }, 1000, 50000));
 	viento = false;
 }
